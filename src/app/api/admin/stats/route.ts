@@ -1,17 +1,17 @@
+import { NextResponse } from 'next/server';
+import { isAuthenticated } from '@/lib/admin-auth';
 import { getStats } from '@/lib/analytics';
-import { getBudgetStatus } from '@/lib/budget';
+import { getBudgetStatus, LIMITS } from '@/lib/budget';
 
-export async function GET(req: Request) {
-  // Simple auth — check for admin key in header
-  const adminKey = process.env.ADMIN_API_KEY;
-  const authHeader = req.headers.get('x-admin-key');
+export const dynamic = 'force-dynamic';
 
-  if (adminKey && authHeader !== adminKey) {
-    return new Response('Unauthorized', { status: 401 });
+export async function GET() {
+  if (!(await isAuthenticated())) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const stats = getStats();
   const budget = getBudgetStatus();
 
-  return Response.json({ stats, budget });
+  return NextResponse.json({ stats, budget, limits: LIMITS });
 }
