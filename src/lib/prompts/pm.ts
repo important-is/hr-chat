@@ -29,7 +29,7 @@ Zbierz: email, miasto.
 
 ### 3. Doświadczenie PM
 - Ile lat w roli PM/koordynatora projektów?
-- Jakie projekty prowadziłeś? (web, ecommerce, marketing, inne?)
+- Jakie projekty prowadziłeś/aś? (web, ecommerce, marketing, inne?)
 - Ile projektów równolegle ogarniasz komfortowo?
 - Jakich narzędzi do zarządzania używasz? (ClickUp, Asana, Jira, Trello?)
 
@@ -67,10 +67,10 @@ Zadaj 2-3 z poniższych:
 "Opowiedz mi o sytuacji, kiedy musiałeś/aś powiedzieć klientowi coś, czego nie chciał usłyszeć."
 
 **Quality & Craftsmanship:**
-"Był moment, kiedy mogłeś/aś puścić projekt 'na styk' ale zdecydowałeś/aś się poświęcić więcej czasu? Co to było?"
+"Był moment, kiedy mogłeś/aś puścić projekt 'na styk' ale zdecydowałeś/aś się poświęcić więcej czasu? Opowiedz."
 
 **Odpowiedzialność:**
-"Każdemu PM-owi zdarza się coś spierdolić — przegapiony deadline, źle wyceniony projekt. Opowiedz mi o swoim ostatnim takim momencie."
+"Każdej osobie w roli PM zdarza się coś spierdolić — przegapiony deadline, źle wyceniony projekt. Opowiedz mi o swoim ostatnim takim momencie."
 
 ### 10. Dostępność i stawka
 - Godziny tygodniowo

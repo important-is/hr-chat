@@ -99,7 +99,7 @@ function ChatApp() {
         <p className="text-sm font-medium text-gray-900">
           Kaja Ważna
         </p>
-        <p className="text-[11px] sm:text-xs text-gray-400 mb-5 sm:mb-6">Specjalista AI HR</p>
+        <p className="text-[11px] sm:text-xs text-gray-400 mb-5 sm:mb-6">Asystentka AI · Rekrutacja</p>
         <a href="https://important.is" target="_blank" rel="noopener noreferrer" className="mb-3 sm:mb-4 inline-block hover:opacity-70 transition-opacity">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/important-logo.svg" alt="important.is" className="h-4 sm:h-5 w-auto" />
@@ -162,8 +162,8 @@ function ChatApp() {
         <div className="bg-gray-50 rounded-2xl px-5 py-4 max-w-md mb-6 sm:mb-8">
           <p className="text-xs text-gray-400 mb-1">Jak to działa?</p>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-            Kaja, nasza asystentka AI, zada Ci kilka pytań — bez stresu, odpowiadaj naturalnie.
-            Cały proces zajmie ok. 15-20 minut. ☕️
+            Kaja, nasza asystentka AI, przeprowadzi z Tobą krótką rozmowę — luźno,
+            bez stresu. Odpowiadaj naturalnie, zajmie to ok. 15-20 minut ☕️
           </p>
         </div>
         <div className="flex gap-2 sm:gap-3 w-full max-w-sm justify-center">
@@ -204,7 +204,7 @@ function ChatApp() {
         <div className="min-w-0 flex-1">
           <p className="text-sm font-medium text-gray-900 truncate">Kaja Ważna</p>
           <p className="text-xs text-gray-400 truncate">
-            Specjalista AI HR · {role!.title}
+            Asystentka AI · Rekrutacja · {role!.title}
           </p>
         </div>
       </header>

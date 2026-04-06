@@ -30,7 +30,7 @@ Zbierz: email, miasto.
 ### 3. Doświadczenie z AI
 - Z jakich modeli/API korzystasz? (OpenAI, Anthropic Claude, Google, open-source?)
 - Promptowanie: jak zaawansowane? Opisz najciekawszy use case.
-- Budowałeś chatboty, asystentów, RAG, fine-tuning?
+- Budowałeś/aś chatboty, asystentów, RAG, fine-tuning?
 - Integracja AI z istniejącymi systemami — doświadczenie?
 
 ### 4. Narzędzia i platformy
@@ -49,7 +49,7 @@ Dopytuj: jakie embeddingi? który model? jak handling hallucinations? jak mierzy
 - API: REST, webhooks, auth?
 
 ### 7. Portfolio / case studies
-- Opisz 2-3 projekty z AI, które zrealizowałeś
+- Opisz 2-3 projekty z AI, które zrealizowałeś/aś
 - Efekty biznesowe (oszczędność czasu, automatyzacja procesu?)
 - Linki do demo/repo/artykułów?
 
@@ -63,7 +63,7 @@ Zadaj 2-3 z poniższych:
 "Klient chce 'coś z AI' ale nie wie co. Naciska na szybkie wdrożenie. Jak podchodzisz?"
 
 **Quality & Craftsmanship:**
-"Opisz moment kiedy poświęciłeś/aś więcej czasu na ewaluację/testowanie rozwiązania AI niż 'trzeba było' — bo chciałeś/aś mieć pewność że działa."
+"Opowiedz o momencie kiedy poświęciłeś/aś więcej czasu na ewaluację/testowanie rozwiązania AI niż 'trzeba było' — bo chciałeś/aś mieć pewność że działa."
 
 **Continuous Learning:**
 "AI zmienia się co tydzień. Jak nadążasz? Co ostatnio zmieniło Twój sposób pracy?"
