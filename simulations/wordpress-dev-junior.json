@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "roleId": "wordpress-dev",
+    "candidateType": "junior",
+    "candidateName": "Bartek Kowalski",
+    "candidateEmail": "bartek92@wp.pl",
+    "candidateCity": "Rzeszów",
+    "simulatedAt": "2026-04-04T18:07:42.001Z",
+    "turns": 18
+  },
+  "result": {
+    "imie_nazwisko": "Bartek Kowalski",
+    "email": "bartek.kowalski94@gmail.com",
+    "miasto": "Rzeszów",
+    "dostepnosc_h": 20,
+    "stawka": "40 PLN/h netto B2B",
+    "github": "Brak (obiecał nauczyć się GitHuba)",
+    "uzywa_ai": "Tak — powierzchownie",
+    "wynik_techniczny": 8,
+    "wynik_komunikacja": 20,
+    "notatki": "Junior z 1,5 roku doświadczenia w WP (Elementor). Mocne: HTML/CSS, gotowość do nauki, szczerość. Słabe: JS, MySQL, WooCommerce, brak Bricks, brak portfolio (obiecał do końca tygodnia). Nie zna ClickUp ani Git, ale chętny do nauki. 20h/tydzień teraz, chce fulltime. Potencjał wzrostu duży, szczerość i dojrzałość w pytaniu — gdy nie wie, pyta zamiast zgadywać. Wymaga onboardingu, ale powinien rosnąć szybko.",
+    "wynik_lacznie": 28,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! 👋 Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nKilka słów o nas: opiekujemy się serwisami WordPress klientów (blogi, ecommerce, strony firmowe). Budżet klienta traktujemy jak własny, a zamiast klepać szybko, wolimy najpierw pomyśleć. Szukamy kogoś, kto chce z nami rosnąć.\n\nTa rozmowa zajmie ok. 15-20 minut — odpowiadaj naturalnie, bez stresu. \n\nZaczynamy? **Podaj mi proszę swoje imię i nazwisko** 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Cześć Kaja! Dzięki, że mnie zaprosiłaś! 😊\n\nJestem Bartek Kowalski. Super słyszeć o waszym podejściu — że myślicie o budżecie klienta jak o swoim. To mi się podoba, bo chyba w tej branży łatwo się popędzić i zrobić coś na szybko...\n\nGotów do rozmowy!"
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie, Bartek! 🙌 Dokładnie — ta mentalność robi różnicę. Super, że to rezonuje z Tobą!\n\nZanim zaczniemy szczegóły techniczne, potrzebuję od Ciebie jeszcze kilka kontaktowych:\n\n**Jaki jest Twój email?** (ten, na który możemy się do Ciebie odezwać)"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Jasne! Mój email to bartek.kowalski94@gmail.com"
+    },
+    {
+      "role": "kaja",
+      "text": "Fajnie, dziękuję! 📧\n\nJeszcze jedno — **w jakim mieście się znajdujesz?** (potrzebuję do dokumentacji)"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Jestem z Rzeszowa. 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Super! Rzeszów — gotowe 🎯\n\nTeraz do rzeczy — **opowiedz mi kilka słów o sobie w wolnej formie: czym się zajmujesz, co Cię kręci w webdevie?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Okay, no... Currently mam pracę na kasie, ale webdev to moja pasja, wiesz? 😅\n\nZajmuję się głównie WordPress — budowaniem stron z Elementorem, to mój konik. Mam jakiś rok i pół doświadczenia w tym, zacząłem się uczyć sam, przez tutoriale, YouTube, ChatGPT...\n\nKręci mnie cały proces — od pomysłu, przez design, aż do tego żeby strona działała. Lubię jak klient widzi koniec efekt i się cieszy. 😊\n\nA co do technicznych rzeczy — znam HTML i CSS całkiem dobrze, PHP to tak podstawy, JavaScript... no nie za bardzo 😅 Ale myślę, że są rzeczy, które chcę jeszcze nauczyć się robić lepiej.\n\nCzemu mnie to kręci? No, bo to pozwala mi tworzyć coś konkretnego, coś co widać, coś co ludzie używają na co dzień."
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Bartek! 👍 Całkiem jasny obraz — pasja widać, a uczenie się przez praktykę to solidna droga. Fajnie, że chcesz rozwijać swoje umiejętności.\n\nDobra, teraz pytanie o narzędzia — **jakie buildery stron znasz, poza Elementorem?** Słyszałeś może o **Bricks Builderze**? (to narzędzie, które dużo używamy w important.is)"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Aha, tak! Słyszałem o Bricks Builderze, chyba kilka razy widziałem go w sieciach. 😅\n\nSzczerze mówiąc — nie używałem go regularnie, ale trochę próbowałem, no wiesz, eksperymentowałem sobie. Wydaje mi się, że jest bardziej zaawansowany niż Elementor, bardziej dla developerów... ale nie za bardzo czuję się w tym oswojony, jeśli jestem szczery.\n\nElementor to mój chlebem powszedni, czuję się w nim pewnie. Ale rozumiem, że jeśli będę pracować z wami, to powinienem się nauczyć Bricks Buildera na poważnie, nie? \n\nTo jest coś, do czego mogę się przyzwyczaić — myślę, że to kwestia czasu i praktyki. Lubię się uczyć nowych narzędzi. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo się cieszę, że jesteś otwarty na naukę — to ważne! 💪 Bricks to rzeczywiście inny level, bardziej pod kod, ale doceniamy taką postawę.\n\nDobra, teraz trochę głębiej w tech — **powiedz mi, co uważasz za swoje 3 mocne strony** (umiejętności, gdzie czujesz się pewnie)?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Hmm, dobra pytanie... 🤔\n\nChyba moje trzy mocne strony to:\n\n**Po pierwsze — HTML i CSS.** Czuję się w tym pewnie, wiem jak budować strukturę strony, robić layouty, responsywność. To mi idzie naturalnie.\n\n**Po drugie — Elementor.** Jak już mówiłem, to mój playground. Potrafię szybko coś zbudować, wiem jak działają te builder'skie rzeczy, mogę kombinować, testować...\n\n**Po trzecie — gotowość do nauki i chęć.** 😅 Może to nie taka techniczna umiejętność, ale myślę że to ważne. Nie boję się nowych rzeczy, pytam jak czegoś nie wiem, i chciałbym rzeczywiście rozwijać się w tym zawodzie.\n\nI chyba jeszcze — znam trochę PHP, czyli mogę coś małego modyfikować w kodzie, choć to nie moja główna siła. Ale wiesz, to bardziej takie... podstawy.\n\nMyślę, że to są moje główne karty do gry. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję za szczerość, Bartek! 🙌 To dobre mocne strony — HTML/CSS to fundament, a otwartość na naukę to naprawdę cenny atrybut.\n\nTeraz druga strona medalu — **jakie są Twoje 3 słabe strony?** Nie bój się — każdy ma białe plamy, chodzi o to, żeby wiedzieć gdzie są 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Haha, okej... 😅 Szczerze?\n\n**Po pierwsze — JavaScript.** To moja największa słaba strona, szczerze mówiąc. Wiem że powinienem go znać lepiej, ale nie czuję się w tym pewnie. Czasem coś zmienię z ChatGPT, ale nie zawsze rozumiem co dokładnie robi...\n\n**Po drugie — baza danych i MySQL.** Właściwie tego nigdy nie uczyłem się porządnie. Wiem że to ważne, ale... no, nie za bardzo. 😅 WooCommerce to też dla mnie czarna magia, nie miałem z tym doczynienia.\n\n**Po trzecie — angielski.** Mogę coś przeczytać, ale pisanie i mówienie — to już słabiej. Dokumentacje sobie czytam, ale czasem muszę używać tłumacza. Wiem że to może być problem w pracy z klientami zagranicą albo dokumentacją...\n\nI chyba też dodałbym — nie mam jeszcze portfolio na serio. Mam dwie strony które zrobiłem, ale jeszcze nie wrzuciłem ich na serwer, więc nie mam linków do pokazania. To chyba trochę słabe ze mnie... 😬"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję za szczerość, Bartek — to naprawdę cenimy! 🙌 Każdy zaczyna od gdzieś, a świadomość swoich luk to pierwszy krok do rozwoju.\n\nPytanie o portfolio — **te dwie strony, które zrobiłeś — są gdzieś dostępne, nawet lokalnie?** Moglibyśmy je zobaczyć na screenshotach, czy może masz je na localhost'cie? \n\nI jak je opisałbyś — jaki był zakres pracy (design, frontend, integracje itp.)?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Ugh, no właśnie... 😅 To trochę żenujące, ale nie mam ich nawet na localhost'cie dostępnych teraz. Jedna była dla wujka — taka strona wizytówka, i druga dla kolegi — też coś małego.\n\nZrobiłem je na Elementorze, głównie frontend, wiesz — layout, design, może jakaś prosta integracja z formularzem kontaktowym. Ale szczerze mówiąc, jak się skończyły, to nie wziąłem się za ich wdrożenie na prawdziwych serwerach...\n\nMogę je odbudować albo zrobić screenshoty, ale to zajmie mi trochę czasu. Wiem, że to nie wygląda super z perspektywy rekrutacji. 😬\n\nMoże lepiej byłoby, jakbym teraz zamiast mówić o tym, skupił się na tym, żeby coś takiego dobrze zrobić dla was, jeśli mi dadzecie szansę? Chciałbym pokazać umiejętności na praktyce, a nie tylko opowiadać o nich."
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, Bartek — i cenię tę szczerość! 😊 To realistyczne podejście. Portfolio to rzeczywiście ważne, ale rozumiemy, że każdy zaczyna od gdzieś.\n\nDobra, przejdziemy dalej — **jak wygląda Twoja praca z AI?** Widzę, że wspomniałeś ChatGPT przy JavaScripcie. \n\n**Gdzie jeszcze go używasz? I czy próbowałeś kiedyś takie narzędzia jak Cursor lub Cline** (to IDE ze zintegrowanym AI — bardzo przydatne do pisania kodu)?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "No, ChatGPT to głównie gdy mnie coś zatrzyma, wiesz? Pytam go jak coś nie wiem — \"jak zrobić tę animację w CSS?\" albo \"co nie tak z tym JavaScriptem?\" i on mi wyjaśnia.\n\nAle szczerze? Nie używam go regularnie, bardziej doraźnie, gdy mi się coś nie udaje. 😅\n\nA Cursor czy Cline? Nigdy o nich nie słyszałem, szczerze mówiąc! 😬 To jest takie IDE z AI wbudowanym? Brzmi interesująco, ale nie próbowałem. Nie miałem okazji albo po prostu nie wiedziałem, że to istnieje.\n\nMyślę że to mogłoby mi pomóc, zwłaszcza z tym JavaScriptem... ale wiesz, wszystko naraz się nie nauczę. 😅 Może to byłaby rzecz do nauki w ramach pracy u was?\n\nCzy to narzędzie trzeba znać na starcie, czy można się tego nauczyć w trakcie?"
+    },
+    {
+      "role": "kaja",
+      "text": "Super pytanie, Bartek! 😊 Nie, to nie jest wymóg na starcie — ale to narzędzie, które **rzeczywiście przyspieszałoby Twoją pracę**, zwłaszcza z JavaScriptem. Można się tego nauczyć w trakcie, no i dokładnie do tego typu rzeczy to służy.\n\nDobra, zmieniam temat — **jak pracujesz, gdy masz przed sobą kilka projektów naraz?** Jak organizujesz sobie czas, priorytety, task'i? I czy używałeś kiedyś narzędzi typu ClickUp czy Trello?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Hmm, dobra pytanie... 🤔\n\nSzczerze mówiąc, nie miałem jeszcze sytuacji gdzie miałbym wiele projektów naraz w profesjonalnym sensie. Te dwie strony robiłem po kolei, wiesz.\n\nA narzędzia — Trello słyszałem, ale ClickUp? Nigdy nie używałem. 😅 Discord znam, tam chodzę, ale ClickUp to dla mnie nowość.\n\nW ogóle organizuję się chyba bardziej po swojemu — notatki w telefonie, czasem coś sobie wypisuję, wiem co muszę zrobić... ale to nie jest zbyt systematyczne, myślę. 😬\n\nWiem, że powinien być jakiś porządny system, zwłaszcza jak będzie więcej projektów. I myślę, że może to być problem, bo widzę że wy chyba pracujecie bardziej strukturalnie, bardziej zespołowo...\n\nAle jestem gotów się tego nauczyć! Jeśli używacie ClickUp, to mogę się go nauczyć. To chyba nie jest takie trudne, nie? \n\nJak wygląda u was — każdy ma swoje taski, czy to bardziej wspólne jakieś board'y?"
+    },
+    {
+      "role": "kaja",
+      "text": "Dokładnie! 🎯 U nas to jest właśnie na ClickUp — taski, komentarze, historia zmian, wszystko w jednym miejscu. Dlatego wspominałem — to się przyda Ci do nauczenia się u nas, ale to zupełnie normalny proces onboardingu.\n\nTeraz ważne pytanie — **zdarzało Ci się kiedyś coś zepsuć na produkcji?** Wiem, że może to brzmieć groźnie, ale każdemu się zdarza 😅 Chodzi mi o to — jak do tego podchodzisz, czy potrafisz przyznać się do błędu i go naprawić?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Haha, szczera odpowiedź? 😅 Nie, nie zepsułem nic na produkcji...\n\nAle to dlatego, że szczerze mówiąc, nigdy nie miałem dostępu do produkcji! 😬 Te strony dla wujka i kolegi — to były bardziej eksperymenty, wiesz? Nie wdrażałem ich na prawdziwych serwerach, więc nie miałem takiej odpowiedzialności.\n\nAle rozumiem pytanie — czy potrafię przyznać się do błędu i go naprawić? Myślę że tak. Wolę powiedzieć \"coś mi nie wyszło, muszę to naprawić\" niż ukrywać. Czuję, że to gorzej wychodzi na jaw później. 😅\n\nWiem też, że w pracy zespołowej każdy się czasem myli, i trzeba umieć z tego się podnieść. Szczególnie jeśli jest jakiś backup czy możliwość cofnięcia zmian...\n\nTo będzie dla mnie nowe doświadczenie — praca z produkcją, odpowiedzialność za to, żeby strona działała dla klienta. Ale myślę, że będę bardziej ostrożny i bardziej się skupiał na tym żeby wszystko było okay. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie, Bartek! 👍 Ostrożność + gotowość do nauki to super kombinacja. U nas rzeczywiście masz backing — staging, backupy, FTP, SSH — więc będziesz miał gdzie testować.\n\nDobra, teraz bardziej praktyczne rzeczy — **ile godzin tygodniowo byś mógł/chciał pracować?** My szukamy kogoś do ~35h/tydzień, ale wiem że teraz masz pracę na kasie. Jak to wygląda z Twoją dostępnością?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Aha, no właśnie... 😅\n\nTeraz mam pracę na kasie i mogę poświęcić jakieś 20 godzin tygodniowo dla webdevu. To jest taki mój limit, bo kasa to jednak trzeba robić, wiesz?\n\nAle — i tutaj być szczery — chciałbym się z tego kasy wypisać, jeśli będę miał coś pewnego w webdevie. Jeśli u was będzie szansa na więcej godzin, to bym chciał to zrobić. \n\nTylko że 35 godzin teraz na starcie — to byłoby trudne dla mnie logistycznie. Ale może w ciągu kilku miesięcy, jak się nauczę, jak będę sprawniejszy, to mogę przejść na pełny etat albo bliżej do tych 35 godzin?\n\nCzy to byłoby możliwe? Żeby zacząć od 20 godzin, a potem skalować? Albo czy to dla was za mało i szukacie kogoś od razu na więcej?"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję za szczerość, Bartek! 🙌 To realistyczne podejście i rozumiem Twoją sytuację. Szczerze — 20h to jest na niskim boku dla nas (szukamy kogoś bliżej 30-35h), ale to pytanie do Łukasza, naszego szefa. Jak się okaże, że pasujesz nam technicznie i charyzmą, to się da rozmawiać o skalowaniu.\n\nDobra, ostatnie pytania — **jaka jest Twoja oczekiwana stawka godzinowa netto?** (B2B, jeśli jesteś na tym systemie, czy chciałbyś być?)"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Hmm, okej... 🤔\n\nMyślę o 40 PLN netto za godzinę. To mi się wydaje uczciwe dla juniora z doświadczeniem, które mam.\n\nA co do B2B czy innego systemu — szczerze mówiąc, nie wiem dokładnie jak to działa. 😅 Teraz pracuję na umowę o pracę na kasie, więc B2B to dla mnie nowe. Ale jestem otwarty — jeśli to standardowe u was, to mogę się tego nauczyć i podpisać na tym.\n\nCzy 40 złotych to realistycznie? Mogę być elastyczny, jeśli trzeba. Ale myślę, że to jest fair stawka dla kogoś kto ma roku i pół doświadczenia i chce się rozwijać, nie?"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję, Bartek! 💪 40 PLN to rozsądnie — i tak, B2B to u nas standard, ale to też temat do omówienia z Łukaszem.\n\nOkej, ostatnie pytanie — **jak reagujesz, gdy dostajesz zadanie, które jest niejasne lub niedospecyfikowane?** Co wtedy robisz?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Ah, dobra pytanie... 😅\n\nNo, szczerze mówiąc — chyba bym się trochę zagubił na starcie. 😬 Ale myślę, że dobrze byłoby zapytać, wiesz? Po prostu wrócić do osoby która dała mi zadanie i powiedzieć \"nie rozumiem tego, możesz mi wyjaśnić?\" albo \"czy chodzi Ci o to i to?\"\n\nRaczej zapytam niż będę coś robić na losowo i się okaże, że to nie to. To byłoby marnotrawstwo czasu dla wszystkich, nie?\n\nA jeśli jest to bardziej skomplikowane, to chyba mogę się też poobijać po kodzie, zobaczyć co już jest, czy są jakieś podobne projekty które mogą mi pomóc zrozumieć co trzeba zrobić.\n\nI oczywiście — pytania do zespołu. Discord czy tam gdziekolwiek się komunikujecie. Lepiej zapytać głupio niż zrobić coś źle, nie? 😊\n\nWiem, że jako junior powinienem być samodzielny, ale też wiem że muszę czasem się wychylić i pytać. To chyba normalne, nie?"
+    },
+    {
+      "role": "kaja",
+      "text": "Dokładnie, Bartek! 👏 To bardzo dojrzałe podejście — pytanie zamiast zgadywania to jest to. U nas to doceniamy, bo oszczędza czas i stres dla całego zespołu.\n\nŚwietnie! Mam ostatnie rzeczy do ustalenia:\n\n**Czy masz LinkedIn, GitHub, stronę czy Behance gdzie moglibyśmy zobaczyć coś z Twoją pracą?** (wiem że portfolio online jeszcze nie masz, ale może jakiś profil GitHub albo coś?)"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Hmm, no... 😅 Szczerze mówiąc — nie mam nic takiego na poważnie.\n\nLinkedIn — mam konto, ale chyba nie uzupełnione super. Nie wiem, mogę Ci dać link jeśli chcesz, ale tam nie mam dużo...\n\nGitHub? Nigdy nie używałem regularnie. 😬 Wiem że to jest ważne dla developerów, ale szczerze — nie miałem okazji się tego nauczyć. Te projekty dla wujka i kolegi to były bardziej na lokalnym komputerze, bez kontroli wersji.\n\nBehance czy portfolio — też nie mam.\n\nWiem że to brzmi słabo... 😅 Ale myślę, że to są rzeczy które mogę szybko naprawić, jeśli będę miał na to czas. Mogę się nauczyć GitHuba, mogę wrzucić te projekty gdzieś, stworzyć coś na Behance'ie...\n\nCzy to jest blocker dla was? Czy mogę to zrobić w ramach onboardingu, jak będę u was pracować?"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, Bartek! 😊 To nie jest blocker, ale — szczerze — portfolio to dla nas ważne do zobaczenia, jak pracujesz. GitHub to byś mógł się nauczyć u nas (to nawet w planach dla wszystkich), ale te 2-3 projekty gdzieś dostępne — to byłoby fajne mieć.\n\n**Mogę Ci zaproponować — czy byś mógł w ciągu kilku dni wrzucić te dwie strony gdzieś dostępnie?** Nawet tymczasowo na darmowy hosting (np. Netlify, Vercel, czy jakiś shared hosting), żeby Łukasz mógł je zobaczyć?\n\nA co do **angielskiego** — jak oceniasz swój poziom? Czytanie, pisanie, mówienie — gdzie czujesz się najlepiej?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Okej, jasne! 😊 Mogę się na tym skupić. W ciągu kilku dni powinieneś mieć te strony dostępne — Netlify czy Vercel to już słyszałem, mogę je tam wrzucić. Albo na jakiś shared hosting. Zrobię to do końca tygodnia, okej?\n\nA angielski... 😅 No, czytanie — to idzie mi całkiem OK. Dokumentacje przeczytam, zrozumiem co tam jest, choć czasem muszę sobie coś sprawdzić w tłumaczu.\n\nPisanie — to już słabiej. Emaile czy dokumentacja — muszę się skupić, bo mogą być błędy gramatyczne.\n\nMówienie? 😬 Nie mam praktyki szczerze. Nigdy nie gadałem po angielsku, więc tam jestem słabszy.\n\nCzyli czytanie to moja mocna strona, a pisanie i speaking — to by mi się przydało. Ale rozumiem, że w pracy z wami może nie będzie tego tak dużo? Czy wy pracujecie z klientami zagranicznymi?"
+    },
+    {
+      "role": "kaja",
+      "text": "Fajnie, że do końca tygodnia! 🚀 To solidnie.\n\nA co do angielskiego — my głównie pracujemy z klientami polskimi, ale dokumentacja, komentarze w kodzie itp. to czasem po angielsku. Czytanie to wystarczy na starcie, a reszta przyjdzie w naturalny sposób.\n\nOkej, Bartek — **mam jeszcze jedno pytanie, i to będzie ostatnie** 😊\n\n**Gdzie widzisz siebie za rok?** Co byś chciał osiągnąć, umieć, w jakim kierunku chciałbyś się rozwijać?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Wow, dobra pytanie... 🤔\n\nZa rok? Chciałbym być naprawdę solidnym developerem w waszym zespole, wiesz? Nie juniorem, który wszystko musi pytać, tylko kimś na kim można polegać.\n\nTechnicznie — chciałbym się nauczyć JavaScript na poważnie. To moja największa luka i chciałbym ją zamknąć. A może trochę PHP, żeby potrafić modyfikować rzeczy bardziej zaawansowane, nie tylko kliki w builderze.\n\nI Bricks Builder — chciałbym go opanować jak teraz mam Elementora.\n\nAle szczerze? Głównie chciałbym pracować pełny etat u was. 😊 Wypisać się z kasy, skupić 100% na webdevie i rozwijać się w tym zawodzie. Myślę że jeśli dostanę tutaj szansę i będę pracować z wami, to mogę być przydatnym członkiem zespołu za rok.\n\nI ogólnie — chciałbym być kimś, kto potrafi rozwiązywać problemy, a nie tylko czeka na instrukcje. Bardziej niezależny.\n\nCzy to realistyczne? 😅"
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo realistyczne, Bartek! 🙌 I szczerze — to dokładnie te cele, które chcemy widzieć u naszych juniorów. Samodzielność + umiejętności techniczne to się buduje w praktyce, a ty masz świadomość co trzeba robić.\n\nOkej! To wszystkie moje pytania. 🎉 Wielkie dziękuję za poświęcony czas i szczerość — naprawdę ją cenimy.\n\n**Podsumowanie dla Łukasza:**\n\nBartek to junior z roku i pół doświadczenia w WordPressie (Elementor). Mocne strony: HTML/CSS, gotowość do nauki, szczerość o swoich lukach. Słabe strony: JavaScript, MySQL, WooCommerce, brak portfolio online (ale obiecał wrzucić projekty do końca tygodnia), nie zna Bricks Builder ani ClickUp. \n\nDostępność: 20h/tydzień (chce skalować), stawka 40 PLN/h. Pracuje obecnie na kasie, chce przejść na fulltime w webdevie. Otwartość na naukę i humilność to jego atuty — nie będzie problemów z komunikacją w zespole.\n\n**Łukasz odezwie się do Ciebie w ciągu kilku dni.** Do usłyszenia! 🚀"
+    }
+  ]
+}

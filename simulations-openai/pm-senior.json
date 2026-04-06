@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "roleId": "pm",
+    "candidateType": "senior",
+    "candidateName": "Anna Wiśniewska",
+    "candidateEmail": "anna.wisniewska@outlook.com",
+    "candidateCity": "Kraków",
+    "simulatedAt": "2026-04-04T19:33:31.632Z",
+    "turns": 12,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 68080,
+    "totalOutputTokens": 3503,
+    "costUSD": 0.012314
+  },
+  "result": {
+    "imie_nazwisko": "Anna Wiśniewska",
+    "email": "",
+    "miasto": "",
+    "stawka": "80 PLN/h netto",
+    "dostepnosc_h": 30,
+    "uzywa_ai": "Tak — aktywnie",
+    "wynik_techniczny": 20,
+    "wynik_komunikacja": 28,
+    "notatki": "Anna ma 7-letnie doświadczenie jako Project Manager, w tym 3 lata w agencji webowej, gdzie zarządza projektami związanymi z tworzeniem stron internetowych i e-commerce. Używa ClickUp oraz innych narzędzi. Świetnie komunikuje się z klientami i potrafi rozwiązywać problemy z niezadowolonymi klientami. Ma solidne podstawy w WordPressie i aktywnie korzysta z AI w swojej pracy.",
+    "wynik_lacznie": 48,
+    "decyzja": "Rozmowa"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy kogoś, kto będzie ogarniał projekty od A do Z — komunikacja z klientem, koordynacja zespołu, pilnowanie terminów i budżetów. Ta rozmowa zajmie ok. 15 minut. Zaczynamy? Podaj imię i nazwisko 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Cześć, Kaja! Nazywam się Anna Wiśniewska. Cieszę się, że mogę wziąć udział w rozmowie. Gdzie możemy zacząć? 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że mogłaś się dołączyć, Anno! 😊\n\nNa początek, kilka słów o Tobie — czym się zajmujesz, jakie masz doświadczenie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Oczywiście! Pracuję jako Project Manager od 7 lat, a ostatnie 3 lata spędziłam w agencji webowej. Zarządzałam projektami związanymi z tworzeniem stron internetowych, e-commerce oraz rebrandingiem dla różnych firm. W mojej pracy dążę do efektywnej koordynacji zespołu oraz dbania o komunikację z klientem, co pozwala mi na zarządzanie jednocześnie od 5 do 8 projektów bez problemu. Kluczowe dla mnie są terminowość i budżet, a dzięki doświadczeniu potrafię dobrze wycenić również prostą stronę. Czy chcesz, abym opowiedziała o konkretnym projekcie?"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, świetnie, że masz takie doświadczenie! Ciekawe, że potrafisz ogarniać jednocześnie 5-8 projektów. 😊\n\nJakich narzędzi do zarządzania projektami używasz? Czy masz doświadczenie z ClickUp, Asaną, Jirą lub Trello?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Dziękuję! Tak, mam doświadczenie z różnymi narzędziami do zarządzania projektami. Najlepiej czuję się w ClickUp, który lubię za jego elastyczność i możliwość dostosowywania widoków. Oprócz ClickUp, używałam również Asany i Jiry, więc znam te narzędzia dobrze. Trello również mi nie jest obce, chociaż rzadziej z niego korzystałam. Dobrze się czuję z różnymi formami organizacji pracy i potrafię dostosować narzędzie do potrzeb zespołu i projektu. Czy chcesz, żebym opisała, jak korzystam z danego narzędzia w praktyce?"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetnie, że masz doświadczenie z różnymi narzędziami i potrafisz dopasować je do potrzeb zespołu! 😊\n\nJak prowadzisz komunikację z klientem? Używasz głównie maili, rozmów telefonicznych, czatu, czy może mieszanki tych metod?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Zdecydowanie korzystam z mieszanki różnych metod komunikacji. Głównie komunikuję się z klientami za pomocą e-maili oraz rozmów telefonicznych, co pozwala na dokładne wyjaśnienie szczegółów projektu i szybką wymianę informacji. Dodatkowo, korzystam z Discorda do codziennej komunikacji z zespołem, co ułatwia nam współpracę w czasie rzeczywistym. Jestem też otwarta na inne formy komunikacji, jeśli klient preferuje inny kanał. W mojej pracy zawsze staram się, aby komunikacja była transparentna i efektywna — co pomaga w budowaniu zaufania i pozytywnych relacji z klientami. Czy chciałabyś, żebym opowiedziała o jakimś konkretnym przypadku, kiedy udało mi się skutecznie rozwiązać problem komunikacyjny?"
+    },
+    {
+      "role": "kaja",
+      "text": "To brzmi bardzo profesjonalnie! Cieszę się, że stawiasz na transparentność i zaufanie w relacjach z klientami. 😊\n\nTak, chętnie posłucham o konkretnym przypadku, kiedy udało Ci się skutecznie rozwiązać problem komunikacyjny z klientem. Jak to wyglądało?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Pewnie! Pracowałam nad projektem dla klienta, który miał dość jasne oczekiwania co do końcowego efektu, jednak w trakcie realizacji rozpoczął zmiany w zakresie projektu, co doprowadziło do zamieszania i frustracji z jego strony. \n\nKiedy zauważyłam, że komunikacja nie jest już tak płynna, zorganizowałam spotkanie telefoniczne, aby lepiej zrozumieć jego obawy. Okazało się, że klient był niezadowolony z tempa prac i nie do końca rozumiał, jakie zmiany wprowadza. Dokładnie wyjaśniłam mu, jakie są konsekwencje dla budżetu i czasu realizacji, a także zaproponowałam spisanie formalnego zmiany zakresu (change request), aby wszystko było jasne i przejrzyste.\n\nPo tym spotkaniu klient poczuł się bardziej zaangażowany w projekt i zrozumiał, jak ważne jest trzymanie się ustaleń. Udało nam się wypracować nowy harmonogram, który był bardziej realistyczny, a ostateczny wynik projektu został odebrany z dużym zadowoleniem. To był ważny moment, który pokazał mi, jak kluczowa jest otwarta komunikacja i aktywne słuchanie. Czy chciałabyś dowiedzieć się więcej o tym projekcie lub innych aspektach mojej pracy?"
+    },
+    {
+      "role": "kaja",
+      "text": "To bardzo inspirująca historia, Anno! Świetnie, że potrafiłaś naprawić sytuację przez aktywne słuchanie i otwartą komunikację. 😊\n\nJak reagujesz, gdy klient jest niezadowolony z efektu końcowego projektu? Jakie kroki podejmujesz w takiej sytuacji?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Dziękuję! Kiedy klient jest niezadowolony z efektu końcowego projektu, traktuję to bardzo poważnie. Przede wszystkim, staram się słuchać jego obaw i diagnozować, co dokładnie poszło nie tak. Zazwyczaj organizuję spotkanie lub rozmowę telefoniczną, aby spojrzeć na sytuację z jego perspektywy.\n\nPodczas takiej rozmowy zwracam uwagę na konkretne elementy, które budzą niezadowolenie. Często okazuje się, że problem wynika z nieporozumienia dotyczącego oczekiwań albo z różnicy w percepcji efektów wizualnych. Po zrozumieniu jego obaw, proponuję rozwiązania, które mogą poprawić sytuację. Może to obejmować wprowadzenie poprawek, dodatkowe zmiany w zakresie projektu czy tez spisanie nowych oczekiwań w formie change request.\n\nWażne jest dla mnie, by klient wiedział, że jego opinia jest dla mnie istotna. Zawsze staram się wypracować rozwiązanie, które spełni jego oczekiwania, jednocześnie pamiętając o zachowaniu realistycznych ram czasowych i budżetowych. Potrafię być elastyczna, ale także jasno komunikuję, co jest możliwe do zrealizowania w danym zakresie. Chcesz, żebym opisała przykład, w którym efektywnie rozwiązałam problem z niezadowolonym klientem?"
+    },
+    {
+      "role": "kaja",
+      "text": "To naprawdę ważne podejście, które pokazuje, jak bardzo zależy Ci na satysfakcji klientów. Elastyczność i otwartość na ich potrzeby to klucz do udanej współpracy! 😊\n\nChętnie posłucham o konkretnym przykładzie, w którym efektywnie rozwiązałaś problem z niezadowolonym klientem. Jak to się potoczyło?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Z przyjemnością opowiem o jednym z takich przypadków. Pracowałam nad projektem rebrandingowym dla małej firmy, która miała bardzo silne wizje dotyczące swojego wizerunku. Po zakończeniu prac nad nową identyfikacją wizualną, klient zgłosił, że nie jest zadowolony z efektów, ponieważ logo nie oddaje ich wartości.\n\nZamiast się denerwować, zorganizowałam spotkanie, aby zrozumieć ich dokładne oczekiwania oraz to, co konkretnie im się nie podoba. Okazało się, że kluczowe dla nich były pewne elementy, które w poprzednich rozmowach nie zostały do końca sprecyzowane. Wartości, nad którymi tak mocno im zależało, nie były wystarczająco odzwierciedlone w projektach, które przygotowaliśmy.\n\nNa podstawie ich uwag wspólnie dokonaliśmy przeglądu koncepcji, a ja zaproponowałam kilka szybkie poprawki, które mogłyby lepiej oddać ich wizję. Prosiłam ich o wyjaśnienie, co w dotychczasowej wersji nie działa, a co moglibyśmy poprawić. Na koniec udało nam się dojść do konsensusu – stworzyliśmy kilka nowych wariantów graficznych, biorąc pod uwagę ich wskazówki oraz oczekiwania.\n\nPo kilku kolejnych iteracjach, zasugerowałam wrócić do czasów, gdy mieli najwięcej pozytywnych wrażeń związanych z projektem. Efektem końcowym była identyfikacja, która całkowicie odpowiadała ich oczekiwaniom. Klient był bardzo zadowolony z efektu, a relacje między nami zdecydowanie się poprawiły, co zaowocowało dalszą współpracą. \n\nTo doświadczenie przypomniało mi, jak ważne jest słuchanie i reagowanie na oczekiwania klientów. Czy masz jeszcze jakieś pytania, które chciałabyś zadać?"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetny przykład na to, jak ważna jest komunikacja i elastyczność w pracy z klientami! To fajnie, że udało Ci się ostatecznie osiągnąć satysfakcjonujący efekt. 😊\n\nNa koniec chciałabym się zapytać, jak dobrze znasz WordPress? Czy jesteś użytkownikiem, czy potrafisz zaawansowanie z nim pracować? Co sądzisz o pojęciach takich jak staging, FTP, builder, czy wtyczka?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Zdecydowanie jestem użytkownikiem WordPressa i mam solidne podstawy w jego obsłudze. Pracowałam głównie z stagingiem, builderami oraz wtyczkami. Rozumiem, jak ważne jest środowisko stagingowe w procesie wprowadzania zmian – pozwala to na testowanie nowych funkcji i poprawek, zanim trafią na stronę na żywo.\n\nW kontekście builderów, korzystałam z narzędzi takich jak Elementor i WPBakery do tworzenia wizualnych układów stron, co znacznie ułatwia pracę, zwłaszcza w przypadku projektów wymagających responsywnego designu. Dobrze rozumiem też funkcję wtyczek i potrafię dobierać odpowiednie wtyczki do funkcjonalności, które potrzebuje dany projekt, choć osobiście nie zajmuję się programowaniem czy rozbudową wtyczek.\n\nJeśli chodzi o FTP, mam pojęcie na temat, jak działa, i korzystałam z niego do przesyłania plików oraz modyfikacji plików, gdy zajdzie taka potrzeba. Można powiedzieć, że mam podstawową znajomość tych narzędzi i potrafię efektywnie współpracować z zespołem deweloperskim. \n\nCzy chcesz, abym dodała coś więcej na temat moich doświadczeń z WordPressem lub moim podejściem do pracy z tym systemem?"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetnie, że masz solidne podstawy w WordPressie i znasz się na kluczowych aspektach, takich jak staging, buildery i wtyczki! 😊\n\nNa koniec, chciałabym zapytać, czy używasz sztucznej inteligencji w swojej pracy? Jeśli tak, to w jaki sposób? A może stoisz na stanowisku, że to jeszcze za wcześnie na takie rozwiązania?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Tak, aktywnie korzystam z narzędzi opartych na sztucznej inteligencji w mojej pracy. Używam ChatGPT do pomocy w pisaniu maili oraz briefów projekty, co oszczędza mi czas i często usprawnia komunikację. AI pomaga mi w formułowaniu jasnych i zwięzłych wiadomości, a także generowaniu pomysłów na treści.\n\nDodatkowo, stosuję Notion AI do organizacji notatek i tworzenia podsumowań spotkań, co bardzo ułatwia mi późniejsze odnajdywanie informacji. Dzięki temu mogę skupić się na bardziej strategicznych zadaniach, a nie na manualnym przetwarzaniu danych.\n\nZdecydowanie uważam, że sztuczna inteligencja ma potencjał, aby zrewolucjonizować wiele aspektów pracy w branży projektowej, zwłaszcza w kontekście poprawy efektywności i automatyzacji rutynowych zadań. Obserwuję te rozwijające się narzędzia i jestem otwarta na dalsze eksperymentowanie z nimi, aby zobaczyć, w jaki sposób mogą wspierać mój zespół i klientów. \n\nCzy masz więcej pytań dotyczących mojej pracy lub doświadczenia?"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetnie, że aktywnie wykorzystujesz AI w swojej pracy! Zdecydowanie może to zwiększyć efektywność i ułatwić wiele codziennych zadań. 😊\n\nNa koniec chciałabym zapytać o Twoją dostępność — ile godzin tygodniowo mogłabyś poświęcić na współpracę z nami? I jaka stawka godzinowa netto B2B Cię interesuje?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Mam dostępność na poziomie 30 godzin tygodniowo, co pozwala mi na efektywne zarządzanie projektami i pełne zaangażowanie w zadania. Jeśli chodzi o stawkę, interesuje mnie 80 PLN/h netto na zasadzie współpracy B2B. Uważam, że to odzwierciedla moje doświadczenie oraz umiejętności, które wnoszę do zespołu. \n\nCzy masz jeszcze jakieś pytania lub kwestie, które chciałabyś poruszyć?"
+    },
+    {
+      "role": "kaja",
+      "text": "Ekstra, Anno! To wszystkie moje pytania! Dziękuję za poświęcony czas i zaangażowanie w rozmowę. 🙌\n\nŁukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Dziękuję serdecznie, Kaja! To była przyjemność rozmawiać z Tobą. Czekam z niecierpliwością na wieści od Łukasza. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję, Anno! Cieszę się, że mogłam przeprowadzić tę rozmowę. Do usłyszenia wkrótce! 😊🚀"
+    }
+  ]
+}

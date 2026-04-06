@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "roleId": "wordpress-dev",
+    "candidateType": "junior",
+    "candidateName": "Bartek Kowalski",
+    "candidateEmail": "bartek92@wp.pl",
+    "candidateCity": "Rzeszów",
+    "simulatedAt": "2026-04-04T19:32:05.237Z",
+    "turns": 11,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 64407,
+    "totalOutputTokens": 3129,
+    "costUSD": 0.011538
+  },
+  "result": {
+    "imie_nazwisko": "Bartek Kowalski",
+    "email": "",
+    "miasto": null,
+    "github": null,
+    "stawka": "40 PLN",
+    "dostepnosc_h": 20,
+    "uzywa_ai": "Tak — powierzchownie",
+    "wynik_techniczny": 10,
+    "wynik_komunikacja": 20,
+    "notatki": "Bartek ma 24 lata i 1,5 roku doświadczenia z WordPressem, głównie pracując z Elementorem. Ma podstawowe umiejętności w PHP i zna CSS. Nie posiada jeszcze portfolio. Wykorzystuje ChatGPT do szukania wskazówek. Chętnie uczy się nowych narzędzi i pedagogicznie podchodzi do swojej pracy.",
+    "wynik_lacznie": 30,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nKilka słów o nas: opiekujemy się serwisami WordPress klientów (blogi, ecommerce, strony firmowe). Budżet klienta traktujemy jak własny, a zamiast klepać szybko, wolimy najpierw pomyśleć. Szukamy kogoś, kto chce z nami rosnąć.\n\nTa rozmowa zajmie ok. 15-20 minut — odpowiadaj naturalnie, bez stresu. Zaczynamy? Podaj mi proszę swoje imię i nazwisko 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Cześć Kaja! Dzięki za miłe powitanie. Mam na imię Bartek Kowalski. Cieszę się, że mogę tu być! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Bartek! Miło mi Cię poznać! 😊\n\nNa początek, powiedz mi kilka słów o sobie — czym się zajmujesz, co Cię kręci w webdevie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Jasne! Mam 24 lata i od około 1,5 roku zajmuję się WordPressem. Najwięcej pracowałem z Elementorem i trochę próbowałem z Bricks Builder, ale to było głównie na zasadzie eksperymentów. \n\nNajbardziej kręci mnie to, że mogę tworzyć strony, które pomagają innym, czy to dla znajomych, czy dla rodziny. To daje mi dużą satysfakcję. Na razie posiadam tylko dwa projekty w portfolio, ale myślę, że chcę rozwijać swoje umiejętności i pracować nad większymi projektami. Podoba mi się też ciągły rozwój w tej branży, bo technologia się zmienia i zawsze można się nauczyć czegoś nowego! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetnie, Bartek! Super, że masz już doświadczenie z WordPressem i że podoba Ci się tworzenie wartościowych stron. 😊\n\nSkoro wspomniałeś o Elementoru i Bricksie, chciałabym dopytać: jakie konkretne zadania realizowałeś przy użyciu tych kreatorów? Co najbardziej Ci się podobało w pracy z nimi?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "No więc, przy użyciu Elementora tworzyłem głównie strony dla mojego wujka i kolegi. Takie podstawowe zadania, jak układanie różnych sekcji, dodawanie obrazków, tekstów czy form kontaktowych. Myślę, że to było dość intuicyjne, bo można było wszystko drag-and-drop, co mi się podobało.\n\nPracując z Bricks Builder, raczej tylko trochę próbowałem go używać, więc nie mam aż tak wielu doświadczeń. Chyba większość rzeczy, które mi się podobają w tych kreatorach, to możliwość szybkiej zmiany wyglądu i dostosowywania elementów bez potrzeby kodowania, chociaż czasami lubię też popracować nad CSS-em, żeby coś poprawić lub dodać. Uważam, że to fajny sposób na szybkie wdrażanie pomysłów. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo ciekawe podejście, Bartek! Rzeczywiście, drag-and-drop to duża zaleta kreatorów stron. Fajnie, że próbujesz także CSS-a, to z pewnością poszerza Twoje umiejętności. 😉\n\nTeraz chciałabym sprawdzić, jak oceniałbyś swoje umiejętności techniczne. Jak byś siebie ocenił w zakresie HTML, CSS, JavaScript, PHP, MySQL, WooCommerce? Daj znać w skali od podstawowego do zaawansowanego. Jeśli możesz, wymień też trzy swoje mocne i trzy słabe strony."
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Pewnie! W skali od podstawowego do zaawansowanego wyglądałoby to tak:\n\n- HTML: Dobry\n- CSS: Dobry\n- JavaScript: Słaby\n- PHP: Podstawowy\n- MySQL: Nie znam\n- WooCommerce: Nie znam za bardzo\n\nCo do mocnych stron, myślę, że:\n1. Mam dobrą znajomość HTML i CSS, więc potrafię tworzyć atrakcyjne i responsywne strony.\n2. Szybko uczę się nowych narzędzi i technologii, co może być przydatne w zespole.\n3. Lubię pracować z klientami i zrozumieć ich potrzeby, co pomaga mi w efektywnym tworzeniu stron.\n\nA jeśli chodzi o słabe strony:\n1. Nie znam zbyt dobrze JavaScript, więc mam problem z bardziej zaawansowanymi interakcjami na stronach.\n2. PHP i MySQL to dla mnie jeszcze czarna magia, więc muszę nad tym popracować.\n3. Nie mam jeszcze dużego portfolio, co może nieco ograniczać moje możliwości pokazania swojej pracy.\n\nMam nadzieję, że to daje jakiś obraz moich umiejętności! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za szczerość, Bartek! 😊 Wydaje się, że masz solidne podstawy w HTML i CSS, co jest świetnym punktem wyjścia do dalszego rozwoju. \n\nBardzo cenna jest też Twoja umiejętność szybkości uczenia się i skupić się na potrzebach klientów — to kluczowe w tej branży! \n\nTeraz chciałabym zapytać o Twoje doświadczenie i portfolio. Ile lat pracujesz z WordPressem, czy masz jakieś linki do projektów, które moglibyśmy zobaczyć, oraz jakie jest Twoje zrozumienie języka angielskiego (czytanie, pisanie, mówienie)? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Dzięki, Kaja! 😊 Pracuję z WordPressem od około 1,5 roku. Niestety, nie mam jeszcze linków do projektów w portfolio, bo te strony, które stworzyłem dla wujka i kolegi, jeszcze nie wrzuciłem na serwer. To jest coś, nad czym chciałbym popracować w najbliższym czasie — chciałbym pokazać swoją pracę innym.\n\nJeśli chodzi o język angielski, to czytam go jako tako, więc potrafię zrozumieć dokumentację i tutoriale, ale pisanie i mówienie nie wychodzi mi aż tak dobrze. Myślę, że muszę jeszcze nad tym popracować, żeby stać się bardziej pewnym siebie. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, Bartek! Zacznij może od stworzenia strony, na której zaprezentujesz swoje projekty — to naprawdę może pomóc w przyszłych rekrutacjach! 😊\n\nCieszę się, że potrafisz czytać dokumentację w języku angielskim, bo to jest naprawdę istotne w branży. Praca nad umiejętnością mówienia i pisania na pewno przyniesie efekty!\n\nTeraz chciałabym zapytać o wykorzystanie sztucznej inteligencji w Twojej pracy. Czy korzystasz z jakichkolwiek narzędzi związanych ze sztuczną inteligencją (na przykład chatboty, generatory treści, automatyzacje)? Jeśli tak, opowiedz proszę, jak je wykorzystujesz! 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Tak, korzystam z ChatGPT do zadawania pytań i szukania odpowiedzi na różne wątpliwości związane z WordPressem. Myślę, że to fajna pomoc, zwłaszcza gdy nie jestem pewien, jak coś zrealizować lub gdy potrzebuję wskazówek dotyczących kodu. Używam go raczej okazjonalnie, więc jeszcze nie na stałe, ale staram się z tego korzystać, gdy potrzebuję inspiracji lub pomocy.\n\nNie mam jeszcze doświadczeń z innymi narzędziami związanymi ze sztuczną inteligencją, ale myślę, że mogą one być bardzo przydatne, zwłaszcza w automatyzacji niektórych procesów. Ciekawe, jak to wszystko dalej się rozwija! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetnie, że znalazłeś zastosowanie dla ChatGPT w swojej pracy nad WordPressem! 😊 Wykorzystanie AI do poszukiwania informacji i wsparcia w rozwiązywaniu problemów to naprawdę mądry krok. \n\nRównież zgadzam się, że automatyzacje mogą być bardzo przydatne, zwłaszcza w przyspieszaniu niektórych procesów. \n\nPrzechodząc dalej, chciałabym zapytać, jak wygląda Twój typowy dzień pracy? Jak organizujesz swoje zadania, gdy pracujesz nad kilkoma projektami? Co robisz, gdy natrafisz na niejasne zadanie? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Mój typowy dzień pracy wygląda tak, że najpierw sprawdzam, co mam do zrobienia w danym dniu. Zwykle robię sobie listę zadań — to pomaga mi ogarnąć, co muszę zrobić. Czasami przemyślam, czy jakieś zadania są pilniejsze, więc staram się to jakoś poukładać.\n\nGdy pracuję nad kilkoma projektami, próbuję skupić się na jednym na raz, żeby nie tracić zbytnio koncentracji. Możliwe, że przydałby mi się jakiś system do zarządzania zadaniami, ale nie korzystałem jeszcze z ClickUp, chociaż słyszałem, że jest przydatny.\n\nKiedy napotykam na jakieś niejasne zadanie, staram się najpierw samodzielnie poszukać rozwiązania w dokumentacji lub na forach. Jeśli to nie działa, korzystam z ChatGPT albo pytam kogoś bardziej doświadczonego, bo myślę, że czasami lepiej jest zapytać, niż marnować czas na myślenie. Staram się, żeby być jak najbardziej skutecznym, ale czasami to bywa trudne. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Sounds good, Bartek! 😊 Podoba mi się, że masz swoje metody organizacji pracy i szukasz rozwiązań, gdy napotykasz trudności. To ważne, by nie bać się zadawać pytań, zwłaszcza gdy chodzi o rozwój umiejętności.\n\nWspomniałeś o ClickUp — to nasze narzędzie do zarządzania projektami, które bardzo ułatwia śledzenie zadań i komunikację. Jeśli dostaniesz szansę pracować z nami, z pewnością szybko się do niego przyzwyczaisz!\n\nZdarzało Ci się coś zepsuć na produkcji? Bez stresu, każdemu się zdarza 😊 Jak to wtedy odbierałeś? Co z tego wyniosłeś?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Na razie nie miałem dostępu do produkcji, więc nie zdarzyło mi się nic zepsuć. Mam nadzieję, że w przyszłości nie będę musiał się zmagać z takimi sytuacjami, ale myślę, że każdy popełnia błędy.\n\nGdybym miał taką sytuację, to pewnie czułbym się trochę zdenerwowany, ale ważne jest, żeby się z tego uczyć. Myślę, że kluczowe byłoby zrozumienie, co poszło nie tak i co mogę zrobić lepiej następnym razem. Wydaje mi się, że to naturalna część pracy w IT — ciągłe uczenie się i rozwijanie swoich umiejętności. Cieszę się, że będę mógł nad tym pracować w przyszłości! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dokładnie, Bartek! W branży IT błędy się zdarzają, a najważniejsze to umieć się na nich uczyć i nie bać się wyciągać wniosków. Twoje podejście do nauki i rozwoju jest naprawdę pozytywne! 😊\n\nNa koniec, chciałabym zapytać o Twoją dostępność. Ile godzin w tygodniu byłbyś w stanie poświęcić na pracę z nami? I jaka byłaby Twoja oczekiwana stawka godzinowa netto w modelu B2B?"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Dziękuję, Kaja! 😊\n\nMogę poświęcić około 20 godzin w tygodniu na pracę, bo jeszcze mam inną pracę na kasie. A jeśli chodzi o stawkę, to myślę, że chciałbym, aby to było w granicach 40 PLN za godzinę netto. To wydaje mi się adekwatne do mojego obecnego doświadczenia. Mam nadzieję, że to będzie odpowiednie! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję za informacje, Bartek! 🤗 20 godzin w tygodniu to fajna dostępność, a stawka 40 PLN na godzinę również jest zrozumiała, biorąc pod uwagę Twoje doświadczenie.\n\nEkstra, to wszystkie moje pytania, Bartek! Wielkie dzięki za poświęcony czas i otwartość podczas rozmowy! 🙌 Łukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "candidate",
+      "name": "Bartek Kowalski",
+      "text": "Bardzo dziękuję, Kaja! 😊 Cieszę się, że mogłem wziąć udział w rozmowie i podzielić się swoimi doświadczeniami. Mam nadzieję, że będziemy mieli szansę współpracować! Do usłyszenia! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozmowa została zakończona i wszystkie informacje zostały zapisane. Jeszcze raz dziękuję, Bartek! Do usłyszenia i powodzenia! 🚀😊"
+    }
+  ]
+}

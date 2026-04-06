@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "roleId": "pm",
+    "candidateType": "senior",
+    "candidateName": "Anna Wiśniewska",
+    "candidateEmail": "anna.wisniewska@outlook.com",
+    "candidateCity": "Kraków",
+    "simulatedAt": "2026-04-04T18:11:24.558Z",
+    "turns": 10
+  },
+  "result": {
+    "imie_nazwisko": "Anna Wiśniewska",
+    "email": "anna.wisniewska@gmail.com",
+    "miasto": "Kraków",
+    "uzywa_ai": "Tak — aktywnie",
+    "wynik_techniczny": 23,
+    "wynik_komunikacja": 28,
+    "dostepnosc_h": 30,
+    "stawka": "80 PLN/h netto B2B",
+    "github": "brak podanego profilu",
+    "notatki": "Anna to senior PM z 7-letnim doświadczeniem, ostatnie 3 lata w agencji webowej. Zarządza 5-8 projektami równolegle, expert w ClickUp, doskonała komunikacja z klientami (change requesty, opcje zamiast paniki). Rozumie WordPress na poziomie PM, zna staging/FTP/builder/wtyczki. Aktywnie używa AI (ChatGPT do emaili, Notion AI do notatek). Angielski B2+. Dostępna 30h/tygodniowo za 80 PLN/h. Silny candidate do pilotowania projektów, transparentna i strategiczna w komunikacji.",
+    "wynik_lacznie": 51,
+    "decyzja": "Rozmowa"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! 👋 Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy kogoś, kto będzie ogarnął projekty od A do Z — komunikacja z klientem, koordynacja zespołu, pilnowanie terminów i budżetów. Ta rozmowa zajmie ok. 15 minut i będzie super luźna.\n\n**Na początek — jak się masz na imię i nazwisko?** 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Cześć Kajo! 😊\n\nJestem Anna Wiśniewska. Dzięki za zaproszenie do rozmowy!"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Anna! 🎉 Fajnie poznawać! \n\nZanim przejdziemy do meritum — potrzebuję jeszcze dwa detale:\n- **Jaki jest Twój email kontaktowy?**\n- **W jakim mieście mieszkasz?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Jasne!\n\nMój email to anna.wisniewska@gmail.com, a mieszkam w Krakowie."
+    },
+    {
+      "role": "kaja",
+      "text": "Perfekt, Anna! Kraków — super 🚀\n\nTeraz chciałabym poznać Cię bliżej. **Kilka słów o Tobie — czym się zajmujesz, jakie masz doświadczenie zawodowe?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Okey! Jestem Project Manager z 7-letnim doświadczeniem — całą karierę spędziłam w agencjach i firmach webowych.\n\nOstatnie 3 lata pracuję w agencji webowej, gdzie zarządzam projektami od strony biznesowej. Mam do czynienia z różnymi typami projektów — tworzenie stron, e-commerce, rebrandingi. Zwykle jednocześnie prowadzę 5-8 projektów bez problemu.\n\nCo ważne — nieważne czy klient chce zmienić scope czy coś dojdzie w trakcie — zawsze robię change request, klient podpisuje, i wszyscy wiemy dokładnie co ile kosztuje. Oszczędza to później mnóstwa problemów.\n\nW komunikacji polegam na emailu i callach z klientami, do zespołu używam głównie Discorda. Pracuję z ClickUp-em (najbardziej go lubię), ale znám też Asanę i Jirę.\n\nAngielski mam B2+, więc mogę komunikować się z międzynarodowymi klientami bez problemu.\n\nCzemu o tym mówię? Bo wiem, że dla agencji liczą się konkretne umiejętności — pilnowanie terminów, budżetów i szczęśliwi klienci 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Anna, to brzmi solidnie! 🙌 Serio — widać, że wiesz o czym mówisz, szczególnie to z change requestami. To exactly to, co nam zależy.\n\nMam kilka pytań, żeby dokopać się do detali.\n\n**Opowiedz mi o konkretnym projekcie — jakaś sytuacja, kiedy coś poszło nie po planie i jak to obsługiwałaś?** Np. klient zmienił zdanie, dev nie dowiezł na czas, coś się sypnęło — cokolwiek."
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Dobra, mam idealny przykład. 🎯\n\nRok temu miałam projekt rebranding dla e-commerce'u — klient chciał nową stronę, nowe logo, całą komunikację. Wszystko zaplanowane na 8 tygodni.\n\nW trzecim tygodniu klient nagle mówi: \"Czekaj, chcemy dodać integrację z trzema nowymi systemami płatności\". To nie było w scopie, oczywiście. \n\nZamiast powiedzieć \"okej, zrobimy\", zrobiłam to tak:\n1. **Słuchanie** — zrozumiałam co dokładnie potrzebują i dlaczego\n2. **Diagnostyka** — sprawdziłam z devami ile to potrwa i ile to kosztuje\n3. **Change request** — przygotowałam dokument z trzema opcjami: dodać do budżetu, przesunąć termin, albo zrobić to w drugiej fazie\n4. **Decyzja** — klient wybrał opcję trzecią\n\nWynik? Projekt poszedł gładko, klient był spokojny bo wiedział dokładnie co się dzieje, i mamy z nimi kolejne projekty.\n\nGdybym wtedy nie zrobiła change request i po prostu się zgodziła, skończylibyśmy z opóźnionym projektem i niezadowolonym klientem.\n\nTo jest dla mnie klucz — transparentność od początku."
+    },
+    {
+      "role": "kaja",
+      "text": "🔥 Anna, to jest DOKŁADNIE to, czego szukamy. Słuchanie → diagnostyka → opcje → decyzja. Perfect flow.\n\nMam jeszcze jedno pytanie na ten temat — **co robisz, gdy dev mówi \"nie dam rady na czas\" w środku sprintu? Jak eskalujesz, jak to komunikujesz klientowi?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Świetne pytanie, bo to się zdarza regularnie. 😅\n\n**Tutaj ważne jest timing** — nie czekam do ostatniej chwili.\n\nGdy dev mówi że będzie problem, od razu robię three things:\n\n1. **Rozmowa z devem** — pytam konkretnie: ile czasu faktycznie potrzeba? Co blokowało? Czy to można rozłożyć na fazy? Czasem to tylko godzina dodatkowa, a czasem rzeczywiście tydzień.\n\n2. **Przygotowanie opcji** — zanim powiedzę cokolwiek klientowi, sam już mam rozwiązania: przesunięcie deadline'u, zrobienie części funkcjonalności w MVP, dodanie do budżetu jeśli przyśpieszymy...\n\n3. **Komunikacja z klientem** — tutaj jestem szczera ale konstruktywna. Nie mówię \"all is lost\" 😄. Mówię: \"Zorientowaliśmy się, że feature X wymaga więcej pracy niż szacowaliśmy. Macie trzy opcje...\" i pokazuję konsekwencje każdej.\n\n**Kluczowe** — robię to zawsze z wyprzedzeniem, nigdy w ostatni dzień. Klient ceni sobie, że wie o problemie wcześniej i może na niego wpłynąć.\n\nTo też dlatego lubię ClickUp — tam widać wszystko w real-time, nikt się nie zaskakuje."
+    },
+    {
+      "role": "kaja",
+      "text": "Anna, to jest naprawdę profesjonalne podejście. Widać, że masz system. 👍\n\nTeraz przeskoczymy na technikę — **jak dobrze znasz WordPress? Co rozumiesz pod pojęciami typu staging, FTP, builder, wtyczki?** I czy potrafisz samodzielnie wycenić prosty projekt WP?"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Okay, bądę szczera — **nie jestem developerem**, ale rozumiem WordPress na poziomie użytkownika i project managera.\n\n**Co znam:**\n\n- **Staging** — wiem co to jest, wiem że tam testujemy zanim pójdzie na live. Czasem sam dev mi wysyła link, sprawdzam czy strona wygląda jak trzeba\n- **Builder** — pracowałam z Elementorem, Divi — wiem jak się ich używa, potrafię poprosić devę o zmianę jeśli coś nie wygląda\n- **Wtyczki** — rozumiem że to są dodatki, wiem jakie robią co. SEO, formularze, WooCommerce — znam ich nazwy i funkcje\n- **FTP** — wiem że to dostęp do plików serwera, ale sam tego nie robię — to do devów\n\n**Wycena** — tutaj mogę sobie radzić na poziomie prostych projektów. Jeśli mówię o standzie WP + Elementor + kilka custom pluginów + integracja formularzy, to potrafię oszacować koszty na podstawie doświadczenia.\n\nAle szczerze — bardziej opieramy się na doświadczeniu devów. Ja sprawdzam czy wycena ma sens biznesowo i czy nie zanurkujemy za bardzo w budżecie.\n\n**Czy to coś co będę robić na stanowisku u was?**"
+    },
+    {
+      "role": "kaja",
+      "text": "Dobra odpowiedź, Anna! 👍 Szczerość to plus. Nie potrzebujemy od ciebie technika — potrzebujemy kogoś, kto rozumie wystarczająco, żeby rozmawiać z devami i klientem bez głupich pytań. Ty to masz.\n\nTo będzie jedna z Twoich rzeczy — pomoc w wycenie prostszych projektów razem z zespołem, ale głównie pilot projektu będą devowie.\n\n**Teraz pytanie o AI — używasz AI w swojej pracy? Do czego i jak?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Tak, aktywnie używam! 🤖\n\n**ChatGPT** — głównie do emaili i briefów. Gdy muszę napisać formal communication do klienta, zamiast siedzeć 20 minut nad sformułowaniem, rzucę prompt w ChatGPT, a on mi wygeneruje draft. Potem edytuję, dodam swój ton, i wysyłam. Oszczędza mi czas na rzeczy, które naprawdę wymagają mojego inputu.\n\n**Notion AI** — używam do notatek ze spotkań. Zamiast transkrybować całą rozmowę, rzucę nagranie i Notion AI wyciąga mi kluczowe punkty. Potem formatuję i wysyłam do zespołu.\n\n**Jak to wygląda praktycznie?** — ChatGPT do rutyny, Notion AI do organizacji. Nie zastępuje mojego myślenia, ale przyspiesza pracę, która nie wymaga mojej kreatywności.\n\nSzczerze? Uważam że każdy PM powinien tego używać. Zaoszczędzony czas mogę poświęcić na rzeczy ważne — rozmowy z klientami, strategie, rozwiązywanie problemów.\n\n**Czy u was zespół też używa AI czy to nowe zagadnienie?**"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Anna! 🎯 To dokładnie to, co chcemy słyszeć — praktyczne użycie, nie hype. ChatGPT do emaili, Notion AI do notatek — to ma sens. I zgadzam się — każdy PM powinien to robić.\n\nU nas zespół już z tym pracuje, więc będziesz w dobrym towarzystwie. ✅\n\n**Ostatnie rzeczy — praktyka:**\n- **Ile godzin tygodniowo byś pracowała?** (wiadomo, że elastyczne, ale na co możemy liczyć)\n- **Jaka jest Twoja stawka godzinowa netto B2B?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Jasne! 👍\n\n**Dostępność:** 30 godzin tygodniowo. To jest dla mnie komfortowe — mam inne projekty, ale te 30h mogę zagwarantować i będę na tym skupiona.\n\n**Stawka:** 80 PLN/h netto B2B.\n\nWiem że w Krakowie rynek się trochę poruszył, ale ta stawka odzwierciedla moje doświadczenie i to co przynoszę na stół — nie chodzę w pizdy z change requestami, komunikacja, zarządzanie budżetem, devów wiem jak obsługiwać. 😊\n\nCzy to się wam mieści w budżecie?"
+    },
+    {
+      "role": "kaja",
+      "text": "Anna, 80 PLN/h to fair cena za to co oferujesz — 7 lat doświadczenia, ClickUp, change requesty, komunikacja. Budżet mamy, nie ma problemu. ✅\n\nOstatnie pytanie — **czy masz jakieś pytania do nas, do agencji, do stanowiska? Coś Cię ciekawi?** 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Anna Wiśniewska",
+      "text": "Fajne pytanie! Mam parę rzeczy. 😊\n\n**Po pierwsze** — wspomniałaś że będę pilotować projekty od A do Z. **Jaki jest średni rozmiar projektu u was?** Chodzi mi o to — czy mówicie o prostych stronach prezentacyjnych, czy bardziej złożonych e-commerce'ów? Bo to wpływa na planowanie.\n\n**Po drugie** — **jak wygląda zespół, z którym będę pracować?** Ile devów, czy są designerzy, content writery? Bo jak się zna dynamikę zespołu, to łatwiej się koordynuje.\n\n**Po trzecie** — **jak wyglądają Wasze relacje z klientami?** Czy to są kontrakty długoterminowe, czy mostly projektowe? Pytam bo to wpływa na strategię komunikacji — inaczej podchodzę do stałego klienta, inaczej do one-off'u.\n\n**I ostatnie** — **kiedy byśmy startowali?** Pytam praktycznie, bo muszę wyciszyć bieżące projekty w odpowiedni sposób.\n\nTo by było na tyle z mojej strony! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Anna, super pytania — widać, że myślisz strategicznie. 👍\n\nTo są dokładnie takie rzeczy, które Łukasz (nasz szef) będzie chciał omówić z Tobą szczegółowo. On ma pełny obraz — rozmiar projektów, skład zespołu, dynamika klientów, timeline'y. Ja jestem tutaj żeby sprawdzić czy pasujemy sobie na poziomie kompetencji i podejścia — i wyraźnie pasujemy. ✅\n\n**Te konkretne detale wyjdą w następnej rozmowie z Łukaszem** — będzie to bardziej deepdive w to jak pracujemy dzień w dzień.\n\n---\n\nAnna, to było super! Dziękuję za poświęcony czas i za takie szczere, konkretne odpowiedzi. 🙌 Dokładnie takie podejście do PM — transparentność, change requesty, komunikacja z devami — to jest to, czego szukamy.\n\n**Łukasz wróci do Ciebie w ciągu kilku dni** z kolejnymi krokami. Trzymam kciuki! 🚀\n\nDo usłyszenia! ☕️"
+    }
+  ]
+}

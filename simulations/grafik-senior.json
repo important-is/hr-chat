@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "roleId": "grafik",
+    "candidateType": "senior",
+    "candidateName": "Marta Jabłońska",
+    "candidateEmail": "marta.design@gmail.com",
+    "candidateCity": "Gdańsk",
+    "simulatedAt": "2026-04-04T18:16:23.363Z",
+    "turns": 9
+  },
+  "result": {
+    "imie_nazwisko": "Marta Jabłońska",
+    "email": "marta.jablonska@email.com",
+    "github": "behance.net/martajab",
+    "miasto": "Gdańsk",
+    "dostepnosc_h": 25,
+    "stawka": "Nie podała (do omówienia)",
+    "uzywa_ai": "Tak — aktywnie",
+    "wynik_techniczny": 23,
+    "wynik_komunikacja": 28,
+    "notatki": "Marta to senior UX/UI designer z 7-letnim doświadczeniem, specjalizujący się w full-cycle projektach (research → design → wdrażanie WP). Wykazała głębokie UX thinking, znowość Figmy i CSS, umiejętność wdrażania w Bricksie. Portfolio pokazuje case study'e (Timber & Co + 4-5 projektów web), personas, wireframy. Pragmatyczne użycie AI (Midjourney, Firefly, ChatGPT) bez bycia zależną. Doskonała komunikacja, edukuje klientów zamiast się kłócić. Organizacja: Asana + Notion. 25h/tydzień dostępności. Brak podanej stawki — wymaga omówienia.",
+    "wynik_lacznie": 51,
+    "decyzja": "Rozmowa"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! 👋 Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy grafika/designera, który nie boi się myśleć o UX i potrafi zaprojektować coś, co nie tylko dobrze wygląda, ale też działa. Ta rozmowa to ok. 15 minut — będzie relaks.\n\nNa początek — jak się masz na imię i nazwisko? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Cześć Kaja! 👋 Dziękuję za zaproszenie — miło mi tutaj być!\n\nMarta Jabłońska. Jestem graphic i UX designerką z Gdańska. \n\nTwoja uwaga o UX plus estetyka — to dokładnie to, czym się zajmuję. Nie ma dla mnie sensu projekt, który wygląda pięknie, ale użytkownik się w nim gubi. Właśnie dlatego zawsze zaczynam od user research i wiryframów zanim zrobię nawet pixel designu.\n\nCiekawa jestem, co robicie w important.is i jakie wyzwanie mielibyście dla mnie. 🎯"
+    },
+    {
+      "role": "kaja",
+      "text": "Marta! Super, że się zgadzamy na początku 🙌 Dokładnie o to nam chodzi!\n\nSzybko o nas — tworzymy i utrzymujemy serwisy WordPress dla klientów. Design to kluczowy element — od brandingu przez UI strony po kreacje social media. Pracujemy w Figmie, wdrażamy na WordPress (głównie Bricks Builder). Chcemy kogoś, kto ma oko do detalu i myśli jak Ty — UX first.\n\nFajnie, że zaczynasz od research i wireframów — to dokładnie to, czego słuchamy 🎯\n\nTeraz do Ciebie — **jaki projekt z Twojego portfolio uważasz za swój najlepszy i dlaczego?** (żebyś mogła pokazać konkretnie, gdzie pokazuje się Twoje podejście do UX)"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Super, to brzmi całkiem blisko tego, co robię! WordPress + Figma + myślenie o użytkowniku — to moja bajka. 🎯\n\nMój najlepszy projekt to **rebranding restauracji \"Timber & Co\"** — mam to w portfolio na behance.net/martajab.\n\nDlaczego to mój ulubieniec:\n\n**Kontekst:** Restauracja miała stary visual identity, a właściciel chciał przyciągnąć młodszą publiczność, ale zachować wiarygodność wśród stałych klientów.\n\n**Moje podejście:**\n1. **Research** — odwiedziłam restaurację 2x, rozmawiałam z właścicielem i kilkoma gośćmi. Okazało się, że problem nie był w logo, ale w tym, że strona WP wyglądała jak z 2015 roku. Użytkownicy gubiła się w menu, rezerwacje były niejasne.\n\n2. **User personas** — zrobiłam dwie: \"Daniel 28 — szuka dobrego miejsca na randkę\" i \"Pani Danuta 65 — chce wiedzieć, gdzie zaparkować\". Całkiem inne potrzeby.\n\n3. **Wireframy** — najpierw w Figmie mapa strony, potem lo-fi prototypy. Hero section musiał pokazać atmosferę (zdjęcia jedzenia), ale też szybko dostępne info: godziny, menu, rezerwacja.\n\n4. **Design** — nowa paleta (drewno + miedź), custom ikony do kategorii menu, no-brainer CTA do rezerwacji.\n\n5. **Efekt** — nie tylko pięknie wyglądała, ale konwersje na rezerwacje wzrosły. To mnie zadowoliło bardziej niż każdy dribble.\n\nTo pokrywa całą ścieżkę — branding, UI strony, social media assets. A najważniejsze — rozumiał"
+    },
+    {
+      "role": "kaja",
+      "text": "Marta, to jest **dokładnie** to, co chcemy słyszeć! 🎯 Research + personas + wireframy + efekty biznesowe — to jest senior level thinking. Wzrost konwersji to najlepszy dowód, że nie robiłaś tylko \"ładnie\".\n\nKilka konkretnych pytań do tego projektu:\n\n**Jak wyglądało dla Ciebie wdrażanie designu na WordPress — czyli przejście z Figmy do Bricks Buildera?** Czy sama kodowałaś CSS, czy pracowałaś z developerem? I co było najtrudniejsze w tej adaptacji?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Świetne pytanie — to często miejsca, gdzie design \"gubi się w tłumaczeniu\". 🎯\n\nW projekcie Timber & Co pracowałam z developerem, ale miałam dość mocny wkład w wdrażanie:\n\n**Jak to wyglądało:**\n\n1. **Figma → Bricks — prep work** — zrobiłam design system w Figmie: komponent buttona (4 warianty), karty (dla dań), spacing grid (4px base), paleta kolorów z aliasami (primary/secondary/accent). Taki \"kodeks\" dla developera, żeby nie interpretował na odczucie.\n\n2. **CSS custom properties** — znalazłam się w sytuacji, gdzie developer chciał hardcodować kolory w Bricksie. Sama pisałam CSS variables (`:root { --color-primary: #8B4513 }`), żeby było skalowalne. Wystarczająco znam CSS żeby to zrobić.\n\n3. **Co było najtrudniejsze:**\n   - **Responsywność** — desktop design wyglądał idealnie, ale na mobile'u hero section się \"zalamał\". Musiałam iść do Bricksa i pracować z breakpoints. Bricks ma fajny system, ale wymaga myślenia mobile-first już w designie.\n   - **Hover stany** — w Figmie są proste, ale w Bricksie trzeba to wszystko kodzić. Teraz już w wireframach robię notatkę \"hover → zmiana koloru tła + animacja 0.3s\".\n   - **Font rendering** — wybrałam fajny font, ale na stronie wyglądał inaczej. Nauczyłam się tego, teraz zawsze testuję webfonty zanim zatwierdzę design.\n\n**Moja rola:**\nNie jestem full dev, ale potrafię czytać CSS, robić minor poprawki, debugować spacing. Developer zajmował się logiką (rezerwacje, integracje),"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Marta! To pokazuje naprawdę dojrzały poziom — znasz granice między design a dev, ale potrafisz się w to zagłębić. To duży plus dla nas, bo wiele osób kończy się na \"oddaję Figmę i tyle\" 💪\n\nOkej, mam kolejne pytanie:\n\n**Ile projektów tego typu — czyli full cycle od research do wdrażania na WordPress — zrobiłaś do tej pory?** I czy wszystkie to były restauracje, czy pracowałaś też dla innych branż?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Dobre pytanie — chciałbym być szczera. 🎯\n\n**Full cycle (research → design → wdrażanie)** zrobiłam około **4-5 projektów**. Timber & Co to najlepszy przykład, ale miałam też:\n\n- **SaaS tool do zarządzania eventami** — tu była spora część UX (user flows, accessibility), wdrażanie na custom WP theme\n- **Rebranding agencji komunikacyjnej** — logo, guidelines, strona WP (ta była bardziej \"klassyczna\" — mniej research, bardziej brief-based)\n- **Projekt e-commerce** — mniejszy, ale pełny cykl\n\n**Czemu nie więcej?** \nSzczerze — przez większość moich 7 lat pracowałam w modelach bardziej \"specjalistycznych\": część projektów to był sam UI/UX (bez wdrażania), część to były social media kampanie, część rebranding bez strony WP.\n\nOstatnie 2-3 lata bardziej się skupiam na pełnym cyklu, bo właśnie to daje mi największą satysfakcję. Widać, czy design rzeczywiście działa. \n\n**Branże:** restauracje, SaaS, e-commerce, agencje. Lubię, gdy branża ma różne user journey'e — to zmusza mnie do głębszego thinking.\n\nPytam wprost — macie jakieś obawy, że brakuje mi doświadczenia w full cycle? Mogę szczegółowo wejść w konkretny projekt, pokazać proces. 🤔"
+    },
+    {
+      "role": "kaja",
+      "text": "Nie, nie ma obaw! Wręcz przeciwnie — 4-5 pełnych cykli to solidny materiał, zwłaszcza że rozumiesz cały proces. To lepsze niż \"20 projektów, ale każdy inny model\" 💪\n\nMarta, teraz inna strona — **jak reagujesz, gdy klient mówi \"nie podoba mi się\" bez konkretów?** Spotkałaś się z tym? Jak się zachowujesz w takiej sytuacji?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Haha, tak — to klasyk! 😅 I na początku mnie irytowało, ale nauczyłam się, że to nie jest problem, tylko informacja, którą trzeba rozkodować.\n\n**Moje podejście:**\n\n1. **Nie przejmuję się emocją** — \"nie podoba mi się\" to nie znaczy, że projekt jest zły. To znaczy, że coś nie resonuje z tym, co klient ma w głowie.\n\n2. **Pytam konkretnie:**\n   - \"Gdzie konkretnie — czy to całość, czy konkretny element?\"\n   - \"Co dokładnie gra Ci się nie?\" (czasem to kolor, czasem layout, czasem \"feels\")\n   - \"A co by musiało się zmienić, żebyś powiedział 'tak'?\"\n\n3. **Pokazuję precedensy** — często mówię: \"Wiem, że mówisz 'nie podoba', ale zanim zaczyniemy redesign — pokaż mi 2-3 przykłady z sieci, które Ci się podobają. Co w nich widzisz?\"\n   \n   To zmienia wszystko. Okazuje się, że chodzi o to, że chce bardziej minimalistyczną paletę, albo inny tone of voice w copywritingu.\n\n4. **Proponuję direction, nie zmianę całości** — zamiast \"zrobimy kompletnie nowy design\", mówię: \"Widzę — zmienimy kierunek tutaj [konkretny element], a resztę trzymamy, bo to działa.\"\n\n**Przykład z praktyki:**\nKlient e-commerce powiedział \"nie podoba mi się\". Okazało się, że nie chodzi o UI, tylko że hero section go nie \"sprzedał\" emocjonalnie. Zmieniłam zdjęcie (research konkurencji), dostosowałam copy, i nagle — \"o, teraz tak!\".\n\nTo był problem contentu i messaging, nie designu. Ale gdybym nie pytała"
+    },
+    {
+      "role": "kaja",
+      "text": "Marta, to jest **exactly** to, co szukamy! 🎯 Edukujesz klienta zamiast się kłócić, pokazujesz precedensy, rozkodowujesz problem — to senior thinking. I najlepsze — wiesz, gdzie jest problem (tu content, nie design).\n\nOkej, zmiana tematu:\n\n**Jak organizujesz się, gdy masz kilka projektów w tym samym czasie?** Jakie narzędzia używasz do zarządzania zadaniami, timeline'ami, deadline'ami? I ile projektów zwykle trzymasz \"w locie\"?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Świetne pytanie — organization to kluczowe, zwłaszcza gdy wszystko dzieje się równocześnie. 🎯\n\n**Jak to wygląda u mnie:**\n\n**Narzędzia:**\n- **Asana** — głównie do trackowania projektów, timeline'ów, deadline'ów. Każdy projekt to osobny workspace z fazami (research → wireframe → design → feedback → wdrażanie).\n- **Figma** — oczywiście, ale tam trzymam też design brief'y i notatki z kickoff'a.\n- **Notion** — dla siebie: logbook projektów, lessons learned, time tracking.\n- **Google Calendar** — bloki czasu: \"9-11 designem, 11-13 meeting'i/feedback, 13-15 dalej design\". Ścieżki ochronne.\n\n**Ile projektów w locie:**\nZwykle **2-3 jednocześnie**, ale na różnych fazach:\n- Projekt A: designing (aktywny 100%)\n- Projekt B: waiting for feedback (10% czasu)\n- Projekt C: research/wireframing (50% czasu)\n\nJeśli mam 3 równocześnie w fazie \"pełny design\" — to się nie skaluje. Wtedy mówię \"nie\" albo renegocjuję timeline.\n\n**Czas na projekt:**\n- Small rebranding: 60-80h\n- Full cycle (research + UI + wdrażanie): 120-160h\n- Maintenance/iteracje: ad hoc\n\n**Dostępność u mnie:**\nPracuję **25h/tydzień** na B2B — to pozwala mi na:\n- 2 duże projekty semi-parallel\n- Albo 3 mniejsze projekty\n\n**Co mi się sprawdza:**\n- **Deep work bloki** — nie robię \"switchy\" co 30 minut. Designem siedzę 2-3h bez przerw.\n- **Feedback loop schedule** — ustalam z k"
+    },
+    {
+      "role": "kaja",
+      "text": "Super struktura, Marta! Widzę, że masz system i wiesz, jak skalować pracę bez wypalenia 💪 Asana + Notion + Google Calendar — to kombinacja, która działa. I fajne, że mówisz \"nie\" zamiast się przesypiać.\n\n25h/tydzień — notuj sobie. To ważne dla nas.\n\nTeraz zostało mi jedno ważne pytanie:\n\n**Czy używasz AI w designie?** (np. Midjourney, DALL-E, Stable Diffusion, Adobe Firefly, czy może ChatGPT do copywritingu?) Jeśli tak — do czego konkretnie i jak to wygląda w Twoim workflow?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Świetne pytanie — AI to temat, na którym ludzie się polaryzują. 🤖\n\n**Ja jestem pragmatyczna: używam AI, ale strategicznie.**\n\n**Co używam i do czego:**\n\n1. **Midjourney — moodboardy i koncepty**\n   - Na early stage, gdy klient nie wie dokładnie, w którą stronę chce iść\n   - Promptuję: \"minimalist restaurant branding, warm wood tones, modern serif\" — dostaję 4 kierunki wizualne\n   - To zaoszczędza mi 2-3h poszukiwania referenceów na Pinterescie\n   - Ale: nigdy nie biorę tego do finału. To input do mojej pracy, nie final output.\n\n2. **Adobe Firefly — object removal, background cleanup**\n   - Zdjęcie do hero section ma niepotrzebny element? Firefly wycinę w 30 sekund\n   - Lepiej niż Photoshop clone tool, bo nie wygląda \"sztucznie\"\n\n3. **ChatGPT — copy, headlines, struktura content**\n   - \"Napisz 3 warianty hero headline dla restauracji, tone: casual ale premium\"\n   - Dostaję input, ale zawsze edytuję. AI pisze generycznie, ja dopasowuję do brand voice\n   - To zaoszczędza mi czas brainstormingu\n\n**Co NIE robię:**\n- Nie generuję całych projektów AI-kiem. To byłoby leniwe i widać, że to AI.\n- Nie stosuję AI do UX/user flows — tam trzeba myśleć, nie generować.\n- Nie sprzedaję AI-generowanego contentu jako \"mojej pracy\".\n\n**Moja filozofia:**\nAI to narzędzie jak Photoshop — zmienia proces, ale nie zastępuje myślenia. Używam go żeby **zaoszczędzić czas na nudnych zadaniach** i **mieć więcej czasu na"
+    },
+    {
+      "role": "kaja",
+      "text": "Marta, to jest odpowiedź na miarę! 👏 Pragmatyzm + etyka + konkretne use case'i — dokładnie tak powinno się myśleć o AI w designie. Nie \"AI all the way\" i nie \"AI nigdy\" — po prostu tool.\n\nFajnie, że edytujesz output i wiesz, gdzie się nie skaluje (UX, myślenie). To pokazuje dojrzałość.\n\nOkej, zostało mi już tylko kilka rzeczy do zalogowania:\n\n**Jaki jest Twój email kontaktowy?** I czy masz link do swojego portfolio (Behance, czy może własna strona) — żeby Łukasz mógł się dokładnie przypatrzeć Timber & Co i reszcie projektów?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Oczywiście! 📧\n\n**Email:** marta.jablonska@email.com\n\n**Portfolio:** behance.net/martajab\n\nTam znajdziesz wszystkie projekty, które omawialiśmy — Timber & Co na początku (tam są case study'i z research i wireframami), SaaS tool, rebranding agencji, plus social media kampanie.\n\nW każdym projekcie dodałam notatki o procesie — żeby Łukasz widział nie tylko finał, ale jak do tego doszłam. 🎯\n\n**Jedno pytanie ode mnie:**\nJaki byłby następny krok? Czy będzie rozmowa z Łukaszem (chyba on prowadzi zespół?), czy może test/projekt próbny? I jaki timeline myślicie? \n\nJestem zainteresowana — ta rozmowa pokazała, że myślimy podobnie o designie i UX. 💪"
+    },
+    {
+      "role": "kaja",
+      "text": "Marta, super! 🙌 Mam wszystko, co mi trzeba.\n\n**Następne kroki:**\nŁukasz przejrzy Twoje portfolio w ciągu kilku dni i jeśli będzie zainteresowany (a myślę, że będzie 😊), sam się do Ciebie odezwie — albo z pytaniami, albo propozycją rozmowy. On prowadzi zespół i bierze ostateczne decyzje.\n\n**Timeline:** liczę na jego kontakt w ciągu 3-5 dni. Jeśli coś będzie niejasne, odpisze szybciej.\n\nDziękuję Ci za poświęcony czas i za szczerość całą rozmowę! 🚀 To była przyjemna rozmowa — widać, że wiesz, co robisz, i że podejście do UX masz w DNA. \n\nTrzymam kciuki! 🤞\n\n---\n\nTeraz zapisuję Cię do naszej bazy. Do usłyszenia! ☕️"
+    },
+    {
+      "role": "kaja",
+      "text": "✅ **Wszystko zapisane!** Łukasz dostanie Twoją kandydaturę z pełnym raportem. 🚀\n\nDo usłyszenia wkrótce! 👋"
+    }
+  ]
+}

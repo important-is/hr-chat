@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "roleId": "grafik",
+    "candidateType": "junior",
+    "candidateName": "Tomek Wróbel",
+    "candidateEmail": "tomekwrobel99@gmail.com",
+    "candidateCity": "Łódź",
+    "simulatedAt": "2026-04-04T19:37:14.030Z",
+    "turns": 14,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 68227,
+    "totalOutputTokens": 2927,
+    "costUSD": 0.01199
+  },
+  "result": {
+    "imie_nazwisko": "Tomek Wróbel",
+    "email": "tomek.wrobel@example.com",
+    "miasto": "Łódź",
+    "github": "behance.net/tomekwrobel",
+    "stawka": "45 PLN",
+    "dostepnosc_h": 30,
+    "uzywa_ai": "Tak — powierzchownie",
+    "wynik_techniczny": 10,
+    "wynik_komunikacja": 20,
+    "notatki": "Tomek ma doświadczenie głównie w kreacjach do social media, korzysta z Canvy oraz początkowo uczy się Figmy. Jego proces projektowy jest bardziej intuicyjny, nie zna jeszcze technik UX, takich jak wireframe. Używa prostych narzędzi do organizacji pracy, ma otwartość na naukę nowych umiejętności, w tym pracy z AI.",
+    "wynik_lacznie": 30,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️ Szukamy grafika/designera, który nie boi się myśleć o UX i potrafi zaprojektować coś, co nie tylko dobrze wygląda, ale też działa. Ta rozmowa to ok. 15 minut. Podaj mi swoje imię i nazwisko 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Cześć Kaja! Nazywam się Tomek Wróbel. Bardzo się cieszę, że mogę tu być! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Tomku! Cieszę się, że do nas dołączyłeś. 😊 Proszę, podaj jeszcze swój adres e-mail oraz miasto, w którym mieszkasz."
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Jasne! Mój adres e-mail to tomek.wrobel@example.com, a mieszkam w Łodzi."
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki, Tomku! 🙏 Teraz kilka słów o Tobie — co Cię kręci w designie? Jakie aspekty tego zawodu są dla Ciebie najbardziej inspirujące?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Wiesz co, najbardziej kręci mnie możliwość wyrażania siebie przez grafikę i tworzenie czegoś, co naprawdę przyciąga uwagę! Lubię bawić się kolorami i typografią, a także sprawiać, żeby projekty były przyjemne dla oka. Inspirują mnie różne style, od minimalistycznych po bardziej szalone, a także to, jak grafika może wpływać na emocje ludzi. Myślę, że to niesamowite, jak dobrze zaprojektowane rzeczy mogą poprawić czyjeś samopoczucie czy pomóc w komunikacji. Dodatkowo cieszę się, że mogę pracować z klientami i tworzyć coś, co im się podoba! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetne, że masz taką pasję i zrozumienie dla wpływu designu na emocje! 😊 Przejdźmy teraz do narzędzi — z jakich programów do projektowania korzystasz? Czy pracujesz w Figmie, Adobe XD, Photoshopie, Illustratorze, Canvie, a może Cinema4D? Jakie masz doświadczenie z tymi narzędziami?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Dzięki! 😊 Głównie korzystam z Canvy, bo to moje ulubione narzędzie — jest intuicyjne i świetnie nadaje się do tworzenia postów na social media. Poza tym znam trochę Photoshopa, chociaż wciąż uczę się nowych rzeczy. Z Figmą dopiero zaczynam i mam nadzieję rozwijać się w tym kierunku, bo słyszałem, że to świetne narzędzie do współpracy. Inne programy, jak Illustrator czy Cinema4D, jeszcze mnie nie interesowały, ale może w przyszłości spróbuję. Na razie skupiam się na tym, co lubię! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, że Canva jest Twoim ulubionym narzędziem, ale dobrze, że planujesz rozwijać się w Figmie! 😊 A jakie masz specjalizacje w swoim portfolio? Czy zajmujesz się głównie UI/UX, brandingiem, kreacjami do social media, czy może pracujesz również w innych obszarach, takich jak print czy motion?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Na razie skupiam się głównie na kreacjach do social media i to jest moja specjalizacja. W portfolio mam kilka projektów związanych z grafiką do mediów społecznościowych. Nie mam jeszcze doświadczenia w UI/UX ani w brandingu, ale chętnie bym spróbował, jeśli pojawi się taka okazja. Print i motion to również obszary, w których jeszcze nie pracowałem, ale to coś, co mnie interesuje. Na razie staram się rozwijać w tym, co znam, ale zawsze jestem otwarty na nowe wyzwania! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że masz otwartą postawę na nowe wyzwania! 😊 Przejdźmy teraz do Twojego portfolio. Czy mógłbyś podzielić się linkami do 3-5 swoich najlepszych projektów i opisać, który z nich uważasz za najlepszy oraz dlaczego?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Mój portfolio znajduję się na Behance pod tym linkiem: [behance.net/tomekwrobel](#). Znajdziesz tam trzy projekty, które stworzyłem do social media. Myślę, że najlepszym z nich jest projekt graficzny dla lokalnej kawiarni. Udało mi się stworzyć przyciągające uwagę posty, które oddają klimat miejsca i zachęcają do odwiedzin. Klient był zadowolony, a ich zasięgi na mediach społecznościowych wzrosły. To dla mnie ogromna satysfakcja! 😊 Cieszę się, że mogłem wnieść coś wartościowego dla ich biznesu. Zachęcam do zobaczenia całego portfolio!"
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za link do portfolio, Tomku! 👍 Fajnie, że projekt dla kawiarni przyniósł takie pozytywne rezultaty. Przechodząc dalej, jak wygląda Twój proces projektowy? Na przykład, czy zaczniesz od briefu, przeprowadzisz research, robisz wireframe i dopiero potem projektujesz? Jak to u Ciebie wygląda?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Cieszę się, że Ci się podoba! 😊 Mój proces projektowy na razie jest dość prosty. Zaczynam od rozmowy z klientem, żeby dowiedzieć się, jakie ma potrzeby i oczekiwania. Potem często robię research, żeby zainspirować się innymi projektami i zobaczyć, co jest teraz trendy.\n\nNastępnie, zaczynam rysować szkice, żeby zobaczyć, jak może wyglądać finalny projekt. Przez to staram się ustalić układ i ogólną estetykę. Kiedy mam już coś, co mi się podoba, przenoszę to do Canvy, gdzie tworzenie ostatecznych wersji jest dla mnie najłatwiejsze. Staram się również wprowadzać uwagi klienta, gdy coś im się nie podoba. Jeszcze nie używam technik takich jak wireframe, ale może kiedyś się tego nauczę! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To brzmi jak dobry proces, szczególnie, że włączasz klienta i jego potrzeby od samego początku! 😊 Co robisz, gdy klient mówi, że coś mu się nie podoba, ale nie podaje konkretów? Jak reagujesz na takie sytuacje?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Dzięki! 😊 Gdy klient mówi, że coś mu się nie podoba, a nie podaje konkretów, staram się być otwarty i zrozumieć jego wątpliwości. Zadaję pytania, żeby dowiedzieć się, co dokładnie mu nie pasuje — czy chodzi o kolory, czcionki, czy może układ. Czasem to może pomóc uściślić, co dokładnie mu się nie podoba.\n\nJeśli nadal nie jest w stanie wskazać konkretnych rzeczy, to proponuję kilka różnych opcji, które mogą być zgodne z jego wizją. Zawsze staram się znaleźć kompromis i zrozumieć, co mogę zmienić, żeby projekt bardziej odpowiadał jego oczekiwaniom. Ważne dla mnie, żeby klient czuł się zadowolony z efektu końcowego! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo profesjonalne podejście, Tomku! 😊 Przejdźmy teraz do doświadczenia w projektowaniu stron internetowych. Czy pracowałeś już nad jakimiś projektami związanymi z WordPressem lub innymi stronami internetowymi? Jakie masz doświadczenie w tym obszarze?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Dziękuję! 😊 Niestety w tej chwili nie mam jeszcze doświadczenia w projektowaniu stron internetowych, jak WordPress czy inne platformy. Moje dotychczasowe projekty koncentrowały się głównie na grafikach do social media. Zdaję sobie sprawę, że umiejętności związane z projektowaniem stron są bardzo ważne, dlatego mam zamiar rozwijać się w tym kierunku i uczyć Figmy, aby móc tworzyć lepsze projekty.\n\nZależy mi na rozwijaniu swoich kompetencji, więc jeśli będzie taka możliwość, chciałbym się zmierzyć z projektami webowymi w przyszłości! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, że masz chęć rozwijać się w kierunku projektowania stron! 😊 Jak wygląda Twoja organizacja pracy, kiedy masz kilka projektów jednocześnie? Jakie metody lub narzędzia wykorzystujesz, aby wszystko dobrze zorganizować?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Dziękuję! 😊 Kiedy mam kilka projektów jednocześnie, staram się dobrze zorganizować swoją pracę. Na początku każdego tygodnia tworzę listę zadań do zrealizowania na dany tydzień, co pomaga mi zobaczyć, co muszę zrobić. Używam do tego notatek na telefonie lub czasem korzystam z prostego narzędzia, jak Trello, żeby móc wizualizować swoje postępy.\n\nDzięki temu mogę przyporządkować czas do każdego projektu i skupić się na jednym zadaniu na raz. Staram się też ustalać priorytety, żeby zajmować się najważniejszymi rzeczami w pierwszej kolejności. Jeśli zauważam, że coś idzie wolniej, to staram się to przeanalizować i ewentualnie dostosować plan, aby wszystko było gotowe na czas. Dzięki tym prostym metodom czuję, że wszystko jest pod kontrolą! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetny sposób na organizację pracy, Tomku! 👍 Ustalenie priorytetów i korzystanie z narzędzi wizualizacyjnych, jak Trello, rzeczywiście może bardzo pomóc. Chciałabym teraz zapytać o Twoje doświadczenia z AI w designie. Używasz jakichś narzędzi AI, takich jak Midjourney, DALL-E, Stable Diffusion czy Adobe Firefly? Jakie masz doświadczenia z nimi i do czego je wykorzystujesz?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Dziękuję! 😊 Na razie nie pracowałem jeszcze z narzędziami AI takimi jak Midjourney czy DALL-E. Znam jednak Canvę AI Text to Image, która jest całkiem fajną zabawką! Używam jej do generowania różnorodnych obrazów, które mogą być inspirujące lub pomocne w moich projektach.\n\nZazwyczaj korzystam z tego narzędzia, gdy potrzebuję ciekawych tła, ilustracji lub po prostu chcę zobaczyć, jakie w ogóle mam opcje. Choć nie jest to jeszcze kluczowy element mojej pracy, to myślę, że AI ma ogromny potencjał w designie i jestem otwarty na naukę więcej o tym, jak można to wykorzystać w przyszłości. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetne, że korzystasz z Canvy AI i jesteś otwarty na naukę! AI rzeczywiście ma dużą przyszłość w designie. 😊 Przejdźmy teraz do kwestii dostępności — ile godzin tygodniowo mógłbyś poświęcić na współpracę z nami? I jaka byłaby Twoja oczekiwana stawka netto w modelu B2B?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Mógłbym poświęcić około 30 godzin tygodniowo na współpracę z Wami. Co do stawki, moja oczekiwana stawka netto w modelu B2B to 45 PLN za godzinę. Myślę, że to uczciwe, biorąc pod uwagę moje doświadczenie i umiejętności, które mogę wnieść do Waszego zespołu. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za informacje, Tomku! 😊 To naprawdę pomocne. Ekstra, to wszystkie moje pytania! Wielkie dzięki za poświęcony czas i otwartość w odpowiedziach. Łukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Bardzo dziękuję, Kaja! 😊 Cieszę się, że mogłem wziąć udział w rozmowie i podzielić się swoimi doświadczeniami. Będę z niecierpliwością czekał na wiadomość od Łukasza. Miłego dnia i do usłyszenia! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że rozmowa była owocna! Dziękuję za wszystkie odpowiedzi, Tomku. Trzymam kciuki za Twoją aplikację! Miłego dnia i do usłyszenia! 🚀"
+    }
+  ]
+}

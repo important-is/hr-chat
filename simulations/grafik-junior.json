@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "roleId": "grafik",
+    "candidateType": "junior",
+    "candidateName": "Tomek Wróbel",
+    "candidateEmail": "tomekwrobel99@gmail.com",
+    "candidateCity": "Łódź",
+    "simulatedAt": "2026-04-04T18:17:28.565Z",
+    "turns": 7
+  },
+  "result": {
+    "imie_nazwisko": "Tomek Wróbel",
+    "email": "tomek.wrobel@gmail.com",
+    "miasto": "Łódź",
+    "github": "tomekwrobel.behance.net, @tomek.design (Instagram)",
+    "uzywa_ai": "Nie",
+    "wynik_techniczny": 8,
+    "wynik_komunikacja": 24,
+    "dostepnosc_h": 30,
+    "stawka": "Brak pytania o stawkę — junior, obecnie pracuje 30h/tydzień",
+    "notatki": "Tomek to młody designer (22 lata) z potencjałem, ale całkowicie w złej niszę — social media + Canva, zero doświadczenia web designu, zero Figmy. Szczerze przyznaje ograniczenia, chce się rozwijać w kierunku web designu. Komunikacja doskonała — dojrzały, refleksyjny, pyta właściwe pytania. Nie fit do pozycji web designera teraz, ale polecam intensive learning track (Figma, HTML/CSS basics, portfolio web) — za 6 miesięcy może być bardzo ciekawy kandydat.",
+    "wynik_lacznie": 32,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! 👋 Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy grafika/designera, który nie boi się myśleć o UX i potrafi zaprojektować coś, co nie tylko dobrze wygląda, ale też działa. Ta rozmowa to ok. 15 minut — luźna i bez stresu.\n\n**Na początek: jak się masz na imię i nazwisko?** 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Cześć Kaja! 👋 Dziękuję za zaproszenie, fajnie być tutaj!\n\nJestem Tomek Wróbel, 22 lata, z Łodzi. Akurat pracuję teraz nad postami na social media i małymi projektami w Canvie, ale szczerze mówiąc — bardzo mnie interesuje to, co robicie w important.is. Chciałbym się rozwijać jako designer, a nie tylko tworzyć posty, wiesz? 😊\n\nDzięki, że daliście mi szansę rozmowy!"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Tomek! 🙌 Cenię szczerość — to właśnie ten mindset, żeby się rozwijać, jest fajny.\n\nZanim przejdziemy dalej — **jaki jest Twój email kontaktowy?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Jasne! Mój email to **tomek.wrobel@gmail.com**\n\nMam tam też aktualny numer telefonu w profilu, jeśli będziecie chcieli się kontaktować — jestem dostępny praktycznie zawsze 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki Tomek! 📧 Mamy email, to wystarczy.\n\nOkej, pytanie drażliwsze — powiedziałeś, że pracujesz w Canvie i nad postami social media. **Czy kiedyś pracowałeś w Figmie, czy to dla Ciebie nowy program?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Ah, dobra rzecz, że pytasz! 😅 Figma... no to taki program, którym się już trochę bawię, ale szczerze — nie na tym poziomie, że bym go na co dzień używał.\n\nPo szkole graficznej głównie stawiałem na Canvę, bo to było proste i szybkie do social mediów. Photoshop znám bardziej na zasadzie \"wiem jak robić podstawowe rzeczy\" — wycinanie, warstwy, takie tam.\n\nAle Figmę... zaczynałem sobie przeglądać na YouTube, bo wiem, że to jest ważne dla designu. Widzę, że tam można tworzyć komponenty, prototypy — fajne są te możliwości. Tylko nie miałem projektu, żeby się tego nauczyć na praktyce, wiesz? \n\nJeśli byś mnie zatrudniła, to na pewno bym się tego nauczył — nie biorę tego za coś, czego się nie da ogarnąć 💪"
+    },
+    {
+      "role": "kaja",
+      "text": "Fajnie, że jesteś otwarty na naukę! 💪 To ważne.\n\nAle chcę być szczera — **Figma to dla nas MUST**, bo praktycznie wszystkie projekty web robimy w Figmie. To nie jest coś, czego można się nauczyć \"na boku\" — potrzebowalibyśmy kogoś, kto już pracuje w niej na co dzień.\n\n**Pytanie — czy masz jakieś projekty, które mogę zobaczyć?** Może link do portfolio, Behance'a, albo nawet Instagram ze social media, które robiłeś? Chciałabym zobaczyć, jak myślisz designersko, nawet jeśli to nie jest Figma."
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "Ah, rozumiem — dzięki za szczerość, to ważne. 😊\n\nNo, moje portfolio jest na Behance'u — **tomekwrobel.behance.net** (albo coś w tym stylu, mogę Ci linku przesłać emailem). Tam mam 3 projekty — głównie social media posty dla małych biznesów, stories, takie rzeczy.\n\nSzczerze mówiąc... nie mam tam projektów webowych, bo nigdy nie robiłem strony internetowej. Moje dotychczasowe prace to były rzeczy na 2D, grafiki do Instagrama, posty.\n\nNa Instagramie też mam swoje prace — **@tomek.design** — jeśli chcesz zobaczyć, co robię na co dzień.\n\n*Ale Kaja, mogę być szczery?* — czytając to, co mówisz o Figmie jako MUST... rozumiem, że to może być problem dla Ciebie, tak? Ja wiem, że to super narzędzie, ale zawsze myślałem, że design to więcej o tym, jak wygląda rzecz i jak się czuje, niż o konkretnym programie. \n\nCzy to znaczy, że akurat ta pozycja mogłaby być dla kogoś bardziej doświadczonego w web designie? 🤔"
+    },
+    {
+      "role": "kaja",
+      "text": "Tomek, naprawdę cenię Twoją szczerość i samoświadomość. To dużo mówi o Tobie. 👍\n\nDokładnie — masz rację, że design to o wizji i czuciu, ale tutaj jest konkretnie tak: **my pracujemy na projektach webowych dla klientów, wdrażamy w WordPress, i Figma to nasze narzędzie do współpracy z developerami**. To nie jest kwestia puryzmu — to praktyka. Social media design to zupełnie inna gra.\n\nSzczerze? **Ta pozycja rzeczywiście mogłaby być dla kogoś bardziej doświadczonego w web designie.**\n\nALE — **nie chcę Cię zbywać.** Pytam: czy byłbyś zainteresowany w tym, żeby się nauczyć Figmy naprawdę solidnie, może na kursie? I czy widzisz siebie za pół roku, rok w web designie? Bo potencjał masz widać — myślisz logicznie, jesteś otwarty.\n\nJeśli to jest rzeczywiście kierunek, w którym chcesz iść, mogę Ci powiedzieć, co trzeba robić. Ale chcę, żebyś wiedział, do czego się bierze. 🎯\n\n**Co myślisz?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "*Wow*, dziękuję za takie podejście, Kaja. Serio, to motywujące, że nie zamykasz mi drzwi na cztery spusty 😊\n\nWeb design... szczerze? Tak, widzę się w tym kierunku. Teraz robię social media, ale czuję, że to trochę ograniczające — chciałbym projektować rzeczy, które faktycznie *działają*, a nie tylko wyglądają fajnie. To, co mówisz o współpracy z developerami, o WordPress — to brzmi ciekawie.\n\nAle jestem szczery: **teraz bym nie dał rady na tej pozycji.** Brakuje mi fundamentów. HTML/CSS nie znam w ogóle, Figma to dla mnie \"na YouTubie\", nie mam w portfolio żadnego web designu.\n\nJeśli chodzi o kurs — tak, bym się na to porwał. Ale chciałbym być realistyczny: czy to by był kurs i nauka na boku, czy coś bardziej intensive'go? Bo pracuję 30h tygodniowo, ale mogę sobie coś zorganizować.\n\n*Pytanie:* czy important.is czasem nie szukacie kogoś junior na pozycję bardziej social media/graphic designu, gdzie bym się mógł rozwijać? Czy może lepiej będzie, żebym się nauczył Figmy i web designu, a potem się do Was zgłoszę? 🤔\n\nSzczerze chciałbym wiedzieć, co byłoby dla Ciebie i zespołu sensowne."
+    },
+    {
+      "role": "kaja",
+      "text": "Tomek, to jest naprawdę dojrzałe pytanie. Doceniam to. 🙌\n\nSzczera odpowiedź: **w important.is szukamy web designera**, nie junior social media designera. To nie jest nasze core — social media robimy, ale to side-hustle. Web to nasze DNA.\n\n**Co byłoby sensowne dla Ciebie?**\n\n1. **Intensive kurs Figmy** (4-8 tygodni, 10-15h/tydzień) — coś w stylu DesignLab, Interaction Design Foundation, albo nawet Akademia Kodu\n2. **Nauka HTML/CSS basics** — nie musisz kodować, ale musisz rozumieć ograniczenia i możliwości\n3. **3-5 projektów webowych w portfolio** — nawet dla fikcyjnych klientów, ale pełne: research, wireframy, design w Figmie, responsywność\n4. **Potem się do nas zgłoś** — wtedy będziemy mówić w tym samym języku\n\nTo nie jest \"nie mamy dla Ciebie miejsca\". To jest \"teraz bym Ci niejedną głowę połamał, a tobie byłoby ciężko\". Za pół roku? Zupełnie inna historia.\n\n**Moja rada:** rób to systematycznie. Nie \"na boku od 30h pracy\" — zrób to priorytet. Będzie się opłacić.\n\nOkej, ale skończmy tę rozmowę profesjonalnie. Jeszcze jedno pytanie — **jak się organizujesz, gdy pracujesz nad kilkoma rzeczami jednocześnie?** Nawet teraz, przy postach social media — jakiś system, notatki, calendar?"
+    },
+    {
+      "role": "candidate",
+      "name": "Tomek Wróbel",
+      "text": "*Ooooo*, to jest takie pytanie, na które chciałbym odpowiedzieć \"super się organizuję\", ale będę szczery 😅\n\nSzczerze? **Mam Notes w telefonie i kalendarz Google.** Do postów robię listy TODO, czasem sobie rzeczy zapisuję, ale nic super zaawansowanego. Trello słyszałem, ale nie używam. Asana, Notion — znam nazwy, ale to nie jest moja codzienność.\n\nPrzy social mediach to działa, bo projekty są małe, deadliny są jasne — post na piątek, story na wtorek, wiadomo. Ale czuję, że to byłoby chaotyczne, gdybym miał kilka dużych projektów webowych jednocześnie.\n\n*Moja szczera ocena siebie:* organizuję się w miarę okej, ale bym się podszkolił. Szczególnie jeśli plan to intensive learning track przez pół roku — tutaj raczej potrzeba jakiegoś systemu, żeby nie zgubić się w celach.\n\nMyślę, że to by się nauczyło w praktyce, ale rozumiem, że to może być flaga dla Ciebie, tak? 🚩\n\n**Co Ty mi poradziłaś — żeby się lepiej organizować w tym learning journeyu?** Czy jest jakiś system, który lubicie w important.is?"
+    },
+    {
+      "role": "kaja",
+      "text": "Haha, doceniam szczerość! 😄 Notes + Google Calendar to start, ale faktycznie — przy web designie byłoby ciasno.\n\n**Moja rada:** zanim zaczniesz kurs, **załóż sobie Notion** (free, intuicyjny). Zrób tam:\n- **Learning tracker** — co tygodnia, które moduły Figmy/HTML przećwiczyłeś\n- **Project board** — 3-5 projektów webowych, na jakim etapie są (research → wireframe → design → done)\n- **Deadline calendar** — kiedy chcesz skończyć każdy projekt\n\nTo nauczy Cię się też Notionu, którego będziesz używać w codziennej pracy. Win-win. 💡\n\n---\n\nOkej Tomek, myślę, że mamy całą rozmowę! 🎉\n\nChcę być szczera w podsumowaniu: **teraz nie jesteś fit do tej konkretnej pozycji web designera w important.is.** Brakuje Ci fundamentów — Figmy, web designu, HTML/CSS basics. To nie jest krytyka — to po prostu realia.\n\n**ALE** — masz w sobie coś, co mi się podoba:\n✅ Chcesz się rozwijać (nie tylko zarabiać)\n✅ Jesteś szczery o swoich ograniczeniach\n✅ Myślisz o UX i działaniu, nie tylko estetyce\n✅ Jesteś gotów się solidnie nauczyć\n\n**Moja rekomendacja:** Intensive learning track przez 4-6 miesięcy (Figma, HTML/CSS, 3-5 projektów web), potem się do nas zgłoś — będziemy czekać. 🚀\n\nPowodzenia, Tomek! Trzymam za Ciebie kciuki. 🤞\n\n---\n\nWielkie dzięki za poświęcony czas! Do usłyszenia! 💪"
+    },
+    {
+      "role": "kaja",
+      "text": "Gotowe! 🎯 Dane zapisane do Notion. Łukasz się do Ciebie nie odezwie (bo nie jesteś fit teraz), ale jeśli za pół roku wróciš z portfoliem webowym i Figmą — będzie inaczej! 💪\n\nPowodzenia, Tomek! 🚀"
+    }
+  ]
+}

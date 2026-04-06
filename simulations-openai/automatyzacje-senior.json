@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "roleId": "automatyzacje",
+    "candidateType": "senior",
+    "candidateName": "Michał Stępień",
+    "candidateEmail": "michal.stepien@icloud.com",
+    "candidateCity": "Katowice",
+    "simulatedAt": "2026-04-04T19:46:58.685Z",
+    "turns": 14,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 77358,
+    "totalOutputTokens": 3950,
+    "costUSD": 0.013974
+  },
+  "result": {
+    "imie_nazwisko": "Michał Stępień",
+    "email": "michal.stepien@example.com",
+    "miasto": "Katowice",
+    "stawka": "110 PLN/h",
+    "dostepnosc_h": 30,
+    "uzywa_ai": "Tak — aktywnie",
+    "wynik_techniczny": 23,
+    "wynik_komunikacja": 26,
+    "notatki": "Michał ma solidne doświadczenie w automatyzacji procesów biznesowych z użyciem n8n i innych narzędzi. Posiada 40 workflow w produkcji, dobre umiejętności programowania w JavaScript oraz doświadczenie w integracji z API. Potrafi działać w przypadku awarii workflow oraz dba o dokumentację. Jego dostępność to 30h tygodniowo, a oczekiwana stawka to 110 PLN/h.",
+    "wynik_lacznie": 49,
+    "decyzja": "Rozmowa"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️ Szukamy kogoś, kto potrafi zautomatyzować procesy biznesowe — od prostych webhooków po złożone workflow z AI. Rozmowa to ok. 15 minut. Jak masz na imię i nazwisko? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Cześć, Kaja! Nazywam się Michał Stępień. Cieszę się, że mogę z Tobą porozmawiać!"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Michał! 😊 Proszę, podaj mi swój adres email oraz miasto, w którym mieszkasz."
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Mój adres email to michal.stepien@example.com, a mieszkam w Katowicach."
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki, Michał! Przejdźmy do kolejnego etapu. Czym się zajmujesz? Jak trafiłeś do automatyzacji?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Od czterech lat specjalizuję się w automatyzacji procesów biznesowych, głównie z wykorzystaniem narzędzi takich jak n8n, Zapier i Make. Moja przygoda z automatyzacją zaczęła się od potrzeby optymalizacji powtarzalnych zadań w mojej poprzedniej pracy. Zauważyłem, jak wiele procesów można usprawnić dzięki integracji różnych aplikacji i automatyzacji zadań. Od tego czasu zrealizowałem około 40 aktywnych workflow, zarówno dla siebie, jak i klientów, i stałem się ekspertem w n8n, gdzie głęboko znam wszystkie nody oraz mam doświadczenie w integracjach API."
+    },
+    {
+      "role": "kaja",
+      "text": "Brzmi świetnie, Michał! Cieszę się, że masz doświadczenie w automatyzacji. Przechodząc do narzędzi: z jakich narzędzi korzystasz najczęściej, i które z nich uważasz za najlepsze? Jak wygląda twoje doświadczenie z n8n? Używasz go w wersji self-hosted czy w chmurze?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Najczęściej korzystam z n8n, Zapier i Make. Moim zdaniem n8n jest najlepszym narzędziem dla bardziej zaawansowanych automatyzacji, ponieważ daje pełną kontrolę i elastyczność dzięki możliwości programowania w JavaScript w ramach nody. Jest też bardzo rozbudowane, z możliwością integracji z różnymi API.\n\nMoje doświadczenie z n8n obejmuje głęboką znajomość wszystkich nód, co pozwala mi na tworzenie kompleksowych workflow, które skutecznie rozwiązują konkretne problemy biznesowe. Używam n8n w wersji self-hosted, co pozwala mi dostosować środowisko do specyficznych potrzeb projektów, a także zapewnić pełną kontrolę nad danymi i bezpieczeństwem."
+    },
+    {
+      "role": "kaja",
+      "text": "Super, że masz tak zaawansowane doświadczenie z n8n! Ile workflow masz aktualnie \"w produkcji\"? I jak wygląda Twoje doświadczenie z integracjami API, w tym REST, webhooks i OAuth?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Aktualnie mam około 40 workflow w produkcji, w tym zarówno własne, jak i dla klientów. Moje doświadczenie z integracjami API jest szerokie — pracowałem z różnymi API, korzystając z metod REST oraz implementując autoryzacje takie jak JWT i OAuth 2.0. \n\nDzięki dobrej znajomości dokumentacji API, jestem w stanie szybko integrować nowe systemy i automatyzować procesy. Przykładem takiej integracji może być moja praca z WordPress, gdzie realizowałem integracje związane z zamówieniami w WooCommerce i połączeniami z CRM. Webhooki również wykorzystuję często do monitorowania zdarzeń w czasie rzeczywistym i reagowania na nie w moich workflow."
+    },
+    {
+      "role": "kaja",
+      "text": "To naprawdę imponujące, Michał! Przejdźmy teraz do umiejętności technicznych. Czy masz doświadczenie w programowaniu w JavaScript lub Pythonie, szczególnie w kontekście code nodów w n8n? Jakie są Twoje umiejętności w tej dziedzinie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Tak, mam solidne doświadczenie w programowaniu w JavaScript, szczególnie w kontekście code nodów w n8n, gdzie to dla mnie codzienność. Używam JavaScript do pisania niestandardowych skryptów, które dostosowują workflow do konkretnych potrzeb, np. do przetwarzania danych czy łączenia różnych nód w bardziej złożone procesy.\n\nPonadto, posiadam także dobre umiejętności w Pythonie, które wykorzystuję w różnych projektach, chociaż więcej doświadczenia mam w JavaScript z uwagi na jego dominującą rolę w automatyzacji za pomocą n8n. Moje umiejętności w SQL są również na dobrym poziomie, co pozwala mi na sprawne zarządzanie danymi w bazach oraz wykonywanie zaawansowanych zapytań w ramach workflow."
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie, Michał! Dobrze, że masz doświadczenie zarówno w JavaScript, jak i SQL. A co z WordPress i WooCommerce? Czy pracowałeś z ich hookami i REST API? Jakie masz doświadczenie w tej dziedzinie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Tak, mam doświadczenie w pracy z WordPress i WooCommerce, w tym z ich hookami oraz REST API. Realizowałem integracje, które obejmowały m.in. przesyłanie zamówień do CRM oraz synchronizację nowych postów z newsletterem.\n\nW przypadku WooCommerce, korzystałem z REST API do pobierania informacji o zamówieniach, produktach czy klientach, co pozwoliło mi na automatyzację wielu procesów. Dzięki tym integracjom mogłem usprawnić działania marketingowe oraz zarządzanie danymi. Pracowałem również z webhooksami, aby reagować na konkretne zdarzenia, takie jak nowe zamówienia czy zmiany w statusie zamówienia, co jeszcze bardziej zwiększało efektywność całego systemu."
+    },
+    {
+      "role": "kaja",
+      "text": "Znakomicie! Teraz chciałabym zapytać o coś związanego z AI w automatyzacjach. Łączysz AI z workflow? Jeśli tak, to jakie zastosowania miałeś przy tej integracji (np. n8n z OpenAI lub Claude)? Jakie use cases udało Ci się zrealizować, takie jak klasyfikacja, generowanie treści czy analiza danych?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Tak, aktywnie integruję AI z workflow, szczególnie z wykorzystaniem n8n i narzędzi takich jak OpenAI czy Claude. Przykłady moich zastosowań obejmują:\n\n1. **Klasyfikacja emaili**: Używałem modeli AI do automatycznej klasyfikacji przychodzących wiadomości, co pozwala na szybsze reagowanie na istotne komunikaty i przydzielanie ich do odpowiednich zadań lub osób.\n\n2. **Generowanie treści**: Stosowałem AI do tworzenia szkiców odpowiedzi na wiadomości czy opracowywania treści na blogi. Proces ten znacznie przyspieszył produkcję materiałów marketingowych.\n\n3. **Analiza danych**: Wykorzystywałem AI do analizy danych z różnych źródeł (takich jak Google Sheets czy CRM) pod kątem trendów i wzorców, co pomagało w podejmowaniu lepszych decyzji biznesowych.\n\nTe integracje pozwoliły mi na automatyzację skomplikowanych procesów i zwiększenie efektywności pracowników, a także na wykorzystanie AI w sposób, który wzmacnia wartościowe decyzje w organizacji."
+    },
+    {
+      "role": "kaja",
+      "text": "To naprawdę fantastyczne, Michał! Przechodząc teraz do myślenia procesowego, wyobraź sobie, że klient opisuje Ci ręczny proces, który chciałby zautomatyzować. Jak podchodzisz do jego automatyzacji? Jakie kroki podejmujesz?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Gdy klient opisuje ręczny proces, który chciałby zautomatyzować, podchodzę do tego w kilku kluczowych krokach:\n\n1. **Zrozumienie procesu**: Przeprowadzam szczegółowy wywiad z klientem, aby dokładnie zrozumieć cały proces, jego etapy oraz zidentyfikować wąskie gardła i problemy. Zbieram informacje na temat używanych narzędzi i aplikacji oraz zachodzących interakcji.\n\n2. **Dokumentacja**: Tworzę dokumentację wizualną, np. diagramy przepływu, które pomagają w zrozumieniu struktury procesu oraz jego kluczowych elementów. To pozwala mi łatwiej zidentyfikować, które etapy można zautomatyzować.\n\n3. **Identyfikacja możliwości automatyzacji**: Razem z klientem analizuję, które elementy procesu są najbardziej odpowiednie do automatyzacji. Zwracam uwagę na powtarzalne zadania, które można zautomatyzować przy użyciu dostępnych narzędzi i technologii.\n\n4. **Projektowanie workflow**: Na podstawie zebranych informacji tworzę projekt automatyzacji w n8n lub innym narzędziu, definiując pozostałe etapy, nody i integracje. Przykładowo, jeżeli proces obejmuje wprowadzanie danych, mogę zaproponować integrację z API do automatycznego zbierania informacji.\n\n5. **Testowanie i optymalizacja**: Po stworzeniu prototypu workflow przeprowadza się testy z klientem, aby upewnić się, że wszystko działa zgodnie z oczekiwaniami. Wspólnie analizujemy wyniki i dokonujemy niezbędnych poprawek.\n\n6. **Wdrożenie i monitoring**: Po przeprowadzeniu testów wdrażam ostateczne rozwiązanie, a następnie monitoruję jego działanie, aby zapewnić, że automatyzacja przynosi oczekiwane rezultaty. Jeśli zauważam jakiekolwiek problemy, szybko podejmuję działania mające na celu ich rozwiązanie.\n\n7. **Dokumentacja i szkolenie**: Na koniec dokumentuję cały proces automatyzacji i szkolę klienta, aby był w stanie samodzielnie korzystać z now"
+    },
+    {
+      "role": "kaja",
+      "text": "ego rozwiązania i zrozumieć, jak działa stworzone workflow. W ten sposób zapewniam, że klient jest w pełni przygotowany do korzystania z nowej automatyzacji i może kontynuować rozwój swojego procesu.\n\nJak sobie radzisz w sytuacji, gdy workflow się \"wysypie\" w nocy? Jak reagujesz w takich sytuacjach?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "W przypadku, gdy workflow w n8n \"wysypie się\" w nocy, mam ustaloną procedurę reagowania, która obejmuje kilka kluczowych kroków:\n\n1. **Monitoring i alerty**: Używam narzędzi do monitorowania, takich jak Uptime Kuma, które informują mnie o problemach z workflow lub błędach. Ustawiłem powiadomienia na Discorda, które natychmiast informują mnie o sytuacjach awaryjnych.\n\n2. **Szybkie zidentyfikowanie problemu**: Gdy otrzymuję powiadomienie, pierwszym krokiem jest sprawdzenie logów w n8n, aby zidentyfikować źródło problemu. Analizuję błędy oraz dane, które były przetwarzane, aby znaleźć przyczynę awarii.\n\n3. **Debugowanie**: Po zidentyfikowaniu problemu, uruchamiam proces debugowania. W zależności od rodzaju błędu, mogę przeprowadzić testy lokalne, aby odtworzyć sytuację, bądź analizuję szczegóły konkretnego węzła, który mógł być przyczyną problemu.\n\n4. **Ewentualne poprawki**: Po zdiagnozowaniu błędu wprowadzam odpowiednie poprawki do workflow — może to być zmiana w logice, dodanie warunków, które zapobiegają podobnym przypadkom w przyszłości, lub np. aktualizacja integracji z API, które mogło się zmienić.\n\n5. **Testowanie i przywrócenie działania**: Zanim ponownie uruchomię workflow, przeprowadzam testy, aby upewnić się, że wszystko działa prawidłowo. Po ich zakończeniu uruchamiam workflow na nowo.\n\n6. **Informowanie klienta**: Informuję klienta o zaistniałej sytuacji, przedstawiając przyczyny awarii oraz podjęte kroki naprawcze. Transparentność jest kluczowa, aby klient był świadomy działań, które podejmuję.\n\n7. **Dokumentacja problemu**: Na końcu dokumentuję problem i wprowadzone zmiany, aby zbudować bazę wiedzy na przyszłość. Dzięki temu jestem lepiej przygotowany do radzenia sobie z podobnymi sytuacjami w"
+    },
+    {
+      "role": "kaja",
+      "text": "przyszłości i mogę unikać powtarzania tych samych błędów.\n\nTo bardzo profesjonalne podejście, Michał! Teraz chciałabym zapytać o organizację Twojej pracy. Jak korzystasz z narzędzi takich jak ClickUp lub Discord do zarządzania swoim czasem i projektami? Dokumentujesz swoje workflow i procesy? Jak to wygląda u Ciebie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "W mojej pracy korzystam z kilku narzędzi do organizacji, zarządzania czasem i dokumentacji. Oto, jak to wygląda:\n\n1. **Zarządzanie projektami**: Używam ClickUp do zarządzania zadaniami i projektami. Tworzę listy zadań dla różnych workflow, przypisuję terminy, a także monitoruję postępy. Dzięki temu mam pełen wgląd w stan prac oraz mogę łatwo priorytetyzować zadania.\n\n2. **Komunikacja**: Discord wykorzystuję głównie do komunikacji z klientami oraz współpracownikami. Dzięki temu mogę szybko wymieniać się informacjami, zadawać pytania i rozwiązywać problemy w czasie rzeczywistym. Tworzę osobne kanały dla różnych projektów, co pozwala na utrzymanie porządku w komunikacji.\n\n3. **Dokumentacja workflow**: Dokumentuję wszystkie stworzone workflow w Notion, co pozwala na łatwe śledzenie i dzielenie się informacjami. Każdy workflow zawiera opisy, zrzuty ekranów oraz szczegółowe instrukcje dotyczące działania, co ułatwia klientom i współpracownikom zrozumienie procesów. \n\n4. **Analiza i optymalizacja**: Regularnie przeglądam swoje workflow i dokumentację, aby zidentyfikować miejsca, które można zoptymalizować. Przy zmianach w workflow zawsze aktualizuję dokumentację, aby była zgodna z bieżącym stanem rzeczy.\n\n5. **Czas pracy**: Do zarządzania czasem i śledzenia wykonanego czasu pracy również korzystam z ClickUp czy innych narzędzi, co pozwala mi na monitorowanie, ile godzin poświęcam na konkretne projekty, a także na skuteczniejsze planowanie przyszłych działań.\n\nDzięki tym praktykom jestem w stanie efektywnie zarządzać swoimi projektami, utrzymywać dobrą komunikację i dbać o dokumentację, co przekłada się na lepszą jakość usług dla moich klientów."
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo dobrze, Michał! Świetnie, że masz uporządkowany system organizacji pracy i dokumentacji. Na koniec chciałabym zapytać o Twoją dostępność oraz oczekiwaną stawkę. Ile godzin w tygodniu mógłbyś poświęcić na współpracę i jaka jest Twoja oczekiwana stawka?"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Jestem dostępny na 30 godzin tygodniowo, co pozwala mi na efektywne zarządzanie projektami oraz reagowanie na bieżące potrzeby klientów. Moja oczekiwana stawka to 110 PLN/h netto w modelu B2B. Uważam, że to adekwatna wartość za moje doświadczenie i umiejętności w obszarze automatyzacji i integracji procesów."
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki, Michał! To wszystkie moje pytania. Naprawdę doceniam, że poświęciłeś czas na rozmowę. 🕒 \n\nTeraz zaplanuję podsumowanie i przekazanie Twojego profilu do Łukasza. Będzie się z Tobą kontaktował w ciągu kilku dni. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "candidate",
+      "name": "Michał Stępień",
+      "text": "Dziękuję, Kaja! Cieszę się, że mogłem wziąć udział w rozmowie. Czekam na kontakt od Łukasza i z niecierpliwościąść czekam na dalsze kroki. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozmowa została zakończona i Twoje dane zostały pomyślnie zapisane. Dziękuję raz jeszcze, Michał! Do usłyszenia wkrótce! 🚀"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "roleId": "wordpress-dev",
+    "candidateType": "senior",
+    "candidateName": "Kamil Nowak",
+    "candidateEmail": "kamil.nowak@gmail.com",
+    "candidateCity": "Warszawa",
+    "simulatedAt": "2026-04-04T18:09:59.429Z",
+    "turns": 15
+  },
+  "result": {
+    "imie_nazwisko": "Kamil Nowak",
+    "email": "kamil.nowak.dev@gmail.com",
+    "uzywa_ai": "Tak — aktywnie",
+    "wynik_techniczny": 23,
+    "wynik_komunikacja": 28,
+    "notatki": "Senior developer, 6 lat na WordPress, Bricks Builder na poziomie expert (2 lata). Solidne doświadczenie z WooCommerce (customizacja, hooki, integracje płatności). Portfolio 3 projektów live. Codziennie używa Cursor do PHP/hooków z rozumnym podejściem. Świetna komunikacja — pyta w niejasnych sytuacjach, przyznaje błędy i się z nich uczy. Dostępny 35h/tydzień, stawka 90 PLN/h. Chce rosnąć w JS i MySQL.",
+    "dostepnosc_h": 35,
+    "stawka": "90 PLN/h netto B2B",
+    "miasto": "Warszawa",
+    "github": "Brak publicznego — portfolio live",
+    "wynik_lacznie": 51,
+    "decyzja": "Rozmowa"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! 👋 Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nKilka słów o nas: opiekujemy się serwisami WordPress klientów (blogi, ecommerce, strony firmowe). Budżet klienta traktujemy jak własny, a zamiast klepać szybko, wolimy najpierw pomyśleć. Szukamy kogoś, kto chce z nami rosnąć.\n\nTa rozmowa zajmie ok. 15-20 minut — odpowiadaj naturalnie, bez stresu. 😊\n\n**Zaczynamy! Podaj mi proszę swoje imię i nazwisko** 😉"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Kamil Nowak 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Kamil! 🙌 Miło Cię poznać!\n\n**Potrzebowałabym jeszcze parę detali kontaktowych:**\n- Jaki masz adres email?\n- Z jakiego miasta piszesz?\n\n(Numer telefonu to opcjonalnie, ale podaj jeśli chcesz 😊)"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "kamil.nowak.dev@gmail.com\n\nWarszawa, Polska.\n\nNumer mogę podać, jak będzie potrzebny 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie, dzięki! 👍 Mamy Cię w systemie.\n\n**Teraz chciałabym poznać Cię bliżej — powiedz mi kilka słów o sobie w wolnej formie:**\nCzym się zajmujesz? Co Cię kręci w webdevie? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Jestem freelancerem od 6 lat, głównie robię projekty na WordPress. Specjalizuję się w Bricks Builderze — używam go dwa lata i naprawdę mi się sprawdził do szybkiego budowania responsywnych stron.\n\nOstatnio pracowałem nad sklepami WooCommerce, portalami informacyjnymi i landing page'ami. W kodzie czuję się pewnie z PHP i CSS, JS mam średnio, a MySQL na poziomie podstaw.\n\nW webdevie kręci mnie to, że mogę budować coś, co działa i przynosi efekty — szczególnie jak widzę, że klient zarabia na tym co zrobiłem. Do tego korzystam sporo z AI do pisania kodu — Cursor używam codziennie, wiem jak efektywnie go wykorzystać."
+    },
+    {
+      "role": "kaja",
+      "text": "Wow, to solidne fundamenty, Kamil! 🚀 Szczególnie że masz 6 lat doświadczenia i Bricks Builder to Twoja domena — to jest dokładnie to, czego szukamy.\n\n**Mam pytanie do tego co powiedziałeś — sklepów WooCommerce:**\nJakie konkretnie zadania robiłeś w WooCommerce? Choćby integracje, pluginy, customizacja checkoutu, czy bardziej templating i design?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Głównie customizacja — dostosowywanie szablonów produktów, kategoria, stroną koszyka. Pisałem custom hooki do zmiany flow checkoutu, integracje z gateway'ami płatności (Stripe, Przelewy24), plus filtry i sorting produktów.\n\nPluginy — instalowałem i konfigurowałem, ale nie tworzyłem własnych od zera. W Bricks Builderze robię dynamiczne strony produktów, listy towarów ze zmiennymi.\n\nBazy danych — radzę sobie na poziomie podstaw, czyli zapytania do wp_posts, wp_postmeta. Bardziej złożone rzeczy to nie moja strona 😅"
+    },
+    {
+      "role": "kaja",
+      "text": "Fajnie, czyli masz praktyczne doświadczenie z hookami i integracjami — to jest wartościowe! 💪\n\n**Szybkie pytanie o portfolio:**\nMasz linki do 2-3 projektów, które mógłbyś mi pokazać? (sklepy, portale, landing page'e — cokolwiek, gdzie widać Twoją pracę 😊) GitHub, Behance, czy może live strony?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Mam 3 projekty live, które mogę pokazać:\n\n1. **Sklep odzieżowy** — WooCommerce na Bricks Builderze, custom checkout, integracja z Przelewy24\n2. **Portal informacyjny** — dynamiczne posty, custom taxonomies, system filtrowania\n3. **Landing page kampanii** — responsywny, konwersyjny design\n\nMogę Ci przesłać linki emailem — wolę nie publikować ich tutaj publicznie 😊\n\nNa GitHub mam moje snippety i small projekty, ale większość moich prac to właśnie te live strony dla klientów. Wolę pokazywać działające rzeczy niż kod na GitHubie."
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, to ma sens! 👍 Linki emailem to super — Łukasz je sprawdzi jak będziemy finalizować rozmowę.\n\n**Pytanie o narzędzia — poza Bricks Builderem:**\nUżywasz coś jeszcze do budowania stron? (Gutenberg, Elementor, Oxygen, może czysty kod?) I czy pracujesz z Figmą czy innymi narzędziami do designu?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Z builderów to głównie Bricks. Gutenberg znam, ale wolę Bricks — ma lepszy UX i więcej możliwości do customizacji.\n\nDo designu — nie, Figmą nie pracuję. Zazwyczaj pracuję bezpośrednio w przeglądarce albo dostanę mockupy od klienta. Ale mogę czytać Figmę, jak mi ktoś przekaże 👍\n\nDo zarządzania projektami używam ClickUp, komunikuję się przez Discord — to dla mnie wygodne i szybkie."
+    },
+    {
+      "role": "kaja",
+      "text": "Super, to się idealnie klei z naszym setupem! 🎯 ClickUp i Discord to dokładnie to, co my używamy, więc będziesz czuł się jak w domu.\n\n**Teraz trochę o Twoim podejściu do pracy — pytanie sytuacyjne:**\nWyobraź sobie, że dostaniesz taski w ClickUp'ie: \"Zmień wygląd sekcji produktów\". Brakuje Ci szczegółów — jak wygląda, na jakich urządzeniach, co konkretnie zmienić. Jak Ty się zachowujesz w takiej sytuacji? 🤔"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Zaraz piszę na Discord — pytam konkretnie: jak ma wyglądać, linki do inspo, na jakich breakpointach, jaki deadline. Nie zaczynam się domyślać.\n\nJeśli klient nie wie dokładnie, to razem siedzimy i szukamy rozwiązania — mogę zaproponować 2-3 opcje, pokazać na szybkim mockupie.\n\nWolę 5 minut pytań na początek niż 2 godziny pracy w złą stronę 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Idealnie! 💯 Dokładnie tak powinno być — to pokazuje odpowiedzialność i oszczędza czasu wszystkim.\n\n**Następne pytanie — trudne momenty:**\nZdarzało Ci się coś zepsuć na produkcji? (bez stresu, każdemu się zdarza 😊) Jak Ty zareagowałeś i co wyciągnąłeś z tego doświadczenia?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Tak, raz zepsułem CSS na produkcji klienta — zmiana w stylach zabrała formatowanie formularza. Zorientowałem się tego samego dnia.\n\nOd razu naprawiłem i zrobiłem backup. Klient tego nie zauważył dzięki szybkiej reakcji.\n\nOd tamtego czasu zawsze testuję na staging przed push'em na produkcję i robię backup przed większymi zmianami. Teraz to standard u mnie 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "To jest dojrzałe podejście, Kamil! 🙌 Widać, że wyciągnąłeś naukę i zmieniłeś swój proces — to się ceni.\n\n**Pytanie o AI — skoro powiedziałeś, że używasz Cursor codziennie:**\nKonkretnie — jak go używasz? Na przykład do czego? Generowanie komponentów Bricks, pisanie hooków, debugowanie, coś innego? Masz jakiś fajny przykład? 🤖"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Używam Cursor głównie do pisania PHP — hooków, custom funkcji, snippetów do functions.php. Wrzucę mu kontekst (co mam w szablonie, co chcę osiągnąć) i generuje mi kod, który potem przeglądam i adaptuję.\n\nDo debugowania też — wrzucę błąd, Cursor podpowiada gdzie szukać.\n\nBricks komponenty — czasem, ale tam zwykle szybciej robię ręcznie, bo znam builder dobrze.\n\nKonkretny przykład: ostatnio potrzebowałem custom hook do zmiany formatu ceny w WooCommerce. Zamiast sam pisać od zera, dałem Cursor'owi brief, on wygenerował, ja przejrzałem i dostosowałem do mojego case'u. Zaoszczędziło mi 20 minut.\n\nClaude używam do promptów — jak nie wiem jak sformułować polecenie dla AI, to Claude mi w tym pomaga 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie! 🎯 To jest inteligentne podejście — wiesz jak AI wykorzystać bez polegania na nim ślepo. Przegląd i adaptacja kodu to jest kluczowe.\n\n**Teraz przejdziemy do bardziej praktycznych detali — dostępność:**\nIle godzin tygodniowo możesz pracować dla nas? (szukamy kogoś na ~35h/tydzień w stałej współpracy) 📅"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "35h/tydzień — mogę zrobić bez problemu. To dla mnie idealna ilość czasu na stałą współpracę 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Perfect! 🎉 To się idealnie pokrywa z tym co szukamy.\n\n**Ostatnie pytanie — stawka:**\nJaka jest Twoja oczekiwana stawka godzinowa netto na umowę B2B? 💰"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "90 PLN/h netto B2B 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Solidnie! 👍 Mamy to zapisane.\n\n**Jeszcze jedno — żeby być pewna:**\nMasz możliwość dostępu do FTP/SSH, backupy, standardowe narzędzia devopa? Czy to coś, co będziesz musiał uczyć się od zera?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Znam FTP/SSH, robię backupy regularnie. To standard u mnie — każdy projekt ma backup przed zmianami.\n\nNarzędzia typu Git, SourceTree — używam. DevOps bardziej zaawansowany (CI/CD, Docker) to nie moja domena, ale podstawy dobrze znam 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Ekstra! 🚀 To nam wystarczy — Git w planach, ale nie jest obowiązkowy.\n\n**Jedno ostatnie pytanie — AI w pracy:**\nPoza Cursor'em i Claude'em — używasz AI do czegoś jeszcze? (treści, tłumaczenia, grafika AI, automatyzacje, chatboty?) Czy głównie to kod? 🤖"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Głównie kod — Cursor i Claude na co dzień.\n\nChatGPT używam do research'u — jak nie wiem jak coś zrobić w Bricks Builderze, szukam tutoriali, czytam documentację. ChatGPT pomaga w szybkim znalezieniu rozwiązania.\n\nTreści, grafiki, chatboty — to nie moja działalność. Skupiam się na tym co robię dobrze — developmencie 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, to jest mądre — fokus na tym co robisz najlepiej. 💪\n\n**Ostateczne pytanie na zamknięcie:**\nCzego się chciałbyś nauczyć lub rozwinąć w sobie w ciągu najbliższego roku? Co Cię jeszcze pociąga w webdevie? 🎯"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Chciałbym podnieść JavaScript — teraz mam go średnio, a coraz więcej rzeczy potrzebuje solidnego JS'a. Interaktywne komponenty, animacje, bardziej zaawansowane rzeczy.\n\nMySQL też chciałbym lepiej znać — teraz się radzę na poziomie podstaw, ale bardziej złożone zapytania, optymalizacja — to bym chciał przyswoić.\n\nI angielski mówiony — czytam i piszę dobrze, ale mówiąc czuję się mniej pewnie. W branży to przydatne.\n\nW webdevie pociąga mnie to, że technologia się zmienia — każdy rok to nowe narzędzia, frameworki. Chciałbym rosnąć razem z tym, a nie zostać w tyle 👍"
+    },
+    {
+      "role": "kaja",
+      "text": "To jest naprawdę dojrzałe podejście do rozwoju, Kamil! 🌱 Widać, że myślisz długoterminowo i chcesz się rozwijać. Właśnie takich ludzi szukamy.\n\n---\n\n**Ekstra, to wszystkie moje pytania!** 🙌 Wielkie dzięki za poświęcony czas i szczerość — naprawdę miło rozmawia się z Tobą.\n\nŁukasz (nasz CEO/lead) wróci do Ciebie w ciągu kilku dni. Będziemy w kontakcie! 🚀\n\nTrzymam kciuki! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "✅ **Wszystko zapisane w Notion!** Łukasz ma Twoje dane i rozmowę. Do usłyszenia! 👋"
+    }
+  ]
+}

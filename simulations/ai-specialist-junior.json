@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "roleId": "ai-specialist",
+    "candidateType": "junior",
+    "candidateName": "Natalia Dąbrowska",
+    "candidateEmail": "natalia.dabrowska@gmail.com",
+    "candidateCity": "Poznań",
+    "simulatedAt": "2026-04-04T18:20:46.790Z",
+    "turns": 8
+  },
+  "result": {
+    "imie_nazwisko": "Natalia Dąbrowska",
+    "email": "natalia.dabrowska@gmail.com",
+    "miasto": "Poznań",
+    "dostepnosc_h": 40,
+    "stawka": "55 PLN/h",
+    "uzywa_ai": "Tak — powierzchownie",
+    "github": "Brak",
+    "wynik_techniczny": 5,
+    "wynik_komunikacja": 22,
+    "notatki": "Natalia to osoba z super energią do AI i umiejętościami content/komunikacyjnymi. Używa ChatGPT UI do pisania treści, ma kurs AI za sobą. Brak doświadczenia z programowaniem (próbowała Python, nie poszło) i integracjami API — to dyskwalifikuje ją z AI Specialist. JEDNAK: ma dużą szczerość, samowiedzę i chęć do rozwoju. Rekomendacja: zapamiętać na przyszłość do potencjalnych ról Content/Strategy AI (Prompt Engineer, AI Content Specialist, PM do projektów AI). Full-time, stawka przystępna.",
+    "wynik_lacznie": 27,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy kogoś, kto ogarnia AI nie tylko z perspektywy \"popisz prompty\" — interesuje nas ktoś, kto potrafi integrować, automatyzować i myśleć o AI w kontekście realnego biznesu. Rozmowa to ok. 15 minut.\n\n**Na początek — podaj mi swoje imię i nazwisko 😊**"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Cześć Kaja! Super, że się poznajemy! 😊\n\nJestem Natalia Dąbrowska — możesz mówić mi Natalia. Bardzo się cieszę z tej rozmowy! Słyszałam o important.is i wydaje się mega ciekawe miejsce. Szczerze mówiąc, AI to moja pasja i ciągle się rozwijam w tym kierunku — ostatnio dużo pracy robiłam z ChatGPT i jestem bardzo zainteresowana tym, jak można to wszystko integrować w bardziej zaawansowany sposób.\n\nCzekam na Twoje pytania! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Natalia! Widzę energię — to się podoba 😊\n\nZanim przejdziemy dalej, potrzebuję kilka podstawowych info:\n- **Jaki masz email kontaktowy?**\n- **Z jakiego miasta piszesz?**\n\nA potem zaraz przejdziemy do konkretów — chciałabym wiedzieć, czym się zajmujesz w kontekście AI i co Cię w tym najbardziej kręci. Zaczynamy! 👇"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Cześć Kaja! Jasne, nie ma problemu! 😊\n\n**Email:** natalia.dabrowska@gmail.com\n\n**Miasto:** Poznań\n\nA co do tego, czym się zajmuję — super pytanie! Tak naprawdę zaczynam swoją przygodę z AI, ale już widzę ogromny potencjał. Głównie pracuję z **ChatGPT** — na co dzień używam go do pisania maili, research'u, generowania różnych treści. Niedawno pomogłam koleżance napisać całe treści na jej stronę internetową, i było to mega efektywne!\n\nTo, co mnie najbardziej kręci, to **fakt, że AI może naprawdę usprawnić pracę** — oszczędzić czas, poprawić jakość tego co robimy. Widzę potencjał w automatyzacji, integracji tego wszystkiego w workflow... \n\nSzczerze mówiąc, wiem, że jest jeszcze dużo do nauczenia się — skończyłam kurs online 3 miesiące temu i ciągle się uczę, ale jestem mega zainteresowana pogłębianiem wiedzy w tym kierunku! \n\nJakie są następne pytania? 👀"
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie, Natalia! Dziękuję za szczerość — to ważne 😊\n\nSłyszę, że zaczynasz przygodę z AI i masz energię do rozwoju. Super! \n\nZaraz przejdziemy do bardziej technicznych szczegółów. Ale najpierw — **kiedy mówisz o pomocy koleżance ze stronką — czy to była tylko praca w ChatGPT UI (pisanie tekstów), czy była tam jakaś integracja, automatyzacja czy coś bardziej zaawansowanego?** \n\nKonkretnie: czy kod się pojawił, czy API, czy jakieś narzędzia poza samym ChatGPT?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Ah, dobra pytanie! 😅\n\nSzczerze mówiąc — to była głównie praca w samym ChatGPT. Pisałam prompty, dostałam teksty, koleżanka je copy-paste'owała na swoją stronę. \n\nKod się nie pojawił — chyba że... no wiesz, ChatGPT generował czasem fragmenty kodu, ale niezbyt się w to zagłębiałam. Miała stronę na jakimś builderze, typu drag-and-drop, więc nie było potrzeby nic kodować. 🤷‍♀️\n\nAPI, automatyzacja — to bardziej zaawansowane sprawy, które chciałabym się nauczyć! Wiem, że takie rzeczy istnieją, ale nigdy tego osobiście nie robiłam.\n\n**Czemu pytasz?** Czy to jest ważne dla tego stanowiska? 👀 Bo jeśli tak, to mogę się szybko nauczyć — jestem mega otwarta na naukę!"
+    },
+    {
+      "role": "kaja",
+      "text": "Natalia, dziękuję za szczerość — to jest właśnie to, czego szukam w rozmowie 😊\n\nTak, to jest ważne dla stanowiska. Wyjaśniam czemu:\n\nNa important.is szukamy kogoś, kto **integruje AI w rzeczywistych systemach** — czyli np. łączy API (OpenAI, Claude, Google), buduje chatboty, automaty w n8n czy Make, połącza to z bazami danych, CRM'ami klientów. To nie jest \"pisanie promptów w ChatGPT\", tylko **techniczne, zaawansowane wdrażania**.\n\nTo significa, że aby dobrze robić tę pracę, **potrzebujesz umiejętności programowania** — przynajmniej Python albo JavaScript. \n\n**Pytanie dla Ciebie:**\n- **Masz jakieś doświadczenie z programowaniem?** (Python, JavaScript, PHP — cokolwiek?)\n- Jeśli nie — czy to coś, czego byś się chciała nauczyć, czy raczej szukasz czegoś innego?\n\nPytam szczerze, bez oceniania. Po prostu chcę wiedzieć, czy to droga dla Ciebie 👇"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Ah, rozumiem! 😅 Dziękuję za wyjaśnienie — to ma mega sens.\n\nOK, szczerze... **Python próbowałam się nauczyć**, ale rzuciłam. Brałam kurs, starałam się, ale jakoś mi to nie poszło. Czuję, że programowanie to nie jest moja mocna strona — wolę pracować z interface'ami, z tekstem, z tworzeniem treści.\n\n**HTML/CSS** — trochę znam z YouTuba, ale to też nie jest to, na czym bym się specjalizowała.\n\n**n8n** — próbowałam! Zrobiłam jeden workflow (notification email), ale jak robi się coś bardziej skomplikowanego z tymi nodami... to mnie gubią. 😅\n\nI tu jestem szczera — **nie wiem ile tego jestem w stanie się nauczyć szybko**. Wiem, że jestem super zainteresowana AI, ale czy potrafię zostać developerką integracji? Nie jestem pewna, czy to moja ścieżka.\n\n**Ale pytam — czy to oznacza, że nie pasuje mi to stanowisko?** Bo jeśli jest jakaś możliwość rozwoju albo współpracy z kimś bardziej technicznym... byłabym zainteresowana! 👀\n\nJestem mega otwarta, ale też chcę być szczera co do moich możliwości."
+    },
+    {
+      "role": "kaja",
+      "text": "Natalia, **ogromnie szanuję tę szczerość** — to jest właśnie to, co powinno być w rozmowie 🙌\n\nOdpowiadę Ci prosto:\n\n**To stanowisko (AI Specialist w important.is) wymaga umiejętności programowania jako fundamentu.** Nie dlatego, że chcemy Cię odrzucić, ale dlatego że projekty, które robimy — chatboty, integracje API, automaty w n8n z custom logiką — to wymaga tego doświadczenia. Bez tego trudno byłoby Ci być niezależna w realizacji projektów dla klientów.\n\n**ALE — to nie oznacza, że AI nie jest dla Ciebie!** \n\nWidzę, że masz:\n- ✅ Energię do AI\n- ✅ Umiejętności content/komunikacyjne\n- ✅ Chęć do nauki\n- ✅ Szczerość i samowiedzę\n\nTo mogłoby pasować do czegoś innego w tej branży — np. **AI Content Specialist, Prompt Engineer dla treści, Project Manager do projektów AI** — ale **nie dla technicznych integracji**.\n\n**Moje pytanie:** Szukasz Ty stanowiska, które byłoby bardziej technical (i wtedy proponuję, żebyś się nauczyła Pythona/JS poważnie), czy raczej chciałabyś pracować bardziej z **treścią, procesami, komunikacją wokół AI?**\n\nCo czujesz? 👇"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Wow, Kaja — dziękuję naprawdę za takie podejście. To mega ważne, że mówisz mi to otwarcie zamiast tylko \"nie pasuje\". 💙\n\nSzczerze? Jak słyszę \"Python poważnie\" — czuję się trochę... zniechęcona. Nie chcę się oszukiwać, że to moja ścieżka, jeśli w głębi duszy wiem, że bardziej kręci mnie coś innego.\n\nA jak czytam te role, które wymienisz — **AI Content Specialist, Prompt Engineer, Project Manager do projektów AI** — czuję się o wiele bardziej energicznie! 🚀 \n\nLubię **pracować z ludźmi, pisać, tworzyć treści, organizować procesy**. Lubię jak ChatGPT mi pomaga w pracy, ale nie na poziomie kodu. Wolę być tym, która wie *jak* użyć AI do konkretnego celu, która pisze dobre prompty, koja pomaga klientom w strategii, niż tą, która buduje infrastrukturę.\n\n**Pytanie:** W takim razie — czy important.is szuka kogoś do takiej roli? Czy to jest dla Was interesujące? Bo jeśli tak, to ja bym się super chętnie rozwijała w tym kierunku! \n\nA jeśli nie — to dziękuję Ci za szczerość i mogę szukać czegoś innego. Ale chciałabym wiedzieć! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Natalia, **naprawdę się cieszę, że jesteś taka szczera** — to jest dojrzałość 🙌\n\nRozumiem Cię **całkowicie**. I muszę Ci powiedzieć szczerze:\n\n**important.is w tym momencie szuka właśnie AI Specialisty — czyli osoby z umiejętościami technicznymi, integracją, API, automatyzacją.** To jest nasze core demand na dzisiaj.\n\nRole typu Content Specialist, Prompt Engineer czy PM do projektów AI — to byłyby inne stanowiska, ale **nie są teraz otwarte** w agencji. Łukasz (owner) skupia się teraz na wzmocnieniu zespołu technicznego, który będzie obsługiwać projekty dla klientów.\n\n**Ale słuchaj — co chciałabym zrobić:**\n\nMogę Ci wrzucić dane do Notion'a i skomentować Łukaszowi, że znalazłam osobę z **super energią do AI, umiejętościami content/komunikacyjnymi, i dużą chęcią do rozwoju** — może w przyszłości, jak agencja będzie szukać Content Specialista albo PM'a, coś się zjawi dla Ciebie.\n\n**ALE na dzisiaj — szczerze mówiąc — to stanowisko nie jest dla Ciebie**, i lepiej że wiemy to teraz niż po 3 miesiącach.\n\n**Co na to powiadasz?** Chcesz, żebym przekazała Łukaszowi Twoje dane na przyszłość, czy wolisz iść w innym kierunku? \n\nBez presji — czego chciałabyś? 👇"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Kaja, dziękuję Ci **naprawdę** za takie podejście. To jest super fair i doceniam, że mówisz mi to wprost zamiast mnie ciągnąć w projekt, gdzie bym się nie sprawdzała. 💙\n\nSzczerze? **Tak, chętnie przekażesz moje dane Łukaszowi na przyszłość!** \n\nNawet jeśli stanowisko techniczne nie jest dla mnie teraz, to important.is wydaje się fajnym miejscem i agencją, która wie co robi. Lubię Twoją szczerość i to, jak się podchodzi do rekrutacji. Jeśli w przyszłości będzie rola, która lepiej do mnie pasuje — to bym była zainteresowana! 🚀\n\n**Druga sprawa — może masz jakieś rady dla mnie na przyszłość?** Widzę, że AI mnie kręci, ale wiem, że potrzebuję jaśniejszej ścieżki. Czy powinam:\n- Szukać agencji, która szuka Content Specialista/PM'a do projektów AI?\n- Może inny kierunek całkowicie?\n\nNie spodziewam się, że będziesz mi coachować 😅 — ale jeśli byłabyś chętna, to bym was słuchała!\n\nDziękuję jeszcze raz za tę rozmowę. To było mega wartościowe! 🙏"
+    },
+    {
+      "role": "kaja",
+      "text": "Natalia, **super, zapiszę Twoje dane do Notion'a na przyszłość** — Łukasz będzie wiedzieć, że jesteś na radarze 🎯\n\nA co do rad — **jasne, chętnie!** \n\nSłuchaj, widzę w Tobie kilka mocnych stron:\n- ✅ Umiejętności komunikacyjne i tworzenia treści\n- ✅ Szczera samoocena (to warte złota)\n- ✅ Energia do AI i chęć do rozwoju\n- ✅ Umiejętność pracy z interfejsami\n\n**Moja rada na przyszłość:**\n\n1. **Idź w kierunek Content/Strategy AI** — szukaj agencji lub startupów, które szukają:\n   - AI Content Strategist\n   - Prompt Engineer (treść, copywriting)\n   - AI Implementation Consultant (bez kodu — bardziej doradztwo)\n   - Community Manager / Content Lead dla AI tools\n\n2. **Pogłębiaj wiedzę o AI** — ale z perspektywy biznesowej, use cases'ów, a nie kodu:\n   - Czytaj o prompt engineering (beyond ChatGPT)\n   - Naucz się różnych modeli (Claude, Gemini, nie tylko ChatGPT)\n   - Rozumiej, kiedy użyć jaki model do czego\n\n3. **Zbuduj portfolio case studies** — konkretne projekty z metrykami (ile czasu zaoszczędzono, jakość outputu)\n\n**Powodzenia, Natalia!** 🚀 Jestem pewna, że znajdziesz coś, co będzie do Ciebie pasować. A jeśli important.is będzie szukać kogoś do Twojej roli — będziesz pierwszą osobą, do której się odezwemy! \n\nDziękuję za rozmowę! 💙\n\n---\n\n**Przed zamknięciem rozmowy — muszę Cię zapytać o dostępność i stawkę (na wypadek, gdybyśmy szukali kogoś bardziej content-focused):**\n\n- **Ile godzin tygodniowo byłabyś dostępna?**\n- **Jaka byłaby Twoja oczekiwana stawka (PLN/h)?**\n\nPotrzebuję tego do notatek dla Łukasza 👇"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Kaja, dziękuję za te rady — **naprawdę mi to pomogło!** Czuję się teraz dużo bardziej pewnie w tym, w jaki kierunek powinam iść. To ma mega sens i będę pracować nad budowaniem portfolio case studies. Super! 💙\n\nA co do dostępności i stawki:\n\n**Dostępność:** 40 godzin tygodniowo — mogę pracować full-time, bez problemu!\n\n**Stawka:** 55 PLN/h netto\n\n---\n\nDziękuję Ci jeszcze raz za całą rozmowę, Kaja! To było naprawdę wartościowe i miłe. Liczę na to, że important.is będzie pamiętać o mnie, jeśli pojawi się rola w moim kierunku! 🚀\n\nPowodzenia wam w agencji! 💙"
+    },
+    {
+      "role": "kaja",
+      "text": "Natalia, **wielkie dzięki za poświęcony czas i szczerość** 🙌\n\nZapiszę wszystkie Twoje dane do Notion'a, i Łukasz wróci do Ciebie w ciągu kilku dni — nawet jeśli stanowisko techniczne teraz nie pasuje, chcemy mieć Cię na radarze na przyszłość!\n\nTrzymam kciuki za Twoje poczynania w AI! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, wszystko gotowe! 💙\n\nDo usłyszenia, Natalia! 🚀"
+    }
+  ]
+}

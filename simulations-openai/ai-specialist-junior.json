@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "roleId": "ai-specialist",
+    "candidateType": "junior",
+    "candidateName": "Natalia Dąbrowska",
+    "candidateEmail": "natalia.dabrowska@gmail.com",
+    "candidateCity": "Poznań",
+    "simulatedAt": "2026-04-04T19:40:26.912Z",
+    "turns": 13,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 79986,
+    "totalOutputTokens": 4225,
+    "costUSD": 0.014533
+  },
+  "result": {
+    "imie_nazwisko": "Natalia Dąbrowska",
+    "email": "",
+    "miasto": "",
+    "github": "",
+    "stawka": "55 PLN/h netto",
+    "dostepnosc_h": 40,
+    "uzywa_ai": "Tak — powierzchownie",
+    "wynik_techniczny": 12,
+    "wynik_komunikacja": 18,
+    "notatki": "Natalia ma doświadczenie w używaniu ChatGPT i tworzeniu treści, ale brakuje jej bardziej zaawansowanych umiejętności technicznych. Jest otwarta na naukę, w tym w zakresie programowania i automatyzacji, ale jej doświadczenia są ograniczone. Pracowała nad prostymi chatbotami i tworzeniem treści dla klientów, co przyniosło pozytywne efekty, ale nie ma solidnych case studies z wynikami biznesowymi. Jej podejście do problemów z AI jest dobre, zdecydowanie ma chęć rozwijać swoje umiejętności.",
+    "wynik_lacznie": 30,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy kogoś, kto ogarnia AI nie tylko z perspektywy \"popisz prompty\" — interesuje nas ktoś, kto potrafi integrować, automatyzować i myśleć o AI w kontekście realnego biznesu. Rozmowa to ok. 15 minut. Jak masz na imię i nazwisko? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Cześć, Kaja! Jestem Natalia Dąbrowska. Mega się cieszę, że mogę z Wami porozmawiać! Uwielbiam AI i myślę, że może naprawdę usprawnić różne procesy w biznesie! 😊 Co jeszcze chciałabyś wiedzieć?"
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki, Natalia! Miło Cię poznać! 😊\n\nNa początek, mogłabyś opowiedzieć, czym się zajmujesz w kontekście AI? Co Cię w tym najbardziej kręci?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Jasne, super pytanie! 😄 Głównie używam AI w codziennych zadaniach, jak pisanie maili, research i generowanie treści. Codziennie korzystam z ChatGPT — to dla mnie mega pomocne narzędzie! Ostatnio pomogłam koleżance napisać treści na stronę internetową, co było całkiem fajne.\n\nTo, co mnie najbardziej kręci, to potencjał AI do usprawniania różnych procesów. Myślę, że z wykorzystaniem AI można zrobić naprawdę niesamowite rzeczy — automatyzacja, analizy, a nawet kreatywne pisanie! Dla mnie każda nowa funkcjonalność w AI to jak odkrywanie czegoś nowego, co może zrewolucjonizować sposób, w jaki pracujemy! 😊✨ Jakie są Wasze wyzwania w tej pierwszej kwestii?"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że tak pozytywnie podchodzisz do AI! 😊\n\nTeraz chciałabym zapytać o Twoje doświadczenie z konkretnymi modelami i API. Z jakich modeli lub API korzystasz? Oprócz ChatGPT, czy masz doświadczenie z innymi providerami, takimi jak OpenAI, Anthropic Claude czy Google?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! 😄 Rzeczywiście, jestem mega entuzjastycznie nastawiona do AI! Co do modeli, to głównie korzystam z ChatGPT, który jest dla mnie świetnym narzędziem. Słyszałam o Claude od Anthropic, ale nie korzystałam z niego regularnie. Myślę, że to narzędzie też jest ciekawe, ale ChatGPT sprawdza mi się najlepiej na co dzień.\n\nNie miałam jeszcze okazji pracować bezpośrednio z innymi dostawcami API, takimi jak Google, więc w tym temacie nie mam doświadczenia. Jednak jestem bardzo otwarta na naukę i chciałabym poznać nowe możliwości! 😊 Jakie modele wy preferujecie m.in. w kontekście Waszych projektów?"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, że jesteś otwarta na naukę! To bardzo ważne w obszarze AI. 😊\n\nA teraz chciałabym zapytać o Twoje umiejętności w zakresie promptowania. Jak zaawansowane jest Twoje umiejętności w tej dziedzinie? Czy możesz opisać jakiś ciekawy use case, w którym wykorzystałaś promptowanie w swoich projektach?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! 😊 Cieszę się, że to doceniasz! Jeśli chodzi o promptowanie, to piszę prompty w zależności od potrzeb, a jak coś nie wyjdzie, to często je przepisuję, aż będę zadowolona z efektu. Chociaż nie znam pojęcia \"system prompt\", to staram się dostosowywać zapytania, żeby uzyskać jak najlepsze rezultaty.\n\nJednym z ciekawych use case'ów, które miały miejsce, było właśnie pisanie treści na stronę internetową dla mojej koleżanki. Napisałam kilka wersji tekstów promujących jej usługi, a różne prompty pomogły mi uzyskać różnorodne podejścia do tematu. Było to super doświadczenie i widziałam, jak AI naprawdę może pomagać w tworzeniu atrakcyjnych treści! \n\nMam nadzieję, że będę mogła dalej rozwijać swoje umiejętności w tej dziedzinie! A jakie przypadki użycia promptowania są dla Was interesujące? 🌟"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetne, że masz doświadczenie z różnymi podejściami do promptowania i potrafisz je dostosowywać do potrzeb! 😊\n\nPrzechodząc do kolejnego tematu, chciałabym zapytać o Twoje doświadczenie w budowie chatbotów, asystentów lub systemów RAG. Czy stworzyłaś coś takiego w przeszłości? Jakie to było doświadczenie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! 💖 Budowa chatbotów to coś, czym się trochę zajmowałam! Używałam platform takich jak ManyChat i Tidio, co było dla mnie naprawdę niezłą zabawą! Tworzyłam proste chatboty, które pomagały w komunikacji z użytkownikami. To było super doświadczenie, bo nauczyłam się, jak ważne jest zrozumienie potrzeb klientów i jak można przyspieszyć odpowiedzi dzięki AI.\n\nJednak, jeśli chodzi o RAG, to niestety nie wiem, co to dokładnie jest, więc nie mam z tym doświadczenia. 😊 Mimo to, jestem otwarta na nowe wyzwania i chętnie nauczyłabym się więcej na ten temat! Jakie są Wasze plany dotyczące chatbotów i jak je wykorzystujecie w swoim biznesie?"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że masz doświadczenie w budowie chatbotów! To bardzo przydatna umiejętność w dzisiejszym świecie. 😊\n\nRAG to skrót od Retrieval-Augmented Generation, co oznacza technologię pozwalającą na pobieranie informacji z zewnętrznych źródeł, aby wzbogacić generowane odpowiedzi. To bardzo przydatne w kontekście bardziej zaawansowanych systemów AI.\n\nPrzechodząc dalej, chciałabym zapytać o narzędzia i platformy, z których korzystasz. Czy używasz IDE AI takich jak Cursor, Cline czy Copilot? Jakie automatyzacje i narzędzia do integracji (jak Zapier, n8n, Make) stosowałaś?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki za wyjaśnienie, Kaja! 😊 To naprawdę ciekawe, jak RAG może wzbogacać odpowiedzi!\n\nJeśli chodzi o narzędzia i platformy, to nie korzystam jeszcze z IDE AI takich jak Cursor, Cline czy Copilot, ale słyszałam o nich i jestem otwarta na spróbowanie czegoś nowego w przyszłości. Jeśli chodzi o automatyzację, to próbowałam z n8n i stworzyłam jeden prosty workflow, który wysyłał powiadomienia mailowe. Było to dla mnie ekscytujące, ale przy bardziej skomplikowanych nodach trochę się gubiłam.\n\nNie miałam okazji korzystać z takich narzędzi jak Zapier czy Make, ale pewnie mogłyby ułatwić wiele procesów! Chciałabym nauczyć się więcej o integracji i automatyzacji, bo myślę, że to ogromny potencjał w pracy z AI. Jakie narzędzia najczęściej wykorzystujecie? 😊✨"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że masz pozytywne nastawienie do nauki nowych narzędzi! 😊\n\nDokładnie, automatyzacja i integracja to kluczowe elementy efektywnej pracy z AI. Używamy często n8n oraz Zapier do różnych procesów, ponieważ pozwalają na łatwe łączenie różnych aplikacji i automatyzację rutynowych zadań.\n\nTeraz chciałabym przejść do umiejętności technicznych. Jakie masz doświadczenie z programowaniem? Jakie języki znasz, na jakim poziomie i w jakich projektach je używałaś?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! To super, że używacie n8n i Zapier — to naprawdę potężne narzędzia! 😊\n\nJeśli chodzi o moje umiejętności programistyczne, to mam trochę doświadczenia z HTML i CSS, które nauczyłam się z YouTube. Robiłam proste rzeczy, jak tworzenie stron internetowych, ale raczej na poziomie podstawowym. Próbowałam też programować w Pythonie, ale niestety rzuciłam to po krótkim czasie.\n\nWiem, że programowanie jest ważne w kontekście AI, więc chciałabym to rozwijać. Marzy mi się nauczyć więcej i być w stanie tworzyć bardziej zaawansowane aplikacje! Czy w Waszych projektach korzystacie z programowania? Jakie języki są Waszymi ulubionymi? 🚀✨"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że jesteś zainteresowana rozwojem swoich umiejętności programistycznych! 😊 To na pewno bardzo przyda się w pracy z AI.\n\nTak, w naszych projektach korzystamy głównie z Pythona oraz JavaScript/TypeScript. Python jest świetny do analizy danych i pracy z różnymi modelami AI, a JavaScript/TypeScript pomaga w tworzeniu interaktywnych aplikacji webowych. \n\nChciałabym teraz zapytać, jak podchodzisz do problemu, który wymaga zastosowania AI? Od czego zaczynasz, jak planujesz swoje działania?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! To bardzo ciekawie, że korzystacie z Pythona i JavaScript/TypeScript! Trochę o tym słyszałam i zgadzam się, że te języki mają ogromny potencjał w kontekście AI! \n\nKiedy podchodzę do problemu, który wymaga zastosowania AI, zaczynam od zrozumienia problemu i celu, który chcę osiągnąć. Potem myślę o tym, jakie dane będą potrzebne, oraz jak można je zebrać lub wykorzystać. Zazwyczaj korzystam z ChatGPT, aby zebrać pomysły i sugestie dotyczące najlepszego podejścia.\n\nNastępnie planuję, jakie prompty mogę użyć i jak dostosować je do swoich potrzeb. Lubię eksperymentować z różnymi wariantami, aż do uzyskania satysfakcjonującego wyniku. Myślę, że elastyczność i chęć do nauki są kluczowe w tym procesie! A jak Wy podchodzicie do rozwiązywania problemów z wykorzystaniem AI? 😊🌟"
+    },
+    {
+      "role": "kaja",
+      "text": "To bardzo dobre podejście! Zrozumienie problemu i celu jest kluczowe w pracy z AI. 😊\n\nW naszych projektach często zaczynamy od zdefiniowania problemu, analizy potrzeb klienta oraz danych, które mamy do dyspozycji. Później wybieramy odpowiednie modele i techniki, które mogą pomóc w rozwiązaniu problemu. Ideą jest także walidacja wyników oraz iteracyjne podejście, czyli dostosowywanie naszego rozwiązania w miarę zdobywania nowych informacji i wyników.\n\nTeraz przeprowadzimy krótką rozmowę na temat Twojego portfolio. Czy mogłabyś opisać 2-3 projekty z AI, które zrealizowałaś? Jakie były ich efekty biznesowe? Czy masz jakieś linki, które mogłabyś podesłać?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Cieszę się, że moje podejście się pokrywa z Waszymi metodami! 😊\n\nJeśli chodzi o moje projekty z AI, to głównie skupiałam się na tworzeniu treści i prostych chatbotów. \n\n1. **Tworzenie treści na stronę internetową**: Pomogłam koleżance przygotować treści promujące jej usługi. Używałam ChatGPT do generowania różnych wersji tekstów, które później wspólnie edytowałyśmy. Efektem końcowym były atrakcyjne treści, które przyciągnęły więcej odwiedzin na jej stronie. To sprawiło, że zyskała nowych klientów!\n\n2. **Chatbot na ManyChat**: Stworzyłam prostego chatbota, który odpowiadał na najczęściej zadawane pytania. Dzięki temu użytkownicy mogli szybciej uzyskać odpowiedzi na swoje potrzeby, co poprawiło ich zadowolenie z obsługi. To było małe, ale pomocne rozwiązanie w komunikacji.\n\nObecnie nie mam linków do projektów, ponieważ były one bardziej prywatne, ale mogłabym pokazać Wam przykłady, gdybym miała możliwość zrealizować coś podobnego w przyszłości! Jakie projekty w Waszej firmie były najbardziej interesujące? 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo ciekawe projekty, Natalia! To świetnie, że miałaś okazję przyczynić się do sukcesu koleżanki i stworzyć narzędzie, które poprawiło doświadczenia użytkowników. 😊\n\nW naszej firmie realizujemy różne projekty z AI, w tym integracje chatbotów w systemach CRM, a także wykorzystanie AI do personalizacji treści na stronach internetowych. Ciekawe efekty osiągamy dzięki wspomaganiu zespołu marketingowego danymi z analizy zachowań użytkowników.\n\nPrzechodząc do kolejnego tematu, chciałabym zapytać, jak organizujesz swoją pracę? Jakie narzędzia wykorzystujesz do zarządzania projektami? Co sądzisz o ClickUp i Discord? Czy czujesz się w tym komforowo?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! 😊 Fajnie, że realizujecie takie interesujące projekty związane z AI, szczególnie w kontekście personalizacji treści! To naprawdę może przynieść świetne efekty.\n\nJeśli chodzi o organizację mojej pracy, to korzystam głównie z narzędzi takich jak Google Calendar do planowania spotkań i terminów oraz Trello lub Notion do zarządzania zadaniami. Dzięki temu mogę łatwo śledzić, co mam do zrobienia, i szybko dostosowywać priorytety.\n\nCo do ClickUp, to słyszałam o nim i wiem, że ma wiele funkcji do zarządzania projektami, ale jeszcze go nie używałam. Natomiast Discord to świetna platforma do komunikacji, szczególnie w zespołach! Chociaż ciężko mi na razie korzystać z jego bardziej zaawansowanych funkcji, to czuję się komfortowo, rozmawiając tam z innymi.\n\nGdybym miała okazję, chciałabym nauczyć się lepiej zarządzać projektami w ClickUp! Jakie najbardziej lubicie narzędzia i jak pomagają Wam w codziennej pracy? 😊✨"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że masz doświadczenie w organizacji pracy z Google Calendar i Trello/Notion — to bardzo przydatne narzędzia! 😊\n\nClickUp i Discord faktycznie świetnie sprawdzają się w zarządzaniu projektami. ClickUp pozwala na bardzo zaawansowane śledzenie postępów i organizację zadań, co pomaga w utrzymaniu porządku w zespołach. Discord wykorzystujemy do komunikacji i współpracy w czasie rzeczywistym — jest bardzo przydatny do szybkiego rozwiązywania problemów oraz dzielenia się pomysłami.\n\nNa koniec rozmowy chciałabym dowiedzieć się o Twojej dostępności oraz oczekiwanej stawce. Ile godzin w tygodniu mogłabyś poświęcić i jakie masz oczekiwania finansowe?"
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! To naprawdę świetnie, że macie takie fajne podejście do korzystania z ClickUp i Discord! 😊\n\nCo do mojej dostępności, mogę poświęcić około 40 godzin w tygodniu. Jestem mega gotowa na nowe wyzwania w AI i chętnie zaangażuję się w projekty! \n\nJeśli chodzi o oczekiwaną stawkę, to obecnie wynosi ona 55 PLN/h netto. Myślę, że to uczciwe w kontekście moich umiejętności i entuzjazmu do pracy z AI! Dziękuję za rozmowę i cieszę się, że mogłam podzielić się moimi doświadczeniami! Jakie są kolejne kroki po tej rozmowie? 😊🌟"
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki, Natalia! To świetnie, że jesteś gotowa spędzić tyle czasu na nowych projektach! 😊\n\nTwoja oczekiwana stawka jest zrozumiała, ale chciałabym zaznaczyć, że w naszej agencji często poszukujemy osób z bardziej zaawansowanymi umiejętnościami technicznymi. Mimo to, doceniamy Twój entuzjazm i otwartość do nauki!\n\nEkstra, to wszystkie moje pytania! Wielkie dzięki za poświęcony czas 🙌 Łukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀\n\nZaraz zakończę rozmowę i zbiorę wszystkie Twoje dane."
+    },
+    {
+      "role": "candidate",
+      "name": "Natalia Dąbrowska",
+      "text": "Dzięki, Kaja! Mega się cieszę, że mogłam z Wami porozmawiać i podzielić się swoimi doświadczeniami! 😊 Doceniam Waszą szczerość i zrozumienie moich umiejętności. Mam nadzieję, że w przyszłości będę miała okazję rozwijać się i zdobywać więcej doświadczenia w AI!\n\nCzekam na kontakt od Łukasza. Dziękuję jeszcze raz za rozmowę i do usłyszenia! 🚀✨"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję, Natalia! Cieszę się, że mogłaś z nami porozmawiać. Życzę Ci powodzenia w dalszym rozwoju i mam nadzieję, że jak najszybciej usłyszysz od Łukasza. Do usłyszenia! 🚀✨"
+    }
+  ]
+}

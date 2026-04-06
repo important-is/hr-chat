@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "roleId": "automatyzacje",
+    "candidateType": "junior",
+    "candidateName": "Kasia Malinowska",
+    "candidateEmail": "kasia.malinowska87@gmail.com",
+    "candidateCity": "Białystok",
+    "simulatedAt": "2026-04-04T19:43:59.629Z",
+    "turns": 14,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 73626,
+    "totalOutputTokens": 3512,
+    "costUSD": 0.013151
+  },
+  "result": {
+    "imie_nazwisko": "Kasia Malinowska",
+    "email": "kasia.malinowska@example.com",
+    "miasto": "Warszawa",
+    "stawka": "50 PLN/h",
+    "dostepnosc_h": 35,
+    "uzywa_ai": "Nie",
+    "wynik_techniczny": 8,
+    "wynik_komunikacja": 22,
+    "notatki": "Kasia ma doświadczenie z automatyzacją przy użyciu n8n i Zapier. Opracowała 2 workflow w n8n i ma podstawowe umiejętności programowania w JavaScript. Zna podstawy REST API i chce rozwijać swoje umiejętności w obszarze AI. Jest otwarta na nowe narzędzia i metody organizacji pracy. Oczekuje stawki 50 PLN/h na B2B oraz dostępne 35 godzin tygodniowo.",
+    "wynik_lacznie": 30,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy kogoś, kto potrafi zautomatyzować procesy biznesowe — od prostych webhooków po złożone workflow z AI. Rozmowa to ok. 15 minut. Podaj proszę swoje imię i nazwisko 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Cześć, Kaja! Nazywam się Kasia Malinowska. Bardzo się cieszę, że mogę z Tobą rozmawiać! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Cześć, Kasia! Fajnie, że jesteś! 😊\n\nCzy mogłabyś podać swój adres e-mail oraz miasto, w którym mieszkasz?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Jasne! Mój adres e-mail to kasia.malinowska@example.com, a mieszkam w Warszawie. Jakie dalsze pytania masz na myśli? 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję, Kasiu! 😊\n\nZacznijmy od Twojego doświadczenia. Czym się zajmujesz? Jak trafiłaś do automatyzacji?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Obecnie pracuję z automatyzacjami, głównie w Zapier. Przez ostatnie 2 lata zajmowałam się prostymi przypadkami użycia, na przykład powiadamianiem o nowych leadach z formularzy. Ostatnio zaczęłam poznawać n8n i przez ostatnie 3 miesiące udało mi się stworzyć kilka działających workflow, takich jak powiadomienia ze Slacka i synchronizacja z Google Sheets.\n\nZainteresowanie automatyzacją pojawiło się, gdy zauważyłam, jak wiele powtarzalnych zadań można uprościć. To naprawdę ekscytujące widzieć, jak te procesy mogą działać płynniej! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetnie, Kasiu! 😊 Cieszę się, że odkryłaś pasję do automatyzacji i masz już doświadczenie z n8n.\n\nMożesz mi powiedzieć, z jakich narzędzi korzystasz w kontekście n8n, Zapier i Make? Które z nich uważasz za najlepsze do pracy?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Na chwilę obecną korzystam głównie z n8n i Zapier. W n8n udało mi się stworzyć dwa działające workflow, które już efektywnie wykorzystuję, a w Zapier mam doświadczenie w prostych automatyzacjach, związanych głównie z leadami. Żadnego workflow jeszcze nie stworzyłam w Make, więc nie mam jeszcze doświadczenia z tym narzędziem.\n\nUważam, że n8n jest bardzo elastyczne i daje dużo możliwości, zwłaszcza przy bardziej złożonych workflow. Zapier natomiast jest świetne do prostych integracji i ma przyjazny interfejs, co ułatwia zaczynanie pracy. Myślę, że wybór narzędzia zależy od konkretnych potrzeb projektu. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Zgadzam się z Tobą, że wybór narzędzia powinien być dostosowany do konkretnych potrzeb projektu. 😊\n\nA jak to wygląda z n8n? Korzystasz z wersji self-hosted czy cloud? Jakie nody znasz najlepiej? Jakie masz doświadczenie z workflow, które udało Ci się stworzyć?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Od początku korzystam z n8n w wersji self-hosted, ponieważ chciałam mieć pełną kontrolę nad danymi i ustawieniami. \n\nZ nody znam przede wszystkim te związane z Slackiem i Google Sheets, ponieważ to one były kluczowe w moich dotychczasowych workflow. Udało mi się stworzyć workflow do powiadamiania mnie o nowych wiadomościach na Slacku oraz drugi, który synchronizuje dane pomiędzy Google Sheets. To było interesujące doświadczenie, bo z każdą nową integracją poznaję n8n coraz lepiej! \n\nJeszcze trochę brakuje mi do bardziej zaawansowanych nody, ale idę w dobrą stronę! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Kasiu! Cieszę się, że masz już doświadczenie z self-hosted n8n i że znasz podstawowe nody. To z pewnością pomoże w dalszym rozwoju! 😊\n\nIle workflow udało Ci się już wdrożyć w n8n, które są \"w produkcji\"? A także, czy masz jakieś doświadczenie z integracjami  z API, jak REST, webhooks czy OAuth?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Na chwilę obecną mam dwa workflow w n8n, które są \"w produkcji\" – powiadomienia na Slacku oraz synchronizacje z Google Sheets. Działa to świetnie i jestem z tego bardzo zadowolona! 😊\n\nJeśli chodzi o integracje z API, mam trochę doświadczenia w kopiowaniu gotowych przykładów z dokumentacji, głównie związanych z REST i webhookami. Przy tworzeniu bardziej złożonych integracji, zwłaszcza korzystających z OAuth, czuję się jeszcze trochę niepewnie, bo jeszcze tego od podstaw nie robiłam. Chciałabym rozwinąć tę umiejętność w przyszłości, ponieważ myślę, że to otworzy przede mną jeszcze więcej możliwości!"
+    },
+    {
+      "role": "kaja",
+      "text": "To brzmi bardzo dobrze, Kasiu! 😊 Dobrze, że masz już podstawowe doświadczenie i chęć do nauki nowych umiejętności.\n\nJakie masz doświadczenie z programowaniem? Czy korzystasz z JavaScript lub Pythona do skryptów w n8n? Jakie inne technologie dotyczące baz danych, na przykład SQL, Airtable czy Google Sheets, są Ci znane?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Moje doświadczenie z programowaniem jest dość podstawowe. Znam JavaScript na poziomie, który pozwala mi zrozumieć funkcje i pętle, ale jeszcze nie pisałam własnych skryptów w n8n. Niestety, nie zaznajomiłam się jeszcze z Pythonem.\n\nJeśli chodzi o technologie baz danych, to mam doświadczenie z Google Sheets, które używam w moich workflow w n8n. SQL jest dla mnie nowością, więc na razie nie mam w nim praktyki. Chciałabym jednak z czasem rozwinąć tę umiejętność, ponieważ wiem, że może być bardzo przydatna. Również słyszałam o Airtable, ale jeszcze nie miałam okazji go używać. 😊\n\nUczę się każdego dnia i z niecierpliwością czekam na nowe wyzwania!"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetne podejście, Kasiu! 😊 Cieszę się, że jesteś otwarta na rozwijanie swoich umiejętności. Programowanie i obsługa baz danych to na pewno wartościowe narzędzia w automatyzacji.\n\nChciałabym teraz dowiedzieć się więcej o Twoim doświadczeniu w integrowaniu AI z workflow. Czy kiedykolwiek łączyłaś AI z workflow w n8n, na przykład z użyciem OpenAI lub chatbotów? Jakie masz doświadczenia w tym zakresie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Słyszałam, że AI można integrować z workflow, ale jeszcze tego nie próbowałam. Nie miałam jeszcze okazji pracy z OpenAI czy chatbotami w n8n, więc w tym zakresie moje doświadczenie jest na razie zerowe. \n\nJednak bardzo mnie to interesuje, zwłaszcza w kontekście automatyzacji procesów i zwiększenia ich efektywności! Myślę, że wykorzystanie AI otworzyłoby nowe możliwości i przyspieszyło wiele zadań. Chciałabym nauczyć się, jak to zrobić, aby móc eksperymentować z takimi rozwiązaniami w przyszłości. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, Kasiu! Cieszę się, że masz aspiracje w zakresie AI w automatyzacji, to na pewno ciekawy obszar do eksploracji! 😊\n\nPrzejdźmy teraz do Twojego myślenia procesowego. Wyobraź sobie, że klient opisuje Ci ręczny proces, który chciałby zautomatyzować. Jak podchodzisz do tej sytuacji? Jakie kroki podejmujesz, aby przeanalizować i zautomatyzować ten proces?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Kiedy klient opisuje mi ręczny proces, który chciałby zautomatyzować, najpierw staram się zrozumieć wszystkie kroki, które są w nim zaangażowane. Moje podejście wyglądałoby mniej więcej tak:\n\n1. **Zbieranie informacji**: Rozpoczynam od zadawania pytań, aby dokładnie poznać cały proces, zidentyfikować kluczowe elementy oraz osoby zaangażowane.\n\n2. **Mapowanie procesu**: Próbuję stworzyć wizualną reprezentację procesu, aby zobaczyć, które zadania są powtarzalne, czasochłonne lub podatne na błędy.\n\n3. **Analiza potrzeb**: Zastanawiam się, co klient chciałby osiągnąć poprzez automatyzację — na przykład zmniejszenie czasu, które spędza na danym zadaniu, czy zwiększenie dokładności.\n\n4. **Wybór narzędzi**: Na podstawie zebranych informacji analizuję, które narzędzia (np. n8n, Zapier) mogą być najlepiej dopasowane do konkretnego przypadku.\n\n5. **Prototypowanie**: Tworzę prosty prototyp automatyzacji, aby pokazać klientowi, jak to może wyglądać w praktyce.\n\n6. **Testowanie i dostosowywanie**: Sprawdzam, jak automatyzacja działa w praktyce, i na podstawie feedbacku klienta wprowadzam niezbędne poprawki.\n\n7. **Edukacja i wsparcie**: Po wdrożeniu automatyzacji, udzielam klientowi instrukcji, jak z niej korzystać, oraz oferuję dalsze wsparcie, jeśli zajdzie taka potrzeba.\n\nMyślę, że kluczem do udanej automatyzacji jest dobre zrozumienie potrzeb klienta oraz elastyczność w dostosowywaniu rozwiązań! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Świetne podejście, Kasiu! 😊 Widać, że masz dobrą strategię do analizy i automatyzacji procesów. Dobrze, że kładziesz nacisk na komunikację z klientem i ich potrzeby.\n\nTeraz chciałabym zapytać o sytuację, w której workflow się \"wysypał\" (czyli przestał działać) w nocy. Jak reagujesz w takiej sytuacji? Jakie masz doświadczenie w monitorowaniu, obsłudze błędów i alertach?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Dziękuję! Cieszę się, że moje podejście się podoba. 😊\n\nJeśli chodzi o sytuację, w której workflow w n8n przestał działać, to obecnie nie mam jeszcze zaawansowanego systemu monitorowania. Zazwyczaj restartuję workflow, gdy zauważam, że coś się wysypuje. Zdaję sobie sprawę, że to nie jest najlepsze podejście, dlatego chciałabym nauczyć się lepszej obsługi błędów.\n\nW przyszłości chciałabym wykorzystać bardziej zaawansowane metody monitorowania, aby być na bieżąco z działaniem workflow i szybciej reagować na potencjalne błędy. Być może w przyszłości mogłabym rozważyć ustawienie alertów, które powiadamiałyby mnie o problemach na bieżąco. Wiem, że poprawna obsługa błędów jest kluczowa, aby zapewnić, że automatyzacje działają płynnie! 😊 "
+    },
+    {
+      "role": "kaja",
+      "text": "Dokładnie, to bardzo ważne podejście! 😊 Dobrze, że dostrzegasz potrzebę lepszej obsługi błędów i monitorowania. To na pewno sprawi, że Twoje rozwiązania będą bardziej niezawodne.\n\nTeraz chciałabym zapytać o Twój styl pracy. Jak organizujesz swoje zadania? Czy korzystasz z takich narzędzi jak ClickUp lub Discord, a może dokumentujesz swoje workflow? Jak wygląda Twoje podejście do organizacji pracy?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Mam radosne podejście do organizacji pracy! 😊 Obecnie korzystam z prostych narzędzi, takich jak Google Sheets, żeby śledzić swoje zadania i postępy w nauce n8n. To pozwala mi mieć wszystko w jednym miejscu i na bieżąco monitorować, co jeszcze chcę osiągnąć.\n\nNie korzystam jeszcze z ClickUp ani Discord, ale słyszałam o nich sporo pozytywnych rzeczy. Myślę, że mogą być przydatne w organizacji większych projektów i komunikacji zespołowej.\n\nCo do dokumentacji, staram się zapisywać kluczowe informacje i kroki związane z moimi workflow, zwłaszcza gdy uczę się nowych funkcji n8n. Dzięki temu mogę łatwiej wracać do wcześniejszych rozwiązań i nie powtarzać tych samych kroków.\n\nJestem otwarta na nowe narzędzia i sposoby organizacji pracy i chętnie spróbuję czegoś nowego, jeśli to sprawi, że moja praca będzie bardziej efektywna! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetne podejście do organizacji pracy, Kasiu! 😊 Fajnie, że jesteś otwarta na nowe narzędzia i metody, które mogą uczynić Twoją pracę bardziej efektywną.\n\nNa koniec chciałabym zapytać o Twoją dostępność i oczekiwaną stawkę. Ile godzin tygodniowo mogłabyś poświęcić na pracę, oraz jaka byłaby Twoja oczekiwana stawka?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Dziękuję! 😊 Cieszę się, że mogłam podzielić się swoim podejściem do pracy.\n\nCo do dostępności, mogę poświęcić około 35 godzin tygodniowo na pracę. Jeśli chodzi o stawkę, to oczekuję 50 PLN/h netto w modelu B2B. Mam nadzieję, że to pasuje do Waszych oczekiwań! 😊\n\nCzy to wszystko, co chciałabyś wiedzieć, czy może masz jeszcze jakieś pytania?"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję, Kasiu! 😊 Twoje odpowiedzi są naprawdę interesujące i cieszę się, że mogłaś podzielić się swoimi doświadczeniami.\n\nTo już wszystkie moje pytania! Bardzo dziękuję za czas i zaangażowanie. Łukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀 \n\nTeraz pozwól, że podsumuję nasze rozmowy i zapiszę Twoje dane."
+    },
+    {
+      "role": "candidate",
+      "name": "Kasia Malinowska",
+      "text": "Dziękuję bardzo, Kaja! 😊 Cieszę się, że mogłam wziąć udział w rozmowie i podzielić się swoimi doświadczeniami. czekam z niecierpliwością na wiadomość od Łukasza! Do usłyszenia! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję, Kasiu! Twoje dane zostały zapisane. \n\nCzekamy na Twoją odpowiedź i życzymy Ci powodzenia! Do usłyszenia! 🚀😊"
+    }
+  ]
+}

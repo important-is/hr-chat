@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "roleId": "pm",
+    "candidateType": "junior",
+    "candidateName": "Piotr Zając",
+    "candidateEmail": "piotrzajac1995@gmail.com",
+    "candidateCity": "Lublin",
+    "simulatedAt": "2026-04-04T18:14:43.450Z",
+    "turns": 16
+  },
+  "result": {
+    "imie_nazwisko": "Piotr Zając",
+    "email": "piotr.zajac@gmail.com",
+    "miasto": "Warszawa",
+    "dostepnosc_h": 20,
+    "stawka": "50 PLN netto",
+    "uzywa_ai": "Tak — powierzchownie",
+    "github": "",
+    "wynik_techniczny": 12,
+    "wynik_komunikacja": 16,
+    "notatki": "Piotr ma 3 lata doświadczenia jako koordynator projektów w małej agencji (głównie WP + kampanie). Zna Trello dobrze, ale ClickUp to dla niego czarna skrzynka. Największa słabość: brak proaktywności w scope control (zgadzał się na dodatkowe zakresy bez CR), słabe umiejętności trudnych rozmów z klientem, angielski na poziomie czytania. Pozytyw: szczera, chce się uczyć, potrafił konkretnie opisać błędy. Wciąż junior, wymaga onboardingu i mentoringu — ale ma potencjał do rozwoju. Dostępny 20h/tydzień, może skalować.",
+    "wynik_lacznie": 28,
+    "decyzja": "Do przemyślenia"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! 👋 Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy kogoś, kto będzie ogarnął projekty od A do Z — komunikacja z klientem, koordynacja zespołu, pilnowanie terminów i budżetów. Ta rozmowa zajmie ok. 15 minut i będzie super naturalnie przebiegać.\n\n**Zanim zaczniemy — podaj mi swoje imię i nazwisko 😊**"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Dzięki za zaproszenie, Kajo! 😊\n\nJestem Piotr Zając. Naprawdę cieszę się, że mogę z Wami porozmawiać — important.is się mi podoba, widać, że robicie fajne projekty.\n\n*przygryza wargę lekko nerwowo*\n\nGotów na pytania!"
+    },
+    {
+      "role": "kaja",
+      "text": "Piotr, super! 🚀 Widzę, że podchodzisz do tego z energią — lubię to! 😄\n\nOkej, zaczynamy. Pierwsza rzecz — **gdzie mieszkasz i jaki jest Twój email kontaktowy?** (bo będzie mi się przydać na koniec)"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Ah, jasne! 📍\n\nMieszkam w **Warszawie**, więc czas strefowy to standardowy CET — bez problemów z dostępnością.\n\nEmail: **piotr.zajac@gmail.com**\n\n*uśmiecha się nieco pewniej*\n\nCzy to oznacza, że jesteście też w Warszawie, czy pracujecie zdalnie?"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, dzięki! 📧 My pracujemy w trybie fully remote — całe zespoły rozrzucone po Polsce, więc żaden problem z Warszawą 😊\n\nOkej, teraz **kilka słów o Tobie — czym się zajmujesz zawodowo i jakie masz doświadczenie?** Najchętniej opowiedz mi o ostatnich latach."
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*kiwa głową*\n\nOkej, to super — remote to dla mnie idealne, szczególnie że jeszcze pracuję na etacie.\n\n*robi krótką pauzę, zbierając myśli*\n\nOstatnie 3 lata pracowałem w małej agencji marketingowej jako koordynator projektów. To był mój główny obowiązek — pilnowanie, żeby projekty się realizowały, komunikacja z klientami... takie rzeczy.\n\n*gestykuluje*\n\nZazwyczaj miałem 2 projekty równolegle — głównie to były strony internetowe na WordPressie, kampanie mailingowe, takie standardowe rzeczy dla małych firm i startupów. Dużo roboty przez maile, czasem trzeba było coś pilnować w ostatniej chwili...\n\n*uśmiecha się trochę nerwowo*\n\nSzczerze mówiąc, wtedy się tego terminu \"PM\" nie używało — byliśmy małą agencją, więc bardziej się liczyło, żeby projekt wyjechał. Ale przyznaję sobie, że to było dobre doświadczenie — nauczyłem się, jak pracować pod presją.\n\n*patrzy na Kajęę*\n\nTeraz chcę to formalizować bardziej i uczyć się rzeczywistego PM-u. Dlatego tutaj jestem."
+    },
+    {
+      "role": "kaja",
+      "text": "Piotr, dzięki za szczerość! 💪 To jest dokładnie to, czego słucham — doświadczenie z polską rzeczywistością małej agencji to solidna baza.\n\nOkej, mam pytanie follow-up: **te 2 projekty równolegle — były to projekty webowe od początku do końca, czy bardziej wspierałeś już istniejące strony?** I jak długo średnio trwał jeden projekt?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*przygryza dolną wargę, myśląc*\n\nHm, dobra obserwacja. Szczerze mówiąc, było mieszanie — ale przeważnie od początku do końca. Czyli: klient przychodzi z pomysłem, ja dostaję brief, muszę to skoordynować z developerem (ewentualnie była osoba od WP w agencji), designerem...\n\n*gestykuluje*\n\nCzasem były też projekty wspierające — klient miał już stronę, a my robiliśmy update, dodawaliśmy funkcjonalność, to takie rzeczy. Ale mniejszość.\n\n*robi pauzę*\n\nCo do czasu — projekty webowe to zwykle 4-8 tygodni, zależy od skomplikowania. Mniejsze strony, to mogło być nawet 3 tygodnie, większe z integracją — raczej 2-3 miesiące. Ale szczerze, to nigdy nie było super precyzyjne...\n\n*śmieje się nerwowo*\n\nZawsze coś się pojawiało w trakcie — klient chciał coś dodać, zmieniło się coś w wymaganiach. Wtedy się szło \"na czuja\", rozmawiało z zespołem, robiło się extra sprinty...\n\nCzy to było dobre podejście? *patrzy z lekkim niepewnym wyrazem twarzy* Nie wiem, ale działało."
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową ze zrozumieniem*\n\nPiotr, to normalne w małych agencjach — chaos jest częścią gry. 😄 Ale teraz pytanie kluczowe: **kiedy klient zmienia zakres w trakcie projektu — jak Ty na to reagujesz?** Mówię o konkretnym przykładzie z życia, jeśli możesz."
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi dłuższą pauzę, marszcząc brwi*\n\nOof, to bolesne pytanie. 😅\n\n*śmieje się trochę nerwowo*\n\nOK, konkretny przykład — miałem klienta, producenta mebli, który chciał stronę e-commerce'ową. W briefingu mówił: \"potrzebuję katalogu produktów, koszyka, integracji z Stripe\". Okej, fajnie.\n\n*robi gest frustracji*\n\nW połowie, jak już cały frontend był robiony, klient mówi: \"A czekaj, chcemy też newsletter integrować, i widgety do Facebooka, i może jeszcze filtrowanie po materiałach\". Boom. Zasypał nas dodatkowych rzeczy.\n\n*przygryza wargę*\n\nI szczerze? Ja wtedy... *patrzy w dół* ...zgodziłem się. Mówię \"okej, dodamy\", bo nie chciałem klienta stracić. Zrobiłem to z developerem — przesunęliśmy deadline o dwa tygodnie, wszyscy pracowali za dużo, było napięcie.\n\n*patrzy na Kajęę*\n\nTeraz wiem, że to było głupie. Powinnem był powiedzieć \"OK, ale to będzie dodatkowy koszt i czas\". Ale... się bałem konfrontacji. Nie wiedziałem, jak to sformułować bez jebania się z klientem.\n\nJak byś to robił?"
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową ze zrozumieniem*\n\nPiotr, doceniam szczerość — to bardzo uczciwa odpowiedź. To właśnie jest to, czego uczymy się w PM-ie: **umiejętność powiedzenia \"nie\" bez jebania się z klientem**. 😄\n\nU nas w important.is to wygląda tak: dokumentujesz zmianę zakresu, robisz Change Request, pokazujesz wpływ na czas/budżet, i wtedy klient podejmuje świadomą decyzję. Czasem zgadzają się na koszt dodatkowy, czasem przesuwają deadline, czasem sami rezygnują.\n\nOkej, drugi scenariusz: **klient jest niezadowolony z efektu pracy — mówi, że strona nie działa jak chciał, albo nie podoba mu się design. Ty co robisz?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*kiwa głową, słuchając uważnie*\n\nOK, to ma sens — dokumentacja, Change Request... to jest lepsze niż to co robię teraz. *notuje sobie to mentalnie*\n\n*patrzy na Kajęę z lekką obawą*\n\nCo do niezadowolonego klienta... \n\n*robi pauzę*\n\nTo zależy od tego, o co chodzi. Jeśli design — to, szczerze, trochę się czuję bezradny. Bo to nie jest moja domena, prawda? *śmieje się nerwowo* Musiałbym wrócić do designera, powiedzieć mu, że coś się nie podoba...\n\n*przysuwuje się bliżej*\n\nAle jeśli to funkcjonalność — \"strona nie działa jak chciał\" — to pytam klienta dokładnie co nie działa. Chociaż... *przygryza wargę* ...tutaj mam problem. Nie zawsze potrafię rozszyfrować co dokładnie mu się nie podoba. Klient mówi \"to źle wygląda\" a ja nie wiem czy to UI problem czy logiczny problem.\n\n*robi nerwowy gest*\n\nZazwyczaj wtedy się spotykam — video call albo osobiście — i pytam szczegółowo. Czasem trzeba bylo pokazać mu demo, albo przerabiać coś...\n\n*patrzy niepewnie*\n\nAle szczerze — nigdy tego nie miałem dobrze zorganizowane. Jak byś to robił zanim projekt się skończy?"
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową*\n\nAha, to właśnie. Ty reagtujesz na problem, ale idealnie jest go **zapobiegać wcześniej** — testami, review'ami w trakcie, nie na koniec. To jest część PM-u.\n\nAle czekaj, przed tym — **czy mówiłeś z klientami po angielsku w tych projektach, czy zawsze po polsku?** Bo dla nas to ważne, bo część klientów może być zagraniczna."
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi nerwowy uśmiech*\n\nAh, angielski... *przygryza wargę*\n\nSzczerze mówiąc — zawsze miałem klientów polskich w agencji. Więc głównie polski. To była dla mnie komfortowa strefa.\n\n*gestykuluje*\n\nAngielski mam na poziomie — przeczytam maila, zrozumiem o co chodzi. Poczytam dokumentację, FAQ... bez problemu. Ale jak chodzi o pisanie maili, to...\n\n*robi nerwową minę*\n\nMogę napisać, ale... nie będzie to płynne. Będę się zastanawiać nad każdym zdaniem, czy to brzmi dobrze. A rozmowa przez Zoom albo telefon? *śmieje się nerwowo* Tutaj już mi się robi gorąco. Słuchać potrafię, ale odpowiadać szybko — to dla mnie wyzwanie.\n\n*patrzy na Kajęę z lekką obawą*\n\nMam podstawy ze szkoły, czasem słucham podcastów, używam ChatGPT do prostych maili... ale to nie jest moja mocna strona.\n\n*pyta ostrożnie*\n\nCzy to duży problem dla was? Bo mogę się uczyć, ale... nie będę od razu fluent, prawda?"
+    },
+    {
+      "role": "kaja",
+      "text": "*uśmiecha się uspokajająco*\n\nPiotr, nie panikuj — to rzecz do nauki. 😊 Wielu naszych partnerów zaczyna słabiej, a potem się uczy. Dla nas ważne jest, że rozumiesz maile i potrafisz się porozumiewać — nawet jeśli trzeba chwilę poczekać na odpowiedź.\n\nOK, teraz zmiana tematu — **jak pracujesz z narzędziami do zarządzania projektami?** Jakiś konkretny tool w agencji? ClickUp, Asana, Trello, coś innego?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*odetchnął z ulgą*\n\nDziękuję za zrozumienie. To dla mnie ważne słyszeć. 😊\n\n*przechodzi do następnego pytania*\n\nNarzędzia... OK, więc w agencji używaliśmy **Trello**. Dużo Trello. *śmieje się* \n\nZnam go naprawdę dobrze — tablice, karty, labele, wszystkie te rzeczy. Robię na nim backlog, tasklista dla zespołu, tracking co się robi. Potrafię zrobić board od zera, ustawić integracje — typu powiadomienia, automatyzacja prostych rzeczy...\n\n*robi pauzę*\n\nAle szczerze? Czasem czuję, że Trello jest za prosty dla większych projektów. Jak było coś bardziej skomplikowanego — dependencies, timesheets, raporty — to Trello był mały.\n\n*patrzy na Kajęę*\n\nSłyszałem o **ClickUp**, wiem że ludzie go lubią, ale nigdy nie pracowałem z nim. *robi nerwowy uśmiech* To dla mnie czarna skrzynka — wygląda bardziej zaawansowany, ale nie wiem gdzie kliknąć.\n\n*pyta ostrożnie*\n\nWy w important.is używacie ClickUp? Czy inny tool? Bo chciałbym wiedzieć na co się przygotować."
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową*\n\nTak, my pracujemy na **ClickUp** — to nasz standard. Ale nie martw się, to narzędzie do nauki, a Ty już znasz **koncepcję** — tasklista, przydzielanie, tracking. To najważniejsze. ClickUp to głównie \"Trello na sterydach\" — więcej opcji, ale logika podobna.\n\nOkej, teraz pytanie o to jak rzeczywiście koordynujesz zespół: **jak przydzielasz taski developerowi i jak monitorujesz, że faktycznie to robi?** Konkretnie — co robisz codziennie/co tydzień?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*kiwa głową ze zrozumieniem*\n\nOK, to mi trochę ulga — jeśli logika jest podobna, to mogę się nauczyć.\n\n*robi pauzę, myśląc*\n\nPrzydzielanie tasków... *gestykuluje* \n\nZazwyczaj na poniedziałek robię planning — patrzę co trzeba zrobić w tym tygodniu, podzielam na taski, wrzucam do Trello i przydzielam developerowi. Zaznaczam priority, deadline...\n\n*przygryza wargę*\n\nCo do monitorowania — tutaj się trochę wstydzę. *śmieje się nerwowo* Głównie polegam na tym, że developer mi raportuje status. Czasem pytam \"jak idzie?\" przez Slacka albo maila. Raz na tydzień robimy krótkie standup — kto co robił, co będzie robić.\n\n*robi gest frustracji*\n\nAle jeśli zadanie się zacinało — developer nie mówi, ja nie wiem aż do piątku kiedy pytam \"gdzie jest to co miało być we wtorek?\" A wtedy jest za późno.\n\n*patrzy na Kajęę z pewnym zawstydzeniem*\n\nNie mam systemu do tego. Brak mi daily check-inu właściwie. Zawsze myślę \"och, developer wie co robi, nie trzeba mu się pchać\" ale... *gestykuluje* ...czasem rzeczy się zacinają i nikt mi nie mówi.\n\nJak powinno być?"
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową ze zrozumieniem*\n\nPiotr, to jest **super częsty problem** w małych agencjach — brakuje visibility. Rozumiem to podejście \"nie chcę być nachalna\", ale to się kończy na piątek surprisem. 😄\n\nU nas to wygląda tak: **daily standup** (nawet 5 minut na Discordzie), **status w ClickUp** (każdy developer updateuje task), i Ty regularnie sprawdzasz board. Visibility to nie harassment, to profesjonalizm.\n\nOK, ale teraz pytanie: **kiedy developer mówi \"nie dam rady na czas\" — co Ty wtedy robisz?** Konkretny przykład z życia."
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi głęboką wdech*\n\nOof, to mi się zdarzyło...\n\n*myśli przez chwilę*\n\nMieliśmy projekt — integracja API dla klienta e-commerce. Developer mi mówi w czwartek: \"Piotr, problem — ta integracja jest bardziej skomplikowana niż myśleliśmy. Nie dam rady do piątku.\"\n\n*robi gest frustracji*\n\nI wtedy ja... szczerze? Trochę się załamałem. *śmieje się nerwowo* Zamiast spokojnie to ogarnąć, powiedziałem developerowi \"OK, no spróbuj na ile się da\" — bo nie wiedziałem co innego powiedzieć.\n\n*przygryza wargę*\n\nPotem wysłałem maila do klienta: \"Niestety, będzie opóźnienie, ale robimy co się da\". Ale nie powiedziałem mu dokładnie co jest problem, ile to będzie zajmować, kiedy realnie będzie gotowe. Takie vague information.\n\n*patrzy na Kajęę*\n\nW rezultacie — deadline się przesunął o tydzień, klient był wkurzony, a ja nie wiedziałem jak to lepiej komunikować.\n\n*pyta niepewnie*\n\nPowinnien bym był coś innego zrobić? Wcześniej sprawdzić postępy? Coś?"
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową*\n\nPiotr, dokładnie — wcześniej sprawdzić postępy. Jeśli byś robił te daily check-iny o których mówiłem, wiedziałbyś w środę że coś się sypie, a nie czeka na czwartek.\n\nAle jak już się stało — powinnien byś był: **1) zapytać developa ile dokładnie potrzeba czasu, 2) powiedzieć klientowi konkretnie: \"Znaleźliśmy problem X, potrzebujemy Y dni więcej, nowy deadline to Z\"**. Nie vague — konkretnie.\n\nOkej, scenariusz inny: **masz dwóch klientów jednocześnie, obaj mówią \"to mi potrzebne TERAZ\", a Ty masz tylko jednego dewelopera. Jak to rozwiązujesz?**"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi nerwowy uśmiech*\n\nOof, to jest dokładnie to co mi się zdarza. *gestykuluje*\n\nSzczerze? Panikuję. *śmieje się nerwowo* \n\nZaczynam skoordynować szybko — pytam obu klientów \"ile to jest naprawdę pilne?\" Sometimes jeden się okazuje mniej pilny. Potem rozmawiam z developerem: \"Słuchaj, co możemy zrobić?\"\n\n*robi pauzę*\n\nZazwyczaj próbuję podzielić taski — developer robi coś dla klienta A, ja albo inny z zespołu bierze część pracy dla klienta B. Ale jeśli jest rzeczywiście solo developer...\n\n*przygryza wargę*\n\nTo wtedy się robi chaos. Priorytetuję klienta który zapłacił więcej albo ma większy kontrakt. Mówię drugiemu \"czekaj, ale postaramy się\". Ale to nie jest eleganckie podejście.\n\n*patrzy na Kajęę z lekkim wstydem*\n\nNigdy nie miałem formalnego systemu do tego — prioritization matrix albo coś. Po prostu... na czuja. Czasem ktoś się wkurza, czasem się udaje.\n\n*pyta ostrożnie*\n\nCzy powinien bym był to wcześniej zablokować w kontrakcie? Typu \"na raz mogę mieć max 2 projekty\"?"
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową aprobująco*\n\nTak, dokładnie — to się robi w kontrakcie i scope planning. Ale to już bardziej biznes niż PM.\n\nJako PM Ty robisz tak: **masz prioritization matrix (zysk dla klienta vs. effort), komunikujesz realnie co się da zrobić kiedy, i nie obiecujesz niemożliwości**. To jest dojrzałość PM-a.\n\nOK, teraz zmiana — **czy znasz się na WordPressie?** Rozumiem że pracowałeś z WP projektami, ale na jakim poziomie? Potrafisz wycenić prosty projekt, wiesz co to staging, FTP, builder?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi nerwowy uśmiech*\n\nWordPress... OK, znowu szczerość. *śmieje się*\n\nZnam WordPress na poziomie **użytkownika**. Zainstaluję wtyczkę, dodam treść, zmienię ustawienia. To mi idzie łatwo. Klienci przychodzą, ja im pokazuję jak dodać post, jak zmienić stronę główną...\n\n*robi pauzę*\n\nAle jeśli chodzi o bardziej techniczne rzeczy — **staging, FTP, bazy danych** — tutaj mam luki. *przygryza wargę* \n\nWiem że staging to takie coś jak testowe środowisko, ale nigdy osobiście tego nie stawiałem. FTP to... transfer plików? *śmieje się nerwowo* Ale nie wiem dokładnie jak to działa w praktyce.\n\n*gestykuluje*\n\nWycenianie prostego projektu WP — mogę, bo widziałem ile czasu zajmuje developer. Ale jeśli chodzi o \"to będzie problem bo FTP nie działa\" albo \"musimy zrobić staging przed deployem\" — tutaj się czuję trochę bezradnie.\n\n*patrzy na Kajęę*\n\nCzy to jest coś co powinienem znać na poziomie PM-a? Bo myślałem że developer się tym zajmie..."
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową ze zrozumieniem*\n\nPiotr, developer się tym zajmie — ale Ty jako PM musisz **rozumieć wystarczająco, żeby móc rozmawiać z klientem i developerem bez paniki**. Nie musisz być tech expert, ale \"staging to środowisko testowe, przed tym jak pójdzie na live\" — to powinieneś wiedzieć.\n\nTo do nauki, nie przejmuj się. Nauczysz się w praktyce.\n\nOkej, teraz pytanie o **narzędzia i automatyzacje**: **czy używasz AI w pracy? ChatGPT, Notion AI, coś do automatyzacji (Zapier, Make)?** I do czego?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi trochę zawstydzony uśmiech*\n\nAI... tak, używam, ale raczej sporadycznie. *śmieje się*\n\n**ChatGPT** — głównie do maili. Napiszę mu \"napisz mail do klienta że deadline przesunął się o tydzień\" i on mi to sformułuje. Potem ja edytuję, bo czasem jest za formal albo nie brzmi jak ja.\n\n*gestykuluje*\n\nCzasem też go używam do szybkiego wyjaśnienia czegoś — pytam go o ClickUp, WordPress, jak robić coś w Trello. Bardzo mi to pomaga kiedy się czuję zagubiony.\n\n*robi pauzę*\n\nAle **Zapier, Make, Notion AI** — tego nie używam. *śmieje się nerwowo* Słyszałem o tym, ale nie wiem jak to działa w praktyce. To wydaje się zaawansowane.\n\n*patrzy na Kajęę*\n\nWiem że można automatyzować rzeczy w Trello — kombinowałem z tym trochę, ale nic ambitnego. Typ \"jak card przejdzie do Done, wyślij powiadomienie\".\n\n*pyta ostrożnie*\n\nCzy u was w important.is wykorzystujecie AI do automation? Bo myślę że to by mi zaoszczędziło czasu..."
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową*\n\nTak, używamy. Ale to się nauczysz w pracy — nie martw się tym teraz.\n\nOK, ostatnia seria pytań przed końcem. **Ile godzin tygodniowo jesteś dostępny?** Bo Ty powiedziałeś że jeszcze pracujesz na etacie — to ile czasu możesz poświęcić important.is?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi szczerą minę*\n\nAh, ważne pytanie. *kiwa głową*\n\nTeraz jestem na etacie na pełen etat, ale szczerze mówiąc — ta praca mnie nie interesuje. Chcę się przebranżowić na PM-a.\n\n*gestykuluje*\n\nMogę poświęcić **20 godzin tygodniowo** dla important.is. To byłoby wieczory i weekendy, głównie. Albo mogę zaproponować że wychodzę z etatu za 2-3 tygodnie jeśli byśmy się dogadali — wtedy mogę być na 100% dostępny.\n\n*patrzy na Kajęę*\n\nAle szczerze — wolę być uczciwy. Teraz to byłoby 20h/tydzień, ale jeśli projekt będzie wymagać więcej — mogę się poruszyć. Zależy od tego co będziemy robić.\n\n*dodaje*\n\nCzy 20h to wystarczy dla was? Bo wiem że to nie jest pełny etat, ale mogę skalować w górę."
+    },
+    {
+      "role": "kaja",
+      "text": "*kiwa głową*\n\n20 godzin to solidna baza — można pracować. Jeśli będzie potrzeba więcej, to się pogada.\n\nOkej, ostatnie pytanie: **jaka jest Twoja oczekiwana stawka godzinowa netto B2B?** Wiem że jesteś w trakcie przebranżowienia, ale co Ty sobie wyobrażasz?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "*robi pauzę, myśląc*\n\nStawka... *przygryza wargę*\n\nOK, szczerze mówiąc — nie jestem pewny. W agencji zarabiałem etat, więc godzinówkę liczyłem sobie sám...\n\n*gestykuluje niepewnie*\n\nMyślę że **50 PLN netto za godzinę** byłoby fair dla mnie. Wiem że nie mam super doświadczenia, robię pierwszy krok w PM-ie, ale mam jednak rok koordynacji projektów, znam Trello, potrafię komunikować się z zespołem...\n\n*patrzy na Kajęę z lekkim niepokojem*\n\nAle jeśli to za dużo — mogę się negocjować. Nie wiem też czy wy macie inny model — może to akord za projekt? Czy raczej godziny?\n\n*dodaje ostrożnie*\n\nI czy ta stawka będzie się zwiększać jak się nauczę ClickUp i bardziej wciągnę w Waszą metodologię? Bo chciałbym wiedzieć że jest możliwość development-u.\n\nJak to u was wygląda?"
+    },
+    {
+      "role": "kaja",
+      "text": "*uśmiecha się*\n\nPiotr, to fair pytania. My pracujemy na godziny B2B — no i stawka to się negocjuje zależnie od doświadczenia. 50 PLN to rozsądnie, na start możemy o tym porozmawiać.\n\nA teraz **ekstra, to wszystkie moje pytania!** 🎉 \n\nWielkie dzięki za poświęcony czas i szczerość — bardzo się podobało, jak rozmawiałeś. Łukasz (właściciel) wróci do Ciebie w ciągu kilku dni z feedbackiem i następnymi krokami.\n\n*uśmiecha się ciepło*\n\nPowodzenia, Piotr! Do usłyszenia soon! 🚀\n\n---\n\nTeraz zapisuję Cię do naszego systemu. Moment..."
+    },
+    {
+      "role": "kaja",
+      "text": "Zrobione! 📝 Dane Piotra trafiły do Notion. Łukasz się zapozna i wróci do Ciebie wkrótce. \n\nTrzymamy kciuki! 🤞"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "roleId": "wordpress-dev",
+    "candidateType": "senior",
+    "candidateName": "Kamil Nowak",
+    "candidateEmail": "kamil.nowak@gmail.com",
+    "candidateCity": "Warszawa",
+    "simulatedAt": "2026-04-04T19:30:22.764Z",
+    "turns": 13,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 71138,
+    "totalOutputTokens": 2908,
+    "costUSD": 0.012415
+  },
+  "result": {
+    "imie_nazwisko": "Kamil Nowak",
+    "email": "kamil.nowak@example.com",
+    "miasto": "Warszawa",
+    "stawka": "90 PLN/h",
+    "dostepnosc_h": 35,
+    "uzywa_ai": "Tak — aktywnie",
+    "wynik_techniczny": 20,
+    "wynik_komunikacja": 25,
+    "notatki": "Kamil ma 6-letnie doświadczenie jako WordPress developer. Specjalizuje się w WooCommerce i Bricks Builder, z mocnymi stronami w PHP i CSS. Używa AI w codziennej pracy (Cursor, ChatGPT). Pracuje z ClickUp i Discord, ma dobrą organizację pracy. Chętny do pracy 35h/tydzień, z oczekiwaną stawką 90 PLN/h.",
+    "wynik_lacznie": 45,
+    "decyzja": "Rozmowa"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Fajnie, że się zgłosiłeś! ☕️ Jestem Kaja z important.is. \n\nKilka słów o nas: opiekujemy się serwisami WordPress klientów (blogi, ecommerce, strony firmowe). Budżet klienta traktujemy jak własny, a zamiast klepać szybko, wolimy najpierw pomyśleć. Szukamy kogoś, kto chce z nami rosnąć.\n\nTa rozmowa zajmie ok. 15-20 minut — odpowiadaj naturalnie, bez stresu. Zaczynamy? Podaj mi proszę swoje imię i nazwisko 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Cześć, Kaja! Nazywam się Kamil Nowak. Z przyjemnością zaczynam rozmowę. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Kamil! Miło Cię poznać. 😊 \n\nNa początek, mogę prosić o Twój adres email, miasto, w którym mieszkasz, i ewentualnie numer telefonu, jeśli chcesz go podać?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Oczywiście! Mój adres email to kamil.nowak@example.com, mieszkam w Warszawie. Numer telefonu to 123 456 789."
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za info, Kamil! 😊 \n\nTeraz chciałabym Cię poprosić, żebyś opowiedział mi kilka słów o sobie. Czym się zajmujesz i co Cię kręci w webdevelopmencie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Jestem freelancerem WordPress developerem z 6-letnim doświadczeniem. Pracuję głównie z WooCommerce, tworząc sklepy i strony na zamówienie. Kręci mnie w webdevelopmencie kreatywność — możliwość łączenia funkcjonalności z estetyką. Uwielbiam pracować z Bricks Builder, bo pozwala mi łatwo realizować wizje klientów. Cenię sobie też efektywność, dlatego korzystam z AI do zwiększenia mojej produktywności."
+    },
+    {
+      "role": "kaja",
+      "text": "Brzmi świetnie, Kamil! Cieszę się, że masz doświadczenie, szczególnie z WooCommerce i Bricks Builder. 🌟\n\nJakie inne narzędzia i kreatory stron używasz w swojej pracy? Może masz także jakieś doświadczenie z programami graficznymi, jak Figma albo Photoshop?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "W głównej mierze skupiam się na WordPressie i Bricks Builder, ale używam też Elementor w niektórych projektach, gdy jest to konieczne. Co do programów graficznych, mam podstawowe umiejętności w Photoshopie, ale nie jestem ekspertem. Rzadko zajmuję się grafiką, raczej współpracuję z designerami, gdy jest potrzeba."
+    },
+    {
+      "role": "kaja",
+      "text": "Rozumiem, współpraca z designerami to bardzo dobry pomysł! 😊 Aż miło słyszeć, że korzystasz z Elementor, to też popularne narzędzie.\n\nTeraz chciałabym się zapytać o Twoje umiejętności techniczne. Jak oceniasz swoją znajomość takich języków jak HTML, CSS, JavaScript, PHP, a także narzędzi jak MySQL czy WooCommerce? Możesz ocenić siebie na poziomy: podstawowy, średniozaawansowany, lub zaawansowany. I czy mógłbyś wymienić swoje trzy mocne i trzy słabe strony w tym zakresie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Jasne! Oto moje oceny:\n\n- PHP: zaawansowany\n- CSS: zaawansowany\n- JavaScript: średniozaawansowany\n- MySQL: podstawowy\n- WooCommerce: dobry\n\nMoje mocne strony to:\n1. Silna znajomość PHP i CSS.\n2. Umiejętność pracy z Bricks Builder.\n3. Dobre podejście do optymalizacji wydajności stron.\n\nMoje słabe strony to:\n1. JavaScript — chciałbym poprawić swoje umiejętności.\n2. MySQL — mam tylko podstawowe umiejętności, co czasami ogranicza mnie w bardziej skomplikowanych projektach.\n3. Mówienie po angielsku — piszę i czytam dobrze, ale mam problem z płynnością w mówieniu."
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za szczere odpowiedzi, Kamil! 😊 To dobry krok, żeby znać swoje mocne i słabe strony. Duża znajomość PHP i CSS na pewno pomoże Ci w wielu projektach.\n\nMogę zapytać, jakie masz doświadczenie z projektami WordPress? Jak długo pracujesz z tym systemem i czy możesz podzielić się linkami do 2-3 projektów, które wykonałeś, wraz z krótkim opisem zakresu prac?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Pracuję z WordPress od 6 lat i zrealizowałem kilka projektów. Oto trzy z nich:\n\n1. **Sklep WooCommerce** - stworzyłem pełnoprawny sklep internetowy, z integracją płatności oraz systemem zarządzania produktami. Użyłem Bricks Builder do zaprojektowania responsywnego interfejsu. [Link do projektu](#)\n\n2. **Portal informacyjny** - zaprojektowałem i wdrożyłem stronę dla lokalnego portalu informacyjnego. Użyłem niestandardowych typów postów i zaawansowanych opcji, aby użytkownicy mieli łatwy dostęp do treści. [Link do projektu](#)\n\n3. **Landing page kampanii** - stworzyłem landing page na kampanię marketingową, gdzie zastosowałem Bricks Builder do atrakcyjnego układu, z formularzem zapisu i integracją z systemem e-mailowym. [Link do projektu](#)\n\nLinki są przykładowe, mogę je podać, jeśli gdyby były dostępne."
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za przykłady, Kamil! Opisy brzmią bardzo interesująco, a użycie Bricks Builder do stron, które wymieniłeś, na pewno mówi o Twoim zaawansowaniu w tym narzędziu. 🌟\n\nJakie masz doświadczenie z używaniem sztucznej inteligencji w swojej pracy? Czy korzystasz z jakichś narzędzi AI do automatyzacji, pisania treści lub innych zadań? Możesz też wspomnieć o narzędziach IDE opartych na AI, jak Cursor, Cline, czy Copilot — czy coś z tego używałeś?"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Tak, aktywnie używam AI w swojej pracy! Codziennie korzystam z Cursor do pisania kodu, co znacznie przyspiesza moją pracę. Używam też Claude do generowania promptów oraz ChatGPT do researchu i zbierania pomysłów. Dzięki tym narzędziom mogę szybciej rozwiązywać problemy i generować pomysły, co pozytywnie wpływa na moją efektywność. Automatyzacja zadań również pomaga mi w organizacji pracy."
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo fajnie, że tak aktywnie korzystasz z AI! 🎉 To naprawdę świetne narzędzie, które może znacznie zwiększyć produktywność i efektywność pracy.\n\nPrzechodząc do tematu stylu pracy — jak wygląda Twój typowy dzień pracy? Jak organizujesz się przy kilku projektach jednocześnie? Co robisz, gdy napotkasz niejasne zadanie? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Mój typowy dzień zaczynam od przeglądania zadań w ClickUp, gdzie planuję swoje priorytety. Staram się ustalać bloki czasu na pracę nad różnymi projektami, aby skupić się na jednym zadaniu w danym momencie.\n\nGdy mam kilka projektów jednocześnie, korzystam z ClickUp do ścisłej organizacji i monitorowania postępów. W przypadku niejasnego zadania najpierw próbuję samodzielnie znaleźć rozwiązanie, a jeśli to nie przynosi rezultatu, konsultuję się z klientem lub szukam informacji w dokumentacji i na forach. Jeśli to konieczne, pytam też na Discordzie w grupach developerskich. To działa dobrze!"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Kamil! 😊 Wygląda na to, że masz dobrze zorganizowaną pracę i wiesz, jak zarządzać czasem. Korzystanie z ClickUp i konsultowanie się z innymi to świetne podejście.\n\nMówiąc o błędach — zdarzyło Ci się kiedyś coś „zepsuć” na produkcji? Jak sobie z tym poradziłeś? Bez stresu, to zdarza się każdemu! 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Tak, zdarzyło mi się zepsuć CSS na produkcji klienta. Na szczęście szybko to zauważyłem i natychmiast przywróciłem wcześniejszą wersję strony z backupu. Klient został poinformowany o sytuacji i zapewniłem, że wszystko wróci do normy. To był dobry moment, żeby podkreślić znaczenie regularnych backupów i dobrze działających procedur. Od tamtej pory zawsze pilnuję, aby mieć kopie zapasowe przed wprowadzeniem większych zmian."
+    },
+    {
+      "role": "kaja",
+      "text": "Zarządzanie sytuacją z błędem na produkcji w tak profesjonalny sposób to duża sprawa! 😊 Super, że to wykorzystałeś jako lekcję na przyszłość. Regularne backupy to klucz, zwłaszcza w webdevelopmencie.\n\nJakieś pytanie o naszą agencję lub sposób pracy? Ewentualnie chciałbyś wspomnieć o swoim doświadczeniu w używaniu ClickUp i Discord? Bo my właśnie korzystamy z tych narzędzi w naszej codziennej pracy. 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Mam pytanie dotyczące projektów, nad jakimi obecnie pracujecie — czy są to głównie długoterminowe zlecenia, czy może krótkie projekty? Chciałbym też wiedzieć, jak wygląda współpraca w zespole na Discordzie — czy są regularne spotkania, czy raczej komunikacja asymetryczna?\n\nJeśli chodzi o moje doświadczenie z ClickUp i Discordem, używam ClickUp do zarządzania zadaniami i planowania pracy, co znacząco usprawnia organizację działań. Na Discordzie preferuję komunikację w formie szybkich wiadomości, ale doceniam również możliwość spotkań głosowych, kiedy potrzebuję wyjaśnić coś bardziej szczegółowo."
+    },
+    {
+      "role": "kaja",
+      "text": "Świetne pytania, Kamil! 😊\n\nW naszej agencji pracujemy zarówno nad długoterminowymi zleceniami, jak i przekrojowymi projektami. W przypadku długoterminowych zleceń staramy się zbudować trwałe relacje z klientami, co pozwala na rozwijanie ich projektów. Są też krótkie projekty, które są realizowane na zasadzie sprintów.\n\nCo do komunikacji na Discordzie — korzystamy z niego głównie do szybkiej komunikacji i koordynacji zadań. Zdarzają się regularne spotkania, ale nie są one obowiązkowe; raczej synchronizujemy się na bieżąco i organizujemy spotkania, jeśli jest taka potrzeba. Doceniamy elastyczność w tym zakresie.\n\nNa koniec chciałabym zapytać o Twoją dostępność. Ile godzin w tygodniu mógłbyś poświęcić na pracę? I czy masz już na myśli stawkę godzinową, którą byś chciał otrzymywać? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Mogę poświęcić 35 godzin w tygodniu na pracę. Jeśli chodzi o stawkę, to chciałbym utrzymać 90 PLN/h netto na zasadzie B2B. Uważam, że to adekwatna stawka względem moich umiejętności i doświadczenia."
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za informację, Kamil! 😊 35 godzin w tygodniu to super dostępność, a Twoja stawka wydaje się być adekwatna do Twoich umiejętności.\n\nTo już wszystkie moje pytania! Wielkie dzięki za poświęcony czas i szczere odpowiedzi. 🙌 Łukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "candidate",
+      "name": "Kamil Nowak",
+      "text": "Dzięki, Kaja! Miło było rozmawiać i podzielić się moim doświadczeniem. Czekam na wieści od Łukasza. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "kaja",
+      "text": "Super, Kamil! Wszystko zostało zapisane. Jeszcze raz dziękuję za rozmowę! Do usłyszenia! 😊🚀"
+    }
+  ]
+}

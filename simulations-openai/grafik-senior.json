@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "roleId": "grafik",
+    "candidateType": "senior",
+    "candidateName": "Marta Jabłońska",
+    "candidateEmail": "marta.design@gmail.com",
+    "candidateCity": "Gdańsk",
+    "simulatedAt": "2026-04-04T19:36:01.765Z",
+    "turns": 12,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 63263,
+    "totalOutputTokens": 3181,
+    "costUSD": 0.011398
+  },
+  "result": {
+    "imie_nazwisko": "Marta Jabłońska",
+    "email": "martajablonska@example.com",
+    "miasto": "Gdańsk",
+    "github": "https://www.behance.net/martajab",
+    "stawka": "100 PLN/h netto",
+    "dostepnosc_h": 25,
+    "uzywa_ai": "Tak — aktywnie",
+    "wynik_techniczny": 22,
+    "wynik_komunikacja": 25,
+    "notatki": "Marta posiada 7-letnie doświadczenie w designie, skupia się zarówno na estetyce, jak i funkcjonalności. Używa narzędzi takich jak Figma, Photoshop i Notion. Proces projektowy oparty na badaniu użytkownika, z doświadczeniem w pracy z klientem. Stawka 100 PLN/h, dostępność 25 godzin tygodniowo.",
+    "wynik_lacznie": 47,
+    "decyzja": "Rozmowa"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️ Szukamy grafika/designera, który nie boi się myśleć o UX i potrafi zaprojektować coś, co nie tylko dobrze wygląda, ale też działa. Ta rozmowa to ok. 15 minut. Jak masz na imię i nazwisko? 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Cześć Kaja! Mam na imię Marta Jabłońska. Cieszę się, że mogę z Tobą porozmawiać!😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Cieszę się, że się odezwałaś, Marta! 😊 Możesz mi podać swój adres e-mail i miasto, w którym mieszkasz?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Oczywiście! Mój adres e-mail to martajablonska@example.com, a mieszkam w Gdańsku."
+    },
+    {
+      "role": "kaja",
+      "text": "Super, dzięki! 😊 Teraz opowiedz mi kilka słów o sobie — co Cię kręci w designie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Jasne! Od 7 lat pracuję w designie i najbardziej kręci mnie łączenie estetyki z funkcjonalnością, szczególnie w obszarze UI/UX. Lubię myśleć o użytkownikach — ich potrzebach i zachowaniach — i to sprawia, że każdy projekt staje się dla mnie wyzwaniem. \n\nDodatkowo, pasjonuje mnie branding i tworzenie spójnych identyfikacji wizualnych, które wyróżniają marki na rynku. Najbardziej satysfakcjonujące dla mnie są projekty, w których mogę zrealizować kompleksowy proces od rebrandingu, przez social media, aż po strony internetowe. Cenię sobie również pracę z narzędziami takimi jak Figma, gdzie mogę wizualizować moje pomysły i testować różne rozwiązania. \n\nOgólnie rzecz biorąc, czerpię radość z tworzenia funkcjonalnych i estetycznych rozwiązań, które pozytywnie wpływają na doświadczenia użytkowników."
+    },
+    {
+      "role": "kaja",
+      "text": "To brzmi naprawdę inspirująco, Marta! Cieszę się, że tak mocno skupiasz się na potrzebach użytkowników i procesie designu. 😊 \n\nJakie narzędzia najczęściej wykorzystujesz w swojej pracy? Używasz Figmy, Adobe XD, Photoshopa, Illustratora, Canva, Cinema4D? A także czy masz jakieś specjalizacje jak UI/UX, branding, social media kreacje itp.?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Dziękuję! Tak, co do narzędzi — jestem ekspertem w Figma, gdzie tworzę prototypy, wireframy i designy interfejsów. Również często korzystam z Photoshopa i Illustratora do pracy nad grafiką i ilustracjami. \n\nCzasami sięgam po Canva, głównie do szybkich creacji na social media, a także mam podstawową wiedzę w Cinema4D, choć używam go głównie do zabawy lub prostych projektów 3D. \n\nMoje specjalizacje obejmują przede wszystkim UI/UX, ale również branding i kreacje na social media, co pozwala mi na realizację różnorodnych projektów. Wynika to z mojego zainteresowania nie tylko funkcjonalnością, ale także estetycznym wyglądem marek."
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie, że masz taką wszechstronność w swoich umiejętnościach! Figma to naprawdę kluczowe narzędzie w naszej branży. 😊 \n\nMogłabyś podzielić się linkami do 3-5 swoich najlepszych projektów? Jakie projekty uważasz za najbardziej udane i dlaczego?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Oczywiście! Możesz zobaczyć moje projekty na moim portfoliu: [behance.net/martajab](https://www.behance.net/martajab).\n\nNajbardziej udane projekty to:\n\n1. **Rebranding restauracji** - Kompleksowy projekt, który obejmował stworzenie nowego logo, menu, kreacji na social media oraz strony internetowej w WordPressie. Zadowolenie klienta i pozytywne reakcje użytkowników były dla mnie najważniejsze, a całość spójna wizualnie.\n\n2. **Webapp UI** - Projekt interfejsu aplikacji webowej, gdzie skupiłam się na ergonomii i intuicyjności nawigacji. Dzięki testom z użytkownikami dowiedziałam się, jakie elementy należy poprawić i jak uprościć proces, co finalnie przyczyniło się do lepszego doświadczenia użytkowników.\n\n3. **Kampania social media** - W ramach tej kampanii stworzyłam zestaw grafik promujących wydarzenie. Byłam odpowiedzialna za spójność wizualną oraz przekaz, co pozwoliło na zwiększenie zaangażowania społeczności.\n\nTe projekty pokazują nie tylko moje szerokie umiejętności, ale także umiejętności myślenia w kontekście użytkownika i skutecznej współpracy z klientami."
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję za podzielenie się linkiem do swojego portfolio i opisami projektów! Szczególnie imponujące wydają się być te, które łączą różne aspekty designu oraz myślenie UX. 😊\n\nJak wygląda Twój proces projektowy? Zaczynasz od briefu, przechodzisz do badań, wireframe'ów i wreszcie do finalnego projektu? Jak to u Ciebie wygląda?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Dokładnie, mój proces projektowy zazwyczaj przebiega w kilku kluczowych krokach:\n\n1. **Brief** - Zaczynam od spotkania z klientem lub zespołem, aby zrozumieć ich cele, oczekiwania i potrzeby. Ważne jest dla mnie zebranie jak najwięcej informacji już na początku.\n\n2. **Badania konkurencji** - Przed przystąpieniem do projektowania, analizuję konkurencję, aby dowiedzieć się, co działa w branży, a co można poprawić. To także źródło inspiracji.\n\n3. **User persona** - Tworzę user persony, które pomagają mi zrozumieć, kim są potencjalni użytkownicy, jakie mają potrzeby i jakie są ich zachowania. To kluczowy krok, który pozwala mi projektować z myślą o użytkownikach.\n\n4. **Wireframe** - Przechodzę do tworzenia szkiców i wireframe’ów w Figma, co pozwala wstępnie zaplanować układ interfejsu i zdefiniować elementy, które będą najważniejsze dla użytkowników.\n\n5. **Design** - Na podstawie feedbacku z wireframe'ów przechodzę do tworzenia graficznego projektu, gdzie dbam o estetykę, kolorystykę, typografię i ogólne wrażenia wizualne.\n\n6. **Feedback loop** - Po stworzeniu prototypu, zbieram opinie od klienta oraz użytkowników, aby wprowadzić zmiany i ulepszenia. Współpraca i otwartość na sugestie to dla mnie istotne elementy w tym etapie.\n\n7. **Finalizacja** - Po zaakceptowaniu projektu tworzę dokumentację i przekazuję materiały deweloperom, jeśli jest to projekt techniczny.\n\nTen proces pozwala mi na systematyczne podejście do każdego projektu, dbając o zarówno estetykę, jak i funkcjonalność."
+    },
+    {
+      "role": "kaja",
+      "text": "To bardzo przemyślany i zorganizowany proces! Szczególnie cenne jest to, że uwzględniasz badania i user persony, co naprawdę wpływa na jakość finalnych produktów. 😊\n\nCo robisz, gdy klient mówi \"nie podoba mi się\", ale nie oferuje konkretów? Jak reagujesz w takiej sytuacji?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "W takiej sytuacji staram się podejść do problemu konstruktywnie. Zamiast reagować defensywnie, zadaję pytania, które pomogą mi lepiej zrozumieć, co dokładnie nie spełnia oczekiwań klienta. Na przykład pytam:\n\n- \"Co konkretnie nie gra w tym projekcie?\"\n- \"Czy są elementy, które szczególnie się Panu/Pani nie podobają, lub które chciałby/chciałaby zmienić?\"\n- \"Czy są jakieś przykłady, które Panu/Pani się podobają i chciałby/chciałaby je zobaczyć w naszym projekcie?\"\n\nDzięki tym pytaniom staram się uzyskać konkretne wskazówki, które pozwolą mi lepiej dostosować projekt do wizji klienta. Otwartość na sugestie i dialog są kluczowe, aby móc znaleźć rozwiązania, które będą satysfakcjonujące dla obu stron. Współpraca z klientem jest dla mnie równie ważna, jak sam proces projektowania."
+    },
+    {
+      "role": "kaja",
+      "text": "To doskonałe podejście! Otwartość na komunikację i chęć zrozumienia potrzeb klienta to klucz do udanej współpracy. 😊\n\nJak organizujesz swoje zadania, gdy pracujesz nad kilkoma projektami jednocześnie? Czy masz jakieś narzędzia do zarządzania projektami, takie jak ClickUp, Notion lub inne? Co sprawdza się u Ciebie najlepiej?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Dziękuję! Tak, organizacja zadania jest kluczowa, zwłaszcza gdy pracuję nad kilkoma projektami równocześnie. Najczęściej korzystam z takich narzędzi jak Trello i Notion, które pozwalają mi w prosty sposób śledzić postępy w projektach.\n\nW Trello tworzę tablice dla różnych projektów, gdzie dodaję karty z zadaniami. Dzięki temu mogę szybko zobaczyć, co jest do zrobienia, co jest w trakcie realizacji i co zostało zakończone. Oznaczam zadania kolorami w zależności od priorytetu, co ułatwia mi planowanie.\n\nNotion wykorzystuję głównie do dokumentacji, zbierania pomysłów i researchu. Dzięki tej platformie mogę tworzyć bazy danych, notatki i listy kontrolne, co sprawia, że wszystko mam w jednym miejscu.\n\nOprócz tego, regularnie ustalam priorytety i jestem elastyczna w planowaniu. Staram się także rezerwować czas na analizę postępów, dzięki czemu mogę dostosować harmonogram pracy, jeśli zajdzie taka potrzeba. To pomaga mi utrzymać równowagę i efektywność w pracy nad różnorodnymi projektami."
+    },
+    {
+      "role": "kaja",
+      "text": "To świetne, że masz skuteczne systemy organizacji pracy! Trello i Notion to naprawdę pomocne narzędzia, które mogą zwiększyć produktywność. 😊 \n\nCzy używasz sztucznej inteligencji w swojej pracy? Na przykład narzędzi takich jak Midjourney, DALL-E, Stable Diffusion czy Adobe Firefly? Jakie masz doświadczenia z AI w designie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Tak, używam sztucznej inteligencji w swojej pracy, ale z umiarem i zaspokajając konkretne potrzeby. Korzystam głównie z Midjourney do tworzenia moodboardów i koncepcji wizualnych. To narzędzie pozwala mi szybko generować inspiracje na podstawie określonych fraz i pomysłów, co przyspiesza proces twórczy.\n\nDodatkowo, wykorzystuję Adobe Firefly do prostych zadań, takich jak usuwanie obiektów z obrazów. To narzędzie pozwala mi zaoszczędzić czas przy postprodukcji i edytowaniu zdjęć, co jest pomocne, zwłaszcza w przypadkach, gdy jest potrzeba szybkiej obróbki graficznej.\n\nJednak unikam polegania na AI w pełnych projektach lub gotowych rozwiązaniach. Uważam, że ludzka kreatywność i perspektywa są niezastąpione, a AI powinno przede wszystkim wspierać proces kreatywny, a nie go zastępować. Chcę tworzyć unikalne i spersonalizowane projekty, które najlepiej odpowiadają potrzebom klientów i użytkowników."
+    },
+    {
+      "role": "kaja",
+      "text": "To odpowiedzialne podejście do wykorzystania AI w designie! Rzeczywiście, balansu między technologią a ludzką kreatywnością jest kluczowy. 😊\n\nNa koniec, chciałabym zapytać o Twoją dostępność. Ile godzin tygodniowo mogłabyś poświęcić na pracę, oraz jaką stawkę netto B2B byś oczekiwała?"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Dziękuję! Moja dostępność to 25 godzin tygodniowo. Jeśli chodzi o stawkę, oczekuję 100 PLN/h netto w modelu B2B. Jestem elastyczna i otwarta na rozmowy o projekcie i ewentualnych dostosowaniach, jeśli zajdzie taka potrzeba."
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję za informacje, Marta! 😊 \n\nEkstra, to wszystkie moje pytania! Wielkie dzięki za poświęcony czas i za wspaniałe odpowiedzi. Łukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀"
+    },
+    {
+      "role": "candidate",
+      "name": "Marta Jabłońska",
+      "text": "Dziękuję, Kaja! Cieszę się, że mogłam odpowiedzieć na Twoje pytania. Będę czekać na wieści od Łukasza. Do usłyszenia! 🚀😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Rozmowa została zakończona i wszystkie dane zostały zapisane. Jeszcze raz dziękuję, Marta! Czekamy na wieści od Łukasza. Do usłyszenia! 🌟"
+    }
+  ]
+}

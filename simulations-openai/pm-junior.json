@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "roleId": "pm",
+    "candidateType": "junior",
+    "candidateName": "Piotr Zając",
+    "candidateEmail": "piotrzajac1995@gmail.com",
+    "candidateCity": "Lublin",
+    "simulatedAt": "2026-04-04T19:34:47.313Z",
+    "turns": 13,
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "totalInputTokens": 68809,
+    "totalOutputTokens": 3059,
+    "costUSD": 0.012157
+  },
+  "result": {
+    "imie_nazwisko": "Piotr Zając",
+    "email": "",
+    "miasto": "",
+    "stawka": "50 PLN",
+    "dostepnosc_h": 20,
+    "uzywa_ai": "Tak — powierzchownie",
+    "wynik_techniczny": 12,
+    "wynik_komunikacja": 24,
+    "notatki": "Piotr Zając ma rok doświadczenia jako koordynator projektów w agencji marketingowej, głównie w kampaniach online. Używa Trello i zna WordPress na poziomie podstawowym. Preferuje komunikację e-mailową, jest otwarty na rozwój i naukę nowych narzędzi PM. Oceny: 12 punktów za doświadczenie techniczne i 24 za komunikację.",
+    "wynik_lacznie": 36,
+    "decyzja": "Zadanie techniczne"
+  },
+  "transcript": [
+    {
+      "role": "kaja",
+      "text": "Cześć! Jestem Kaja z important.is — fajnie, że tu trafiłeś! ☕️\n\nSzukamy kogoś, kto będzie ogarniał projekty od A do Z — komunikacja z klientem, koordynacja zespołu, pilnowanie terminów i budżetów. Ta rozmowa zajmie ok. 15 minut. Zaczynamy? Podaj imię i nazwisko 😊"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Cześć Kaja! Dziękuję za przywitanie. Nazywam się Piotr Zając. Cieszę się, że mogę uczestniczyć w tej rozmowie! 😊 Możemy zaczynać!"
+    },
+    {
+      "role": "kaja",
+      "text": "Świetnie, Piotr! 😊\n\nMożesz mi powiedzieć kilka słów o sobie — czym się zajmujesz i jakie masz doświadczenie?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Oczywiście! W chwili obecnej pracuję w małej agencji marketingowej, gdzie pełnię rolę koordynatora projektów. Mam za sobą rok doświadczenia w tej roli, gdzie prowadziłem maksymalnie dwa projekty jednocześnie. Zajmowałem się głównie komunikacją z klientami, głównie przez e-maile, co pozwoliło mi na rozwinięcie umiejętności organizacyjnych i planowania.\n\nMiałem okazję korzystać z narzędzi takich jak Trello, które bardzo dobrze znam, a także słyszałem o ClickUp, chociaż jeszcze go nie używałem. Chciałbym rozwijać się w roli Project Managera, bo bardzo mnie to interesuje i widzę w tym swoją przyszłość. \n\nObecnie jestem dostępny na 20 godzin w tygodniu, ponieważ wciąż pracuję na etacie, ale jestem bardzo entuzjastycznie nastawiony do tej zmiany! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Brzmi super, Piotr! To ciekawe, że masz doświadczenie w komunikacji z klientami. \n\nIle dokładnie lat masz w roli PM/koordynatora projektów? Jakie konkretnie projekty prowadziłeś, czyli czy były to projekty webowe, e-commerce, marketingowe, czy może coś innego?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Dziękuję! Pracuję jako koordynator projektów od roku. W tym czasie prowadziłem przede wszystkim projekty związane z marketingiem, w tym kampanie online i działania promocyjne dla naszych klientów. \n\nNajwięcej pracy miałem przy projektach webowych, skupiających się na tworzeniu i optymalizacji stron internetowych oraz kampanii w mediach społecznościowych. Miałem też okazję współpracować przy mniejszych projektach związanych z e-commerce, ale to bardziej w tle, niż jako główny koordynator. \n\nKażdy projekt był dla mnie dużym doświadczeniem, chociaż był to na początku dla mnie spory krok, starałem się uczyć jak najwięcej na każdym etapie. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetnie, że zyskujesz różnorodne doświadczenie w projektach! 😊\n\nJakie narzędzia do zarządzania projektami używałeś? Czy miałeś okazję pracować z ClickUp, Asana, Jira czy innymi? Jakie z nich znałeś najlepiej?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Dziękuję! Do tej pory najczęściej korzystałem z Trello, które bardzo dobrze znam i lubię, ponieważ jest intuicyjne i pozwala w prosty sposób śledzić postępy w projektach. Oprócz tego miałem okazję słyszeć o ClickUp, ale jeszcze go nie używałem.\n\nNie miałem także okazji pracować z Asaną czy Jirą, ale jestem otwarty na naukę nowych narzędzi i chętnie bym je przetestował. Uważam, że umiejętność korzystania z różnych narzędzi PM jest bardzo ważna, więc jestem gotów się rozwijać w tej kwestii. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To podejście do nauki nowych narzędzi jest świetne! 😊\n\nJak prowadzisz komunikację z klientem? Czy preferujesz e-maile, rozmowy telefoniczne, czy może czat? Jakie metody sprawdzają się u Ciebie najlepiej?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Dziękuję! W mojej obecnej roli głównie komunikuję się z klientami za pośrednictwem e-maili, ponieważ to mi najbardziej odpowiada i czuję się w tym najpewniej. E-maile pozwalają mi na przemyślenie odpowiedzi i przekazanie informacji w sposób klarowny.\n\nZ rozmowami telefonicznymi mam trochę mniejsze doświadczenie, co czasami budzi we mnie pewną niepewność, ale jestem otwarty na ich rozwijanie. W przyszłości chciałbym wykorzystywać różne metody komunikacji, również czat, jeśli miałbym taką możliwość. \n\nUważam, że kluczowe jest dostosowanie metody komunikacji do potrzeb klienta, więc staram się być elastyczny. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To bardzo dobre podejście, Piotr! Elastyczność w komunikacji z klientem jest kluczowa. \n\nJak reagujesz w sytuacji, gdy klient zmienia zakres projektu w trakcie jego realizacji? Co byś zrobił w takim przypadku?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "To trudna sytuacja, z którą czasami się spotkałem. Przyznam szczerze, że jeszcze nie miałem do czynienia z poważnymi przypadkami \"scope creep\", więc często starałem się po prostu \"ugaszać pożary\". \n\nW przypadku zmiany zakresu projektu, myślę, że kluczowe byłoby najpierw zrozumienie, dlaczego klient chce wprowadzić te zmiany i jakie są jego oczekiwania. Następnie starałbym się jasno wyjaśnić, jak te zmiany wpłyną na harmonogram, budżet oraz na ogólny plan projektu. \n\nByć może w takich sytuacjach mógłbym zasugerować wprowadzenie umowy lub dokumentacji zmiany zakresu, co pomogłoby obu stronom mieć jasność co do nowego kierunku projektu. Uczę się cały czas, więc chętnie przyjmę wskazówki, jak lepiej radzić sobie w takich sytuacjach. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To bardzo rozsądne podejście! Zrozumienie potrzeb klienta oraz klarowne przedstawienie konsekwencji zmian to klucz do efektywnej komunikacji. 😊\n\nA co byś zrobił, gdyby klient był niezadowolony z efektów projektu? Jak byś zareagował w takiej sytuacji?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Zdaję sobie sprawę, że niezadowolenie klienta z efektów projektu to poważna sprawa. W takiej sytuacji starałbym się zachować spokój i przede wszystkim wysłuchać klienta, aby zrozumieć, co dokładnie mu się nie podoba i jakie są jego oczekiwania. \n\nDzięki temu mógłbym lepiej zrozumieć źródło problemu, co jest kluczowe w ustaleniu dalszych działań. Ważne byłoby, aby nie brać krytyki osobiście, lecz skupić się na rozwiązaniu problemu. \n\nNastępnie starałbym się przedstawić możliwe rozwiązania, które moglibyśmy wspólnie wdrożyć, aby poprawić sytuację. Poprosiłbym również o feedback i dawkowanie oczekiwań, aby w przyszłości unikać podobnych problemów. Staram się być otwarty na konstruktywną krytykę, bo to pomaga mi się rozwijać! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Bardzo dobrze, że jesteś otwarty na konstruktywną krytykę i chcesz aktywnie współpracować z klientem nad rozwiązaniami! 😊\n\nA teraz powiedz mi, jak dobrze znasz WordPress? Jesteś jego użytkownikiem, czy może masz bardziej zaawansowaną wiedzę? Jakie aspekty związane z WordPressem znasz?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Jako użytkownik WordPressa znam go na poziomie podstawowym. Głównie zajmowałem się instalacją wtyczek i tworzeniem prostych stron, ale nie mam jeszcze głębszej wiedzy na temat bardziej zaawansowanych funkcji, takich jak staging czy FTP. \n\nZrozumienie działania WordPressa jest dla mnie ważne, ponieważ wiele projektów, nad którymi pracowałem, opiera się na tej platformie. Chciałbym jednak poszerzyć swoją wiedzę na temat WordPressa, tak aby lepiej rozumieć wszystkie aspekty i móc skuteczniej wspierać klientów w realizacji ich potrzeb. Jeśli miałbym okazję pracować w tej roli, to na pewno skupiłbym się na nauce tych bardziej zaawansowanych umiejętności! 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To świetny plan, Piotr! Chęć nauki i rozwijania się jest bardzo ważna, szczególnie w dynamicznej branży. 😊\n\nPrzechodząc do kolejnego pytania, czy używasz AI w swojej pracy? Jeśli tak, to do czego przede wszystkim? A może nie masz jeszcze doświadczenia w korzystaniu z takich narzędzi?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Tak, stosuję AI w mojej pracy sporadycznie. Głównie korzystałem z ChatGPT, aby pomóc mi w pisaniu e-maili lub w tworzeniu treści. Czasami pomaga mi również w generowaniu pomysłów na kampanie lub strategię, co daje mi świeże spojrzenie na tematy, które omawiam.\n\nNie mam jeszcze dużego doświadczenia w wykorzystywaniu AI, ale bardzo mnie to interesuje i widzę wiele potencjalnych zastosowań w zarządzaniu projektami. Myślę, że mogłoby to pomóc w automatyzacji niektórych zadań, co pozwoliłoby mi skupić się na bardziej strategicznych aspektach pracy. Chciałbym rozwijać tę umiejętność, aby lepiej wykorzystać możliwości, jakie oferują technologie AI w codziennej pracy. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To ciekawe, że już dostrzegasz potencjał AI w zarządzaniu projektami! 😊\n\nA co z automatyzacjami? Czy masz doświadczenie w korzystaniu z narzędzi takich jak n8n, Zapier czy Make? Jakie byłyby twoje myśli na ten temat?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Na tę chwilę nie mam doświadczenia z narzędziami do automatyzacji, takimi jak n8n, Zapier czy Make. Słyszałem o nich, ale jeszcze nie miałem okazji ich wypróbować. \n\nUważam, że automatyzacja może być niezwykle przydatna w zarządzaniu projektami, zwłaszcza w kontekście uproszczenia powtarzalnych zadań i zwiększenia efektywności. Mógłbym sobie wyobrazić, że korzystając z takich narzędzi, mógłbym zautomatyzować procesy związane z komunikacją z klientami czy aktualizowaniem statusów projektów w systemach zarządzania. \n\nZdecydowanie chciałbym w przyszłości zainwestować czas w naukę tych narzędzi, aby móc w pełni wykorzystać ich potencjał i zyskać więcej efektywności w pracy jako Project Manager. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "To bardzo rozsądne podejście, Piotr! Automatyzacja rzeczywiście może znacznie zwiększyć efektywność pracy. 😊 \n\nPrzechodząc do kwestii dostępności, ile godzin tygodniowo możesz poświęcić na pracę jako Project Manager? Jaką stawkę godzinową netto B2B byś oczekiwał?"
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Obecnie mogę poświęcić na to około 20 godzin tygodniowo, ponieważ wciąż pracuję na etacie. Jestem elastyczny i mogę dostosować swoje godziny pracy, aby lepiej odpowiadały potrzebom zespołu.\n\nJeśli chodzi o stawkę, to oczekiwałbym 50 PLN netto za godzinę. Uważam, że to odpowiednia stawka biorąc pod uwagę moje dotychczasowe doświadczenie i zaangażowanie w rozwój umiejętności w roli Project Managera. Oczywiście jestem otwarty na rozmowę na ten temat. 😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dzięki za szczerość, Piotr! Twoja dostępność i stawka są dla nas ważne. 😊\n\nEkstra, to wszystkie moje pytania, Piotr! Wielkie dzięki za poświęcony czas i za wszystkie odpowiedzi. 🙌 Łukasz wróci do Ciebie w ciągu kilku dni. Do usłyszenia! 🚀 \n\nTeraz zarejestruję zebrane dane."
+    },
+    {
+      "role": "candidate",
+      "name": "Piotr Zając",
+      "text": "Dziękuję, Kaja! Cieszę się, że mogłem wziąć udział w rozmowie i odpowiedzieć na pytania. Liczę na pozytywną odpowiedź od Łukasza i z niecierpliwością czekam na wieści. Życzę miłego dnia i do usłyszenia! 🚀😊"
+    },
+    {
+      "role": "kaja",
+      "text": "Dziękuję, Piotr! Twoje dane zostały pomyślnie zarejestrowane. Życzę Ci miłego dnia i do usłyszenia! 🚀😊"
+    }
+  ]
+}
