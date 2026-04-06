@@ -1,7 +1,7 @@
 'use client';
 
 import { useChat } from 'ai/react';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { Suspense } from 'react';
@@ -20,6 +20,20 @@ function KajaAvatar({ size = 28 }: { size?: number }) {
   );
 }
 
+/** Generate a random session ID */
+function genSessionId() {
+  return `s_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+}
+
+/** Track an event (fire-and-forget) */
+function track(type: string, data?: { role?: string; sessionId?: string }) {
+  fetch('/api/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type, ...data }),
+  }).catch(() => {});
+}
+
 /* ── Main content (needs useSearchParams → Suspense) ──────────────────── */
 function ChatApp() {
   const searchParams = useSearchParams();
@@ -28,21 +42,45 @@ function ChatApp() {
   const [selectedRole, setSelectedRole] = useState<string | null>(roleParam);
   const [started, setStarted] = useState(false);
   const [interviewDone, setInterviewDone] = useState(false);
+  const [budgetError, setBudgetError] = useState(false);
+  const [fallbackEmail, setFallbackEmail] = useState('');
+  const [fallbackSent, setFallbackSent] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const sessionIdRef = useRef(genSessionId());
 
   const role = selectedRole ? ROLES[selectedRole] : null;
   const triggerMsg = role
     ? `Cześć, chciałbym/chciałabym aplikować na stanowisko: ${role.title}.`
     : '';
 
+  // Track page view on mount
+  useEffect(() => { track('page_view'); }, []);
+
   const { messages, input, handleInputChange, handleSubmit, isLoading, append } = useChat({
     api: '/api/chat',
-    body: { role: selectedRole },
-    onError: (err) => console.error('Chat error:', err),
+    body: { role: selectedRole, sessionId: sessionIdRef.current },
+    onError: (err) => {
+      console.error('Chat error:', err);
+      // Check if it's a budget error
+      if (err.message?.includes('budget') || err.message?.includes('429')) {
+        setBudgetError(true);
+      }
+    },
+    onResponse: (response) => {
+      if (response.status === 429) {
+        setBudgetError(true);
+      }
+    },
   });
+
+  const handleRoleSelect = useCallback((roleId: string) => {
+    setSelectedRole(roleId);
+    track('role_select', { role: roleId });
+  }, []);
 
   const startInterview = () => {
     setStarted(true);
+    track('interview_start', { role: selectedRole ?? undefined, sessionId: sessionIdRef.current });
     append({ role: 'user', content: triggerMsg });
   };
 
@@ -70,6 +108,59 @@ function ChatApp() {
       if (input.trim() && !isLoading) handleSubmit(e as unknown as React.FormEvent);
     }
   };
+
+  // ── Fallback: Kaja niedostępna ──────────────────────────────────────────
+  if (budgetError) {
+    return (
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center px-5 sm:px-6 py-10 text-center">
+        <div className="mb-5 sm:mb-6"><KajaAvatar size={56} /></div>
+        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">
+          Kaja chwilowo niedostępna<span className="text-accent">.</span>
+        </h1>
+        <p className="text-sm sm:text-base text-gray-500 max-w-sm mb-6">
+          Mamy teraz dużo rozmów i musimy chwilę odpocząć 😊
+          Zostaw swój email — odezwiemy się i umówimy rozmowę.
+        </p>
+        {fallbackSent ? (
+          <p className="text-sm text-green-600 font-medium">Zapisano! Odezwiemy się wkrótce 🙌</p>
+        ) : (
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (fallbackEmail.trim()) {
+                fetch('/api/track', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    type: 'page_view',
+                    meta: { fallbackEmail: fallbackEmail.trim(), role: selectedRole },
+                  }),
+                }).catch(() => {});
+                setFallbackSent(true);
+              }
+            }}
+            className="flex gap-2 w-full max-w-sm"
+          >
+            <input
+              type="email"
+              value={fallbackEmail}
+              onChange={(e) => setFallbackEmail(e.target.value)}
+              placeholder="Twój email"
+              required
+              className="flex-1 rounded-full border border-gray-200 px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-accent"
+            />
+            <button
+              type="submit"
+              style={{ backgroundColor: '#E63946' }}
+              className="px-5 py-2.5 rounded-full text-white text-sm font-medium hover:opacity-90"
+            >
+              Wyślij
+            </button>
+          </form>
+        )}
+      </div>
+    );
+  }
 
   // ── Success ─────────────────────────────────────────────────────────────
   if (interviewDone) {
@@ -114,7 +205,7 @@ function ChatApp() {
           {Object.entries(ROLES).map(([id, r]) => (
             <button
               key={id}
-              onClick={() => setSelectedRole(id)}
+              onClick={() => handleRoleSelect(id)}
               className="flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3.5 sm:py-4 rounded-2xl border border-gray-200 hover:border-accent active:border-accent hover:shadow-sm transition-all text-left group"
             >
               <span className="text-xl sm:text-2xl flex-shrink-0">{r.emoji}</span>

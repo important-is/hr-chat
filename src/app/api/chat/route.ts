@@ -6,6 +6,8 @@ import { Client } from '@notionhq/client';
 import { getRole } from '@/lib/roles';
 import { appendFileSync, mkdirSync, existsSync } from 'fs';
 import { join } from 'path';
+import { canProceed, recordCost } from '@/lib/budget';
+import { trackEvent } from '@/lib/analytics';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
@@ -108,11 +110,48 @@ function buildTranscriptBlocks(messages: Msg[], totals: { tokIn: number; tokOut:
 }
 
 export async function POST(req: Request) {
-  const { messages, role: roleId = 'wordpress-dev' } = await req.json();
+  const { messages, role: roleId = 'wordpress-dev', turnstileToken, sessionId } = await req.json();
   const role = getRole(roleId);
 
   if (!role) {
     return new Response('Unknown role', { status: 400 });
+  }
+
+  // Turnstile verification (if configured)
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret && turnstileToken) {
+    try {
+      const cfRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${turnstileSecret}&response=${turnstileToken}`,
+      });
+      const cfData = await cfRes.json() as { success: boolean };
+      if (!cfData.success) {
+        return new Response(JSON.stringify({ error: 'bot_detected' }), {
+          status: 403,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+    } catch {
+      // Don't block on Turnstile failure — log and continue
+      console.error('[turnstile] Verification failed, allowing request');
+    }
+  }
+
+  // Budget check
+  const budget = canProceed(sessionId);
+  if (!budget.allowed) {
+    trackEvent('fallback_shown', { role: roleId, meta: { reason: budget.reason } });
+    return new Response(JSON.stringify({ error: 'budget_exceeded', reason: budget.reason }), {
+      status: 429,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // Track interview start (first message)
+  if (messages.length <= 1) {
+    trackEvent('interview_start', { role: roleId, sessionId });
   }
 
   const requestStart = Date.now();
@@ -126,6 +165,12 @@ export async function POST(req: Request) {
       const inTok = usage?.promptTokens ?? 0;
       const outTok = usage?.completionTokens ?? 0;
       const cost = calcCost(inTok, outTok);
+
+      // Record cost for budget tracking
+      if (sessionId) {
+        recordCost(sessionId, cost);
+      }
+
       const logEntry = {
         ts: new Date().toISOString(),
         role: roleId,
@@ -258,9 +303,16 @@ export async function POST(req: Request) {
               });
             }
 
+            trackEvent('interview_complete', {
+              role: roleId,
+              sessionId,
+              meta: { wynik_lacznie, decyzja, cost },
+            });
+
             return { success: true };
           } catch (err) {
             console.error('Notion save error:', err);
+            trackEvent('interview_error', { role: roleId, sessionId, meta: { error: String(err) } });
             return { success: false, error: String(err) };
           }
         },
