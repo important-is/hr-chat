@@ -59,7 +59,7 @@ export default function InterviewsTab() {
     params.set('dir', sortDir);
 
     try {
-      const res = await fetch(`/api/admin/logs?${params}`);
+      const res = await fetch(`/api/admin/conversations?${params}`);
       const d = await res.json();
       setData(d.conversations || []);
       setPagination(d.pagination || { page: 1, perPage: 50, total: 0, totalPages: 0 });

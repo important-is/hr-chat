@@ -11,7 +11,7 @@ export default function LogsTab() {
 
   useEffect(() => {
     setLoading(true);
-    const endpoint = logType === 'conversations' ? '/api/admin/logs?limit=50' : '/api/admin/events?limit=50';
+    const endpoint = logType === 'conversations' ? '/api/admin/conversations?limit=50' : '/api/admin/events?limit=50';
     fetch(endpoint)
       .then((r) => r.json())
       .then((d) => setData(d.conversations || d.events || []))
