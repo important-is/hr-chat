@@ -9,8 +9,7 @@ const ENV_CHECKS = [
   'NOTION_API_KEY',
   'NOTION_DATABASE_ID',
   'MODEL_PROVIDER',
-  'TURNSTILE_SECRET',
-  'TURNSTILE_SITE_KEY',
+  'TURNSTILE_SECRET_KEY',
   'ADMIN_USER',
   'ADMIN_PASS',
   'ADMIN_SECRET',
@@ -27,8 +26,8 @@ export async function GET() {
   }
 
   return NextResponse.json({
-    modelProvider: process.env.MODEL_PROVIDER || 'anthropic',
-    turnstileConfigured: !!(process.env.TURNSTILE_SECRET && process.env.TURNSTILE_SITE_KEY),
+    modelProvider: process.env.MODEL_PROVIDER || 'openai',
+    turnstileConfigured: !!process.env.TURNSTILE_SECRET_KEY,
     envStatus,
   });
 }

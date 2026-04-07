@@ -43,6 +43,12 @@ function ChatApp() {
   const [started, setStarted] = useState(false);
   const [interviewDone, setInterviewDone] = useState(false);
   const [budgetError, setBudgetError] = useState(false);
+
+  // CMS content overrides
+  const [cmsRoles, setCmsRoles] = useState<Record<string, {
+    title?: string; subtitle?: string; description?: string; tags?: string[]; emoji?: string;
+  }> | null>(null);
+  const [cmsUI, setCmsUI] = useState<Record<string, string>>({});
   const [fallbackEmail, setFallbackEmail] = useState('');
   const [fallbackSent, setFallbackSent] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
@@ -51,13 +57,28 @@ function ChatApp() {
   const sessionIdRef = useRef(genSessionId());
   const turnstileRef = useRef<HTMLDivElement>(null);
 
-  const role = selectedRole ? ROLES[selectedRole] : null;
+  const baseRole = selectedRole ? ROLES[selectedRole] : null;
+  const cmsRole = selectedRole && cmsRoles ? cmsRoles[selectedRole] : null;
+  // Merge: CMS override wins over default
+  const role = baseRole ? {
+    ...baseRole,
+    title: cmsRole?.title || baseRole.title,
+    subtitle: cmsRole?.subtitle || baseRole.subtitle,
+    description: cmsRole?.description || baseRole.description,
+    tags: cmsRole?.tags || baseRole.tags,
+  } : null;
   const triggerMsg = role
     ? `Cześć, chciałbym/chciałabym aplikować na stanowisko: ${role.title}.`
     : '';
 
-  // Track page view on mount
-  useEffect(() => { track('page_view'); }, []);
+  // Track page view + load CMS content on mount
+  useEffect(() => {
+    track('page_view');
+    fetch('/api/content').then(r => r.json()).then(d => {
+      setCmsRoles(d.roles || {});
+      setCmsUI(d.ui || {});
+    }).catch(() => {});
+  }, []);
 
   // Turnstile: render widget when start screen is shown
   // Site key is public (not a secret) — safe to hardcode
@@ -235,24 +256,26 @@ function ChatApp() {
           <img src="/important-logo.svg" alt="important.is" className="h-4 sm:h-5 w-auto" />
         </a>
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
-          Dołącz do zespołu<span className="text-accent">.</span>
+          {cmsUI.heroTitle || <>Dołącz do zespołu<span className="text-accent">.</span></>}
         </h1>
         <p className="text-gray-400 text-sm mb-8 sm:mb-10 max-w-sm px-2">
-          Wybierz stanowisko, na które chcesz aplikować — Kaja przeprowadzi Cię przez krótką rozmowę ☕️
+          {cmsUI.heroSubtitle || 'Wybierz stanowisko, na które chcesz aplikować — Kaja przeprowadzi Cię przez krótką rozmowę ☕️'}
         </p>
         <div className="grid gap-2.5 sm:gap-3 w-full max-w-md">
-          {Object.entries(ROLES).map(([id, r]) => (
+          {Object.entries(ROLES).map(([id, r]) => {
+            const cr = cmsRoles?.[id];
+            return (
             <button
               key={id}
               onClick={() => handleRoleSelect(id)}
               className="flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3.5 sm:py-4 rounded-2xl border border-gray-200 hover:border-accent active:border-accent hover:shadow-sm transition-all text-left group"
             >
-              <span className="text-xl sm:text-2xl flex-shrink-0">{r.emoji}</span>
+              <span className="text-xl sm:text-2xl flex-shrink-0">{cr?.emoji || r.emoji}</span>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-gray-900 group-hover:text-accent transition-colors truncate">
-                  {r.title}
+                  {cr?.title || r.title}
                 </p>
-                <p className="text-xs text-gray-400 truncate">{r.subtitle}</p>
+                <p className="text-xs text-gray-400 truncate">{cr?.subtitle || r.subtitle}</p>
               </div>
               <span
                 style={{ backgroundColor: '#E63946' }}
@@ -261,7 +284,8 @@ function ChatApp() {
                 Aplikuj
               </span>
             </button>
-          ))}
+            );
+          })}
         </div>
       </div>
     );
@@ -290,10 +314,9 @@ function ChatApp() {
           {role!.description}
         </p>
         <div className="bg-gray-50 rounded-2xl px-5 py-4 max-w-md mb-6 sm:mb-8">
-          <p className="text-xs text-gray-400 mb-1">Jak to działa?</p>
+          <p className="text-xs text-gray-400 mb-1">{cmsUI.howItWorksTitle || 'Jak to działa?'}</p>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-            Kaja, nasza asystentka AI, przeprowadzi z Tobą krótką rozmowę — luźno,
-            bez stresu. Odpowiadaj naturalnie, zajmie to ok. 15-20 minut ☕️
+            {cmsUI.howItWorksText || 'Kaja, nasza asystentka AI, przeprowadzi z Tobą krótką rozmowę — luźno, bez stresu. Odpowiadaj naturalnie, zajmie to ok. 15-20 minut ☕️'}
           </p>
         </div>
         {/* Turnstile widget — only rendered when site key is configured */}

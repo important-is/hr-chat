@@ -8,6 +8,7 @@ import { appendFileSync, mkdirSync, existsSync } from 'fs';
 import { join } from 'path';
 import { canProceed, recordCost } from '@/lib/budget';
 import { trackEvent } from '@/lib/analytics';
+import { getRoleOverride } from '@/lib/content';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
@@ -117,6 +118,10 @@ export async function POST(req: Request) {
     return new Response('Unknown role', { status: 400 });
   }
 
+  // Apply prompt override from CMS (if any)
+  const override = getRoleOverride(roleId);
+  const systemPrompt = override.prompt || role.prompt;
+
   // Turnstile verification — only on first message (token is single-use)
   const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
   if (turnstileSecret && turnstileToken && messages.length <= 1) {
@@ -157,7 +162,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: getModel(),
-    system: role.prompt,
+    system: systemPrompt,
     messages,
     maxSteps: 5,
     onFinish: ({ usage, finishReason }) => {
