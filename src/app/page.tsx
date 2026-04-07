@@ -51,11 +51,10 @@ function ChatApp() {
   const [cmsUI, setCmsUI] = useState<Record<string, string>>({});
   const [fallbackEmail, setFallbackEmail] = useState('');
   const [fallbackSent, setFallbackSent] = useState(false);
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [turnstileReady, setTurnstileReady] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const sessionIdRef = useRef(genSessionId());
-  const turnstileRef = useRef<HTMLDivElement>(null);
+  const pageLoadTime = useRef(Date.now());
 
   const baseRole = selectedRole ? ROLES[selectedRole] : null;
   const cmsRole = selectedRole && cmsRoles ? cmsRoles[selectedRole] : null;
@@ -80,45 +79,21 @@ function ChatApp() {
     }).catch(() => {});
   }, []);
 
-  // Turnstile: render widget when start screen is shown
-  // Site key is public (not a secret) — safe to hardcode
-  const TURNSTILE_SITE_KEY = '0x4AAAAAAA-U8B_XBw49aV__';
-
+  // Reset page load time when start screen shows
   useEffect(() => {
-    if (!selectedRole || started) return;
-    if (!TURNSTILE_SITE_KEY) return;
-
-    const el = turnstileRef.current;
-    if (!el) return;
-
-    const tryRender = () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const turnstile = (window as any).turnstile;
-      if (!turnstile) return false;
-      // Clear previous widget by removing child nodes safely
-      while (el.firstChild) el.removeChild(el.firstChild);
-      turnstile.render(el, {
-        sitekey: TURNSTILE_SITE_KEY,
-        theme: 'light',
-        callback: (token: string) => {
-          setTurnstileToken(token);
-          setTurnstileReady(true);
-        },
-      });
-      return true;
-    };
-
-    if (!tryRender()) {
-      const interval = setInterval(() => {
-        if (tryRender()) clearInterval(interval);
-      }, 200);
-      return () => clearInterval(interval);
+    if (selectedRole && !started) {
+      pageLoadTime.current = Date.now();
     }
   }, [selectedRole, started]);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, append } = useChat({
     api: '/api/chat',
-    body: { role: selectedRole, sessionId: sessionIdRef.current, turnstileToken },
+    body: {
+      role: selectedRole,
+      sessionId: sessionIdRef.current,
+      _hp: honeypot, // honeypot — should be empty
+      _t: pageLoadTime.current, // time gate — page load timestamp
+    },
     onError: (err) => {
       console.error('Chat error:', err);
       // Check if it's a budget error
@@ -319,17 +294,27 @@ function ChatApp() {
             {cmsUI.howItWorksText || 'Kaja, nasza asystentka AI, przeprowadzi z Tobą krótką rozmowę — luźno, bez stresu. Odpowiadaj naturalnie, zajmie to ok. 15-20 minut ☕️'}
           </p>
         </div>
-        {/* Turnstile widget — only rendered when site key is configured */}
-        <div ref={turnstileRef} className="mb-4" />
+        {/* Honeypot — invisible to humans, bots fill it */}
+        <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </div>
         <div className="flex gap-2 sm:gap-3 w-full max-w-sm justify-center">
           <button onClick={() => setSelectedRole(null)}
             className="px-5 sm:px-6 py-3 rounded-full text-sm font-medium border border-gray-200 text-gray-500 hover:border-gray-400 transition-colors">
             ← Wróć
           </button>
           <button onClick={startInterview}
-            disabled={!!TURNSTILE_SITE_KEY && !turnstileReady}
             style={{ backgroundColor: '#E63946' }}
-            className="text-white px-6 sm:px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed">
+            className="text-white px-6 sm:px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
             Zacznij rozmowę 🚀
           </button>
         </div>

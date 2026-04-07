@@ -8,6 +8,7 @@ import { appendFileSync, mkdirSync, existsSync } from 'fs';
 import { join } from 'path';
 import { canProceed, recordCost } from '@/lib/budget';
 import { trackEvent } from '@/lib/analytics';
+import { checkRateLimit, checkInterviewRate, recordInterviewStart } from '@/lib/rate-limit';
 import { getRoleOverride, getGlobalPromptOverrides } from '@/lib/content';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
@@ -111,7 +112,7 @@ function buildTranscriptBlocks(messages: Msg[], totals: { tokIn: number; tokOut:
 }
 
 export async function POST(req: Request) {
-  const { messages, role: roleId = 'wordpress-dev', turnstileToken, sessionId } = await req.json();
+  const { messages, role: roleId = 'wordpress-dev', sessionId, _hp, _t } = await req.json();
   const role = getRole(roleId);
 
   if (!role) {
@@ -135,25 +136,52 @@ export async function POST(req: Request) {
     ? `${basePrompt}\n\n## DODATKOWE WYTYCZNE — mają priorytet nad powyższymi\n\n${globalParts.join('\n\n')}`
     : basePrompt;
 
-  // Turnstile verification — only on first message (token is single-use)
-  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
-  if (turnstileSecret && turnstileToken && messages.length <= 1) {
-    try {
-      const cfRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `secret=${turnstileSecret}&response=${turnstileToken}`,
+  // Bot protection (invisible — no friction for users)
+  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+    || req.headers.get('x-real-ip')
+    || 'unknown';
+
+  // 1. Honeypot — if filled, it's a bot
+  if (_hp) {
+    console.log(`[bot] Honeypot filled by ${clientIP}`);
+    trackEvent('interview_error', { role: roleId, meta: { reason: 'honeypot', ip: clientIP } });
+    return new Response(JSON.stringify({ error: 'bot_detected' }), {
+      status: 403, headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // 2. Time gate — first message only. Human needs >2s to read and click
+  if (messages.length <= 1 && _t) {
+    const elapsed = Date.now() - Number(_t);
+    if (elapsed < 2000) {
+      console.log(`[bot] Time gate: ${elapsed}ms from ${clientIP}`);
+      trackEvent('interview_error', { role: roleId, meta: { reason: 'time_gate', elapsed, ip: clientIP } });
+      return new Response(JSON.stringify({ error: 'bot_detected' }), {
+        status: 403, headers: { 'Content-Type': 'application/json' },
       });
-      const cfData = await cfRes.json() as { success: boolean };
-      if (!cfData.success) {
-        return new Response(JSON.stringify({ error: 'bot_detected' }), {
-          status: 403,
-          headers: { 'Content-Type': 'application/json' },
-        });
-      }
-    } catch {
-      console.error('[turnstile] Verification failed, allowing request');
     }
+  }
+
+  // 3. Rate limiting
+  const rateCheck = checkRateLimit(clientIP);
+  if (!rateCheck.allowed) {
+    console.log(`[bot] Rate limit: ${rateCheck.reason} from ${clientIP}`);
+    return new Response(JSON.stringify({ error: 'rate_limited', reason: rateCheck.reason }), {
+      status: 429, headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // 4. Interview rate — first message only
+  if (messages.length <= 1) {
+    const interviewRate = checkInterviewRate(clientIP);
+    if (!interviewRate.allowed) {
+      console.log(`[bot] Interview rate limit from ${clientIP}`);
+      trackEvent('fallback_shown', { role: roleId, meta: { reason: 'interview_rate', ip: clientIP } });
+      return new Response(JSON.stringify({ error: 'budget_exceeded', reason: 'too_many_interviews' }), {
+        status: 429, headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    recordInterviewStart(clientIP);
   }
 
   // Budget check
