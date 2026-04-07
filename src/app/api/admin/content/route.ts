@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { isAuthenticated } from '@/lib/admin-auth';
-import { loadContent, saveContent } from '@/lib/content';
+import { loadContent, saveContent, DEFAULTS } from '@/lib/content';
 import { ROLES } from '@/lib/roles';
 
 export const dynamic = 'force-dynamic';
@@ -12,7 +12,6 @@ export async function GET() {
 
   const content = loadContent();
 
-  // Merge with defaults from ROLES so admin sees current values
   const rolesWithDefaults: Record<string, {
     id: string;
     title: string;
@@ -20,13 +19,7 @@ export async function GET() {
     description: string;
     tags: string[];
     prompt: string;
-    override: {
-      title?: string;
-      subtitle?: string;
-      description?: string;
-      tags?: string[];
-      prompt?: string;
-    };
+    override: Partial<{ title: string; subtitle: string; description: string; tags: string[]; prompt: string }>;
   }> = {};
 
   for (const [id, role] of Object.entries(ROLES)) {
@@ -45,6 +38,11 @@ export async function GET() {
   return NextResponse.json({
     roles: rolesWithDefaults,
     ui: content.ui || {},
+    global: content.global || {},
+    defaults: {
+      companyKnowledge: DEFAULTS.companyKnowledge,
+      interviewRules: DEFAULTS.interviewRules,
+    },
     updatedAt: content.updatedAt,
   });
 }
@@ -71,9 +69,21 @@ export async function PUT(req: Request) {
       content.ui = { ...content.ui, ...body.ui };
     }
 
+    // Update global prompt overrides
+    if (body.global) {
+      content.global = { ...content.global, ...body.global };
+    }
+
     // Reset a role to defaults
     if (body.resetRole) {
       delete content.roles[body.resetRole];
+    }
+
+    // Reset global to defaults
+    if (body.resetGlobal) {
+      if (body.resetGlobal === 'companyKnowledge') delete content.global.companyKnowledge;
+      else if (body.resetGlobal === 'interviewRules') delete content.global.interviewRules;
+      else if (body.resetGlobal === 'all') content.global = {};
     }
 
     saveContent(content);

@@ -23,15 +23,27 @@ interface UIData {
   fallbackText?: string;
 }
 
-type Section = 'roles' | 'ui';
+interface GlobalData {
+  companyKnowledge?: string;
+  interviewRules?: string;
+}
+
+interface DefaultsData {
+  companyKnowledge: string;
+  interviewRules: string;
+}
+
+type Section = 'global' | 'roles' | 'ui';
 
 export default function ContentTab() {
   const [roles, setRoles] = useState<Record<string, RoleData>>({});
   const [ui, setUi] = useState<UIData>({});
+  const [global, setGlobal] = useState<GlobalData>({});
+  const [defaults, setDefaults] = useState<DefaultsData>({ companyKnowledge: '', interviewRules: '' });
   const [updatedAt, setUpdatedAt] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [section, setSection] = useState<Section>('roles');
+  const [section, setSection] = useState<Section>('global');
   const [editingRole, setEditingRole] = useState<string | null>(null);
   const [editingPrompt, setEditingPrompt] = useState<string | null>(null);
   const [toast, setToast] = useState('');
@@ -43,6 +55,8 @@ export default function ContentTab() {
       const data = await res.json();
       setRoles(data.roles || {});
       setUi(data.ui || {});
+      setGlobal(data.global || {});
+      setDefaults(data.defaults || { companyKnowledge: '', interviewRules: '' });
       setUpdatedAt(data.updatedAt || null);
     } catch (err) {
       console.error(err);
@@ -92,6 +106,41 @@ export default function ContentTab() {
     }
   };
 
+  const saveGlobal = async (field: string, value: string) => {
+    setSaving(true);
+    try {
+      await fetch('/api/admin/content', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ global: { [field]: value } }),
+      });
+      showToast('Saved!');
+      fetchContent();
+    } catch (err) {
+      showToast('Error: ' + String(err));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const resetGlobal = async (field: string) => {
+    if (!confirm('Reset to code defaults?')) return;
+    setSaving(true);
+    try {
+      await fetch('/api/admin/content', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ resetGlobal: field }),
+      });
+      showToast('Reset to defaults');
+      fetchContent();
+    } catch (err) {
+      showToast('Error: ' + String(err));
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const resetRole = async (roleId: string) => {
     if (!confirm(`Reset ${roleId} to defaults? All overrides will be removed.`)) return;
     setSaving(true);
@@ -124,27 +173,87 @@ export default function ContentTab() {
       )}
 
       {/* Section tabs */}
-      <div className="flex gap-2">
-        <button
-          onClick={() => setSection('roles')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            section === 'roles' ? 'bg-[#E63946] text-white' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-          }`}
-        >
-          Roles ({Object.keys(roles).length})
-        </button>
-        <button
-          onClick={() => setSection('ui')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            section === 'ui' ? 'bg-[#E63946] text-white' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-          }`}
-        >
-          UI Texts
-        </button>
+      <div className="flex gap-2 flex-wrap">
+        {(['global', 'roles', 'ui'] as Section[]).map((s) => {
+          const labels: Record<Section, string> = {
+            global: 'Global Prompt',
+            roles: `Roles (${Object.keys(roles).length})`,
+            ui: 'UI Texts',
+          };
+          return (
+            <button
+              key={s}
+              onClick={() => setSection(s)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                section === s ? 'bg-[#E63946] text-white' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              {labels[s]}
+            </button>
+          );
+        })}
       </div>
 
       {updatedAt && (
         <p className="text-xs text-gray-400">Last updated: {new Date(updatedAt).toLocaleString('pl-PL')}</p>
+      )}
+
+      {/* Global prompt section */}
+      {section === 'global' && (
+        <div className="space-y-4">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+            <p className="text-sm text-amber-800">
+              Globalny prompt jest doklejany do <strong>wszystkich</strong> rozmów. Zmiany tu nadpisują domyślne wytyczne wbudowane w kod.
+              Jeśli pole jest puste — używane są wytyczne z kodu.
+            </p>
+          </div>
+
+          {/* Company Knowledge */}
+          <div className="bg-white rounded-xl border border-gray-200 p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-800">Wiedza o firmie</h3>
+                <p className="text-xs text-gray-400">Informacje o important.is które Kaja podaje kandydatom</p>
+              </div>
+              {global.companyKnowledge && (
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-50 text-amber-700">customized</span>
+              )}
+            </div>
+            <PromptEditor
+              value={global.companyKnowledge || defaults.companyKnowledge}
+              onSave={(v) => saveGlobal('companyKnowledge', v)}
+              saving={saving}
+            />
+            {global.companyKnowledge && (
+              <button onClick={() => resetGlobal('companyKnowledge')} className="mt-2 text-xs text-gray-400 hover:text-red-500">
+                Reset to code defaults
+              </button>
+            )}
+          </div>
+
+          {/* Interview Rules */}
+          <div className="bg-white rounded-xl border border-gray-200 p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-800">Zasady rozmowy</h3>
+                <p className="text-xs text-gray-400">Ton, styl, język inkluzywny, ograniczenia</p>
+              </div>
+              {global.interviewRules && (
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-50 text-amber-700">customized</span>
+              )}
+            </div>
+            <PromptEditor
+              value={global.interviewRules || defaults.interviewRules}
+              onSave={(v) => saveGlobal('interviewRules', v)}
+              saving={saving}
+            />
+            {global.interviewRules && (
+              <button onClick={() => resetGlobal('interviewRules')} className="mt-2 text-xs text-gray-400 hover:text-red-500">
+                Reset to code defaults
+              </button>
+            )}
+          </div>
+        </div>
       )}
 
       {/* Roles section */}

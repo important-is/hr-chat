@@ -8,7 +8,7 @@ import { appendFileSync, mkdirSync, existsSync } from 'fs';
 import { join } from 'path';
 import { canProceed, recordCost } from '@/lib/budget';
 import { trackEvent } from '@/lib/analytics';
-import { getRoleOverride } from '@/lib/content';
+import { getRoleOverride, getGlobalPromptOverrides } from '@/lib/content';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
@@ -120,7 +120,20 @@ export async function POST(req: Request) {
 
   // Apply prompt override from CMS (if any)
   const override = getRoleOverride(roleId);
-  const systemPrompt = override.prompt || role.prompt;
+  const globalOverrides = getGlobalPromptOverrides();
+
+  // Build system prompt: role prompt + global CMS overrides appended (if set)
+  const basePrompt = override.prompt || role.prompt;
+  const globalParts: string[] = [];
+  if (globalOverrides.companyKnowledge) {
+    globalParts.push(`## Wiedza o firmie (nadpisanie z panelu admina)\n${globalOverrides.companyKnowledge}`);
+  }
+  if (globalOverrides.interviewRules) {
+    globalParts.push(`## Zasady rozmowy (nadpisanie z panelu admina)\n${globalOverrides.interviewRules}`);
+  }
+  const systemPrompt = globalParts.length > 0
+    ? `${basePrompt}\n\n## DODATKOWE WYTYCZNE — mają priorytet nad powyższymi\n\n${globalParts.join('\n\n')}`
+    : basePrompt;
 
   // Turnstile verification — only on first message (token is single-use)
   const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;

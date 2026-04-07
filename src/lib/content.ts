@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import { COMPANY_KNOWLEDGE, INTERVIEW_RULES } from './prompts/shared';
 
 const DATA_DIR = join(process.cwd(), 'data');
 const CONTENT_FILE = join(DATA_DIR, 'content.json');
@@ -13,19 +14,25 @@ export interface RoleContent {
 }
 
 export interface UIContent {
-  heroTitle?: string; // "Dołącz do zespołu."
-  heroSubtitle?: string; // "Wybierz stanowisko..."
-  howItWorksTitle?: string; // "Jak to działa?"
-  howItWorksText?: string; // "Kaja, nasza asystentka AI..."
-  successTitle?: string; // "Dziękujemy za rozmowę!"
-  successText?: string; // "Twoje odpowiedzi..."
-  fallbackTitle?: string; // "Kaja chwilowo niedostępna."
-  fallbackText?: string; // "Mamy teraz dużo rozmów..."
+  heroTitle?: string;
+  heroSubtitle?: string;
+  howItWorksTitle?: string;
+  howItWorksText?: string;
+  successTitle?: string;
+  successText?: string;
+  fallbackTitle?: string;
+  fallbackText?: string;
+}
+
+export interface GlobalPrompt {
+  companyKnowledge?: string; // Override for COMPANY_KNOWLEDGE
+  interviewRules?: string;   // Override for INTERVIEW_RULES
 }
 
 export interface ContentData {
   roles: Record<string, RoleContent>;
   ui: UIContent;
+  global: GlobalPrompt;
   updatedAt?: string;
 }
 
@@ -36,13 +43,15 @@ function ensureDir() {
 const DEFAULT_CONTENT: ContentData = {
   roles: {},
   ui: {},
+  global: {},
 };
 
 export function loadContent(): ContentData {
   ensureDir();
   if (!existsSync(CONTENT_FILE)) return DEFAULT_CONTENT;
   try {
-    return JSON.parse(readFileSync(CONTENT_FILE, 'utf-8'));
+    const data = JSON.parse(readFileSync(CONTENT_FILE, 'utf-8'));
+    return { ...DEFAULT_CONTENT, ...data };
   } catch {
     return DEFAULT_CONTENT;
   }
@@ -64,3 +73,18 @@ export function getRoleOverride(roleId: string): RoleContent {
 export function getUIOverrides(): UIContent {
   return loadContent().ui || {};
 }
+
+/** Get global prompt overrides (null = use defaults baked into role prompts) */
+export function getGlobalPromptOverrides(): { companyKnowledge: string | null; interviewRules: string | null } {
+  const content = loadContent();
+  return {
+    companyKnowledge: content.global?.companyKnowledge || null,
+    interviewRules: content.global?.interviewRules || null,
+  };
+}
+
+/** Get the defaults from code (for admin UI "reset" feature) */
+export const DEFAULTS = {
+  companyKnowledge: COMPANY_KNOWLEDGE,
+  interviewRules: INTERVIEW_RULES,
+};
