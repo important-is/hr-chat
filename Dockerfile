@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
+# Cache bust: 2026-04-07
 RUN npm run build
 
 FROM node:20-alpine AS runner
