@@ -46,6 +46,7 @@ function ChatApp() {
   const [fallbackEmail, setFallbackEmail] = useState('');
   const [fallbackSent, setFallbackSent] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileReady, setTurnstileReady] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const sessionIdRef = useRef(genSessionId());
   const turnstileRef = useRef<HTMLDivElement>(null);
@@ -58,17 +59,41 @@ function ChatApp() {
   // Track page view on mount
   useEffect(() => { track('page_view'); }, []);
 
-  // Turnstile callback
+  // Turnstile: render widget when start screen is shown
+  // Site key is public (not a secret) — safe to hardcode
+  const TURNSTILE_SITE_KEY = '0x4AAAAAAA-U8B_XBw49aV__';
+
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).onTurnstileSuccess = (token: string) => {
-      setTurnstileToken(token);
-    };
-    return () => {
+    if (!selectedRole || started) return;
+    if (!TURNSTILE_SITE_KEY) return;
+
+    const el = turnstileRef.current;
+    if (!el) return;
+
+    const tryRender = () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      delete (window as any).onTurnstileSuccess;
+      const turnstile = (window as any).turnstile;
+      if (!turnstile) return false;
+      // Clear previous widget by removing child nodes safely
+      while (el.firstChild) el.removeChild(el.firstChild);
+      turnstile.render(el, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: 'light',
+        callback: (token: string) => {
+          setTurnstileToken(token);
+          setTurnstileReady(true);
+        },
+      });
+      return true;
     };
-  }, []);
+
+    if (!tryRender()) {
+      const interval = setInterval(() => {
+        if (tryRender()) clearInterval(interval);
+      }, 200);
+      return () => clearInterval(interval);
+    }
+  }, [selectedRole, started]);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, append } = useChat({
     api: '/api/chat',
@@ -271,22 +296,15 @@ function ChatApp() {
             bez stresu. Odpowiadaj naturalnie, zajmie to ok. 15-20 minut ☕️
           </p>
         </div>
-        {/* Turnstile widget */}
-        <div
-          ref={turnstileRef}
-          className="cf-turnstile mb-4"
-          data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
-          data-callback="onTurnstileSuccess"
-          data-theme="light"
-          data-size="normal"
-        />
+        {/* Turnstile widget — only rendered when site key is configured */}
+        <div ref={turnstileRef} className="mb-4" />
         <div className="flex gap-2 sm:gap-3 w-full max-w-sm justify-center">
           <button onClick={() => setSelectedRole(null)}
             className="px-5 sm:px-6 py-3 rounded-full text-sm font-medium border border-gray-200 text-gray-500 hover:border-gray-400 transition-colors">
             ← Wróć
           </button>
           <button onClick={startInterview}
-            disabled={!turnstileToken && !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+            disabled={!!TURNSTILE_SITE_KEY && !turnstileReady}
             style={{ backgroundColor: '#E63946' }}
             className="text-white px-6 sm:px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed">
             Zacznij rozmowę 🚀
