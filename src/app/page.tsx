@@ -45,8 +45,10 @@ function ChatApp() {
   const [budgetError, setBudgetError] = useState(false);
   const [fallbackEmail, setFallbackEmail] = useState('');
   const [fallbackSent, setFallbackSent] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const sessionIdRef = useRef(genSessionId());
+  const turnstileRef = useRef<HTMLDivElement>(null);
 
   const role = selectedRole ? ROLES[selectedRole] : null;
   const triggerMsg = role
@@ -56,9 +58,21 @@ function ChatApp() {
   // Track page view on mount
   useEffect(() => { track('page_view'); }, []);
 
+  // Turnstile callback
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).onTurnstileSuccess = (token: string) => {
+      setTurnstileToken(token);
+    };
+    return () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      delete (window as any).onTurnstileSuccess;
+    };
+  }, []);
+
   const { messages, input, handleInputChange, handleSubmit, isLoading, append } = useChat({
     api: '/api/chat',
-    body: { role: selectedRole, sessionId: sessionIdRef.current },
+    body: { role: selectedRole, sessionId: sessionIdRef.current, turnstileToken },
     onError: (err) => {
       console.error('Chat error:', err);
       // Check if it's a budget error
@@ -257,14 +271,24 @@ function ChatApp() {
             bez stresu. Odpowiadaj naturalnie, zajmie to ok. 15-20 minut ☕️
           </p>
         </div>
+        {/* Turnstile widget */}
+        <div
+          ref={turnstileRef}
+          className="cf-turnstile mb-4"
+          data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+          data-callback="onTurnstileSuccess"
+          data-theme="light"
+          data-size="normal"
+        />
         <div className="flex gap-2 sm:gap-3 w-full max-w-sm justify-center">
           <button onClick={() => setSelectedRole(null)}
             className="px-5 sm:px-6 py-3 rounded-full text-sm font-medium border border-gray-200 text-gray-500 hover:border-gray-400 transition-colors">
             ← Wróć
           </button>
           <button onClick={startInterview}
+            disabled={!turnstileToken && !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
             style={{ backgroundColor: '#E63946' }}
-            className="text-white px-6 sm:px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+            className="text-white px-6 sm:px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed">
             Zacznij rozmowę 🚀
           </button>
         </div>

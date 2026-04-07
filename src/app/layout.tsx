@@ -17,7 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased font-rubik">{children}</body>
+      <body className="antialiased font-rubik">
+        {children}
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+      </body>
     </html>
   );
 }
