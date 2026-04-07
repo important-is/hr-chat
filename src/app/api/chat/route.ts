@@ -117,9 +117,9 @@ export async function POST(req: Request) {
     return new Response('Unknown role', { status: 400 });
   }
 
-  // Turnstile verification (if configured)
+  // Turnstile verification — only on first message (token is single-use)
   const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
-  if (turnstileSecret && turnstileToken) {
+  if (turnstileSecret && turnstileToken && messages.length <= 1) {
     try {
       const cfRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
@@ -134,7 +134,6 @@ export async function POST(req: Request) {
         });
       }
     } catch {
-      // Don't block on Turnstile failure — log and continue
       console.error('[turnstile] Verification failed, allowing request');
     }
   }
