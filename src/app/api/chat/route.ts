@@ -150,10 +150,10 @@ export async function POST(req: Request) {
     });
   }
 
-  // 2. Time gate — first message only. Human needs >2s to read and click
-  if (messages.length <= 1 && _t) {
-    const elapsed = Date.now() - Number(_t);
-    if (elapsed < 2000) {
+  // 2. Time gate — first message only. Client sends ms since page load. Bot clicks in <800ms
+  if (messages.length <= 1 && _t != null) {
+    const elapsed = Number(_t);
+    if (elapsed < 800) {
       console.log(`[bot] Time gate: ${elapsed}ms from ${clientIP}`);
       trackEvent('interview_error', { role: roleId, meta: { reason: 'time_gate', elapsed, ip: clientIP } });
       return new Response(JSON.stringify({ error: 'bot_detected' }), {

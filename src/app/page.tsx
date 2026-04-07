@@ -92,7 +92,7 @@ function ChatApp() {
       role: selectedRole,
       sessionId: sessionIdRef.current,
       _hp: honeypot, // honeypot — should be empty
-      _t: pageLoadTime.current, // time gate — page load timestamp
+      _t: Date.now() - pageLoadTime.current, // time gate — ms since page load
     },
     onError: (err) => {
       console.error('Chat error:', err);
