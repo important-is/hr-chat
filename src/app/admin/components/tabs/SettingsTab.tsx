@@ -42,8 +42,7 @@ const ENV_VARS = [
   { key: 'NOTION_API_KEY', label: 'Notion API Key' },
   { key: 'NOTION_DATABASE_ID', label: 'Notion Database ID' },
   { key: 'MODEL_PROVIDER', label: 'Model Provider' },
-  { key: 'TURNSTILE_SECRET', label: 'Turnstile Secret' },
-  { key: 'TURNSTILE_SITE_KEY', label: 'Turnstile Site Key' },
+  { key: 'TURNSTILE_SECRET_KEY', label: 'Turnstile Secret Key' },
   { key: 'ADMIN_USER', label: 'Admin User' },
   { key: 'ADMIN_PASS', label: 'Admin Password' },
   { key: 'ADMIN_SECRET', label: 'Admin Secret' },
@@ -94,8 +93,8 @@ export default function SettingsTab({ data }: { data: StatsData | null }) {
             </p>
             <p className="text-xs text-gray-400">
               {settings?.turnstileConfigured
-                ? 'TURNSTILE_SECRET and TURNSTILE_SITE_KEY are set'
-                : 'Set TURNSTILE_SECRET and TURNSTILE_SITE_KEY to enable'}
+                ? 'TURNSTILE_SECRET_KEY is set'
+                : 'Set TURNSTILE_SECRET_KEY env var to enable'}
             </p>
           </div>
         </div>
