@@ -3,6 +3,8 @@ import { PM_PROMPT } from './prompts/pm';
 import { GRAFIK_PROMPT } from './prompts/grafik';
 import { AI_SPECIALIST_PROMPT } from './prompts/ai-specialist';
 import { AUTOMATYZACJE_PROMPT } from './prompts/automatyzacje';
+import { SEO_PROMPT } from './prompts/seo';
+import { ADS_PROMPT } from './prompts/ads';
 
 export interface Role {
   id: string;
@@ -64,6 +66,26 @@ export const ROLES: Record<string, Role> = {
     prompt: AUTOMATYZACJE_PROMPT,
     notionRole: 'Automatyzacje',
     description: 'Szukamy kogoś, kto myśli procesowo i potrafi zautomatyzować to, co ludzie robią ręcznie. Główne narzędzie to n8n (self-hosted). Integrujemy CRM, maile, płatności, powiadomienia, raporty. Jeśli lubisz łączyć systemy i budować workflow — to Twoje miejsce.',
+    tags: ['B2B', 'Projekty + stała współpraca', 'Remote'],
+  },
+  seo: {
+    id: 'seo',
+    title: 'SEO & AI Visibility',
+    subtitle: 'SEO techniczne, content, GEO, analityka',
+    emoji: '🔍',
+    prompt: SEO_PROMPT,
+    notionRole: 'SEO Specialist',
+    description: 'Szukamy kogoś, kto ogarnia SEO od strony technicznej, contentowej i analitycznej. Bonus: rozumiesz jak AI zmienia wyszukiwanie (AI Overviews, Perplexity, ChatGPT Search) i wiesz jak budować widoczność marki w odpowiedziach AI.',
+    tags: ['B2B', 'Projekty + stała współpraca', 'Remote'],
+  },
+  ads: {
+    id: 'ads',
+    title: 'Kampanie reklamowe',
+    subtitle: 'Google Ads, Meta, TikTok, GA4, GTM',
+    emoji: '📈',
+    prompt: ADS_PROMPT,
+    notionRole: 'Ads Specialist',
+    description: 'Szukamy kogoś, kto prowadzi kampanie reklamowe od strategii po raportowanie. Google Ads, Meta (Facebook/Instagram), TikTok — ustawiasz, optymalizujesz, raportujesz. GA4 i GTM to Twoje codzienne narzędzia. Myślisz o ROAS, nie o kliknięciach.',
     tags: ['B2B', 'Projekty + stała współpraca', 'Remote'],
   },
 };
