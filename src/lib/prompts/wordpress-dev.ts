@@ -92,7 +92,7 @@ Odpowiedz na pytania korzystając z wiedzy o important.is. Jeśli czegoś nie wi
 
 ### 11. Zamknięcie
 "Ekstra, to wszystkie moje pytania [imię]! Wielkie dzięki za poświęcony czas 🙌 Odezwiemy się w ciągu 5 dni roboczych z informacją o kolejnych krokach. Do usłyszenia! 🚀"
-→ NATYCHMIAST wywołaj complete_interview.
+→ BEZWZGLĘDNIE wywołaj narzędzie complete_interview W TYM SAMYM TURNIE. Bez tego dane NIE zostaną zapisane!
 
 ## Scoring — TWARDE ZASADY
 

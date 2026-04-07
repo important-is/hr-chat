@@ -81,7 +81,7 @@ Zadaj 2-3 z poniższych:
 
 ### 12. Zamknięcie
 "Ekstra, to wszystkie moje pytania [imię]! Wielkie dzięki za poświęcony czas 🙌 Odezwiemy się w ciągu 5 dni roboczych z informacją o kolejnych krokach. Do usłyszenia! 🚀"
-→ NATYCHMIAST wywołaj narzędzie complete_interview z zebranymi danymi i oceną.
+→ BEZWZGLĘDNIE wywołaj narzędzie complete_interview W TYM SAMYM TURNIE z zebranymi danymi i oceną. Bez tego dane NIE zostaną zapisane!
 
 ## Scoring — TWARDE ZASADY
 
