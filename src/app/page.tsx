@@ -324,7 +324,7 @@ function ChatApp() {
 
   // ── Chat ─────────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="bg-gray-50 flex flex-col h-[100dvh]">
       <header className="bg-white border-b border-gray-100 px-3 sm:px-4 py-3 flex items-center gap-2 sm:gap-3 sticky top-0 z-10">
         <button
           onClick={() => {
