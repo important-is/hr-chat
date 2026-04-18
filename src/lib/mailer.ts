@@ -28,6 +28,27 @@ const DECISION_EMOJI: Record<string, string> = {
   'Odrzucony': '🔴',
 };
 
+export async function sendCandidateConfirmation(data: {
+  imie_nazwisko: string;
+  email: string;
+  role: string;
+}) {
+  await transporter.sendMail({
+    from: `"Kaja z important.is" <hi@important.is>`,
+    to: data.email,
+    subject: `Dzięki za rozmowę, ${data.imie_nazwisko.split(' ')[0]}! ✌️`,
+    html: `
+      <div style="font-family: sans-serif; max-width: 560px; color: #222;">
+        <h2 style="font-size: 22px; margin-bottom: 8px;">Hej ${data.imie_nazwisko.split(' ')[0]}! 👋</h2>
+        <p>Dzięki za rozmowę na stanowisko <strong>${data.role}</strong> w important.is.</p>
+        <p>Łukasz przejrzy Twoje odpowiedzi i odezwie się do Ciebie w ciągu <strong>5 dni roboczych</strong>.</p>
+        <p style="color: #666; font-size: 14px;">Jeśli masz pytania — pisz śmiało na <a href="mailto:hi@important.is">hi@important.is</a>.</p>
+        <p style="margin-top: 32px;">Do usłyszenia,<br><strong>Kaja</strong><br><span style="color:#666;font-size:13px;">Rekruterka · important.is</span></p>
+      </div>
+    `,
+  });
+}
+
 export async function notifyNewCandidate(data: CandidateNotification) {
   const emoji = DECISION_EMOJI[data.decyzja] ?? '⚪';
   const earlyTag = data.wczesneZakonczenie ? ' ⚠️ (przerwana wcześniej)' : '';

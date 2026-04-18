@@ -6,12 +6,14 @@ import InterviewsTab from './tabs/InterviewsTab';
 import SettingsTab from './tabs/SettingsTab';
 import LogsTab from './tabs/LogsTab';
 import ContentTab from './tabs/ContentTab';
+import TranscriptsTab from './tabs/TranscriptsTab';
 
-type Tab = 'stats' | 'interviews' | 'content' | 'settings' | 'logs';
+type Tab = 'stats' | 'interviews' | 'content' | 'settings' | 'logs' | 'transcripts';
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: 'stats', label: 'Statistics', icon: '📊' },
   { id: 'interviews', label: 'Interviews', icon: '💬' },
+  { id: 'transcripts', label: 'Transcripts', icon: '📄' },
   { id: 'content', label: 'Content', icon: '✏️' },
   { id: 'settings', label: 'Settings', icon: '⚙️' },
   { id: 'logs', label: 'Logs', icon: '📋' },
@@ -164,6 +166,7 @@ export default function AdminDashboard({ onLogout }: { onLogout: () => void }) {
 
           {tab === 'stats' && <StatsTab data={stats} />}
           {tab === 'interviews' && <InterviewsTab />}
+          {tab === 'transcripts' && <TranscriptsTab />}
           {tab === 'content' && <ContentTab />}
           {tab === 'settings' && <SettingsTab data={stats} />}
           {tab === 'logs' && <LogsTab />}

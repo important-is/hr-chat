@@ -1,13 +1,13 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { openai } from '@ai-sdk/openai';
-import { streamText, tool } from 'ai';
+import { streamText, generateText, tool } from 'ai';
 import { z } from 'zod';
 import { Client } from '@notionhq/client';
 import { getRole } from '@/lib/roles';
 import { appendFileSync, mkdirSync, existsSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { canProceed, recordCost } from '@/lib/budget';
-import { notifyNewCandidate } from '@/lib/mailer';
+import { notifyNewCandidate, sendCandidateConfirmation } from '@/lib/mailer';
 import { trackEvent } from '@/lib/analytics';
 import { checkRateLimit, checkInterviewRate, recordInterviewStart } from '@/lib/rate-limit';
 import { getRoleOverride, getGlobalPromptOverrides } from '@/lib/content';
@@ -40,6 +40,9 @@ const LOG_FILE = join(LOG_DIR, 'conversations.jsonl');
 // Transcripts dir — każda sesja to osobny plik nadpisywany przy każdym turze
 const TRANSCRIPTS_DIR = join(LOG_DIR, 'transcripts');
 if (!existsSync(TRANSCRIPTS_DIR)) mkdirSync(TRANSCRIPTS_DIR, { recursive: true });
+
+// Sesje już zapisane do Notion — nie triggeruj auto-scoring drugi raz
+const scoredSessions = new Set<string>();
 
 type Msg = { role: string; content: unknown };
 
@@ -114,6 +117,115 @@ function buildTranscriptBlocks(messages: Msg[], totals: { tokIn: number; tokOut:
   }
 
   return blocks;
+}
+
+/** Fallback: gdy model nie wywołał complete_interview, robimy osobny scoring pass */
+async function autoScoreInterview(messages: Msg[], roleId: string, sessionId: string, roleTitle: string) {
+  if (scoredSessions.has(sessionId)) return;
+  scoredSessions.add(sessionId);
+
+  try {
+    const result = await generateText({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      model: getModel() as any,
+      system: `Jesteś analitykiem rozmów rekrutacyjnych. Na podstawie poniższej rozmowy wywołaj narzędzie complete_interview z danymi kandydata.
+Wyciągnij: imię i nazwisko, email (jeśli padł), miasto, stawkę, dostępność h/tydzień, użycie AI.
+Oceń wynik_techniczny (0-25) i wynik_komunikacja (0-30) uczciwie na podstawie odpowiedzi.
+Jeśli email nie padł — wpisz "brak@brak.pl". MUSISZ wywołać narzędzie complete_interview.`,
+      messages,
+      maxSteps: 3,
+      tools: {
+        complete_interview: tool({
+          description: 'Zapisz dane kandydata po analizie rozmowy.',
+          parameters: z.object({
+            imie_nazwisko: z.string(),
+            email: z.string(),
+            miasto: z.string().optional(),
+            github: z.string().optional(),
+            stawka: z.string().optional(),
+            dostepnosc_h: z.number().optional(),
+            uzywa_ai: z.enum(['Tak — aktywnie', 'Tak — powierzchownie', 'Nie']),
+            wynik_techniczny: z.number().min(0).max(25),
+            wynik_komunikacja: z.number().min(0).max(30),
+            notatki: z.string(),
+            wczesne_zakonczenie: z.boolean().optional(),
+          }),
+          execute: async (candidate) => {
+            const wynik_lacznie = candidate.wynik_techniczny + candidate.wynik_komunikacja;
+            const decyzja =
+              wynik_lacznie >= 45 ? 'Rozmowa' :
+              wynik_lacznie >= 35 ? 'Zadanie techniczne' :
+              wynik_lacznie >= 25 ? 'Do przemyślenia' : 'Odrzucony';
+
+            // Duplikaty — sprawdź czy email już jest w Notion
+            const emailToCheck = candidate.email.includes('brak@') ? null : candidate.email;
+            if (emailToCheck) {
+              try {
+                const existing = await notion.databases.query({
+                  database_id: process.env.NOTION_DATABASE_ID!,
+                  filter: { property: 'Email', email: { equals: emailToCheck } },
+                  page_size: 1,
+                });
+                if (existing.results.length > 0) {
+                  console.log(`[auto-score] Duplikat emaila ${emailToCheck} — pomijam`);
+                  return { success: false, reason: 'duplicate' };
+                }
+              } catch { /* ignoruj błąd query */ }
+            }
+
+            const created = await notion.pages.create({
+              parent: { database_id: process.env.NOTION_DATABASE_ID! },
+              properties: {
+                'Imię i nazwisko': { title: [{ text: { content: candidate.imie_nazwisko } }] },
+                Email: { email: candidate.email.includes('brak@') ? '' : candidate.email },
+                Miasto: { rich_text: [{ text: { content: candidate.miasto ?? '' } }] },
+                ...(candidate.github ? { GitHub: { url: candidate.github } } : {}),
+                'Stawka oczekiwana': { rich_text: [{ text: { content: candidate.stawka ?? '' } }] },
+                ...(candidate.dostepnosc_h != null ? { 'Dostępność h/tydzień': { number: candidate.dostepnosc_h } } : {}),
+                'Używa AI': { select: { name: candidate.uzywa_ai } },
+                'Wynik techniczny': { number: candidate.wynik_techniczny },
+                'Wynik komunikacja': { number: candidate.wynik_komunikacja },
+                'Wynik łącznie': { number: wynik_lacznie },
+                Status: { select: { name: 'Nowy' } },
+                Rola: { select: { name: roleTitle } },
+                Decyzja: { select: { name: decyzja } },
+                'Data aplikacji': { date: { start: new Date().toISOString().split('T')[0] } },
+                'Notatki AI': { rich_text: [{ text: { content: `[AUTO-SCORING]\n${candidate.notatki}` } }] },
+              },
+            });
+
+            const blocks = buildTranscriptBlocks(messages, { tokIn: 0, tokOut: 0, cost: 0, turns: messages.filter(m => m.role === 'user').length });
+            for (let i = 0; i < blocks.length; i += 100) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              await notion.blocks.children.append({ block_id: created.id, children: blocks.slice(i, i + 100) as any });
+            }
+
+            trackEvent('interview_complete', { role: roleId, sessionId, meta: { wynik_lacznie, decyzja, auto: true } });
+
+            try {
+              await notifyNewCandidate({
+                imie_nazwisko: candidate.imie_nazwisko,
+                email: candidate.email,
+                role: roleTitle,
+                wynik_lacznie,
+                decyzja,
+                notatki: candidate.notatki,
+                notionUrl: `https://www.notion.so/${created.id.replace(/-/g, '')}`,
+                wczesneZakonczenie: candidate.wczesne_zakonczenie ?? false,
+              });
+              if (emailToCheck) await sendCandidateConfirmation({ imie_nazwisko: candidate.imie_nazwisko, email: candidate.email, role: roleTitle });
+            } catch (mailErr) { console.error('Auto-score mail error:', mailErr); }
+
+            return { success: true };
+          },
+        }),
+      },
+    });
+    console.log(`[auto-score] sessionId=${sessionId} finishReason=${result.finishReason}`);
+  } catch (err) {
+    console.error('[auto-score] error:', err);
+    scoredSessions.delete(sessionId);
+  }
 }
 
 export async function POST(req: Request) {
@@ -254,6 +366,18 @@ export async function POST(req: Request) {
         console.error('Log write error:', err);
       }
 
+      // Fallback auto-scoring — gdy model nie wywołał complete_interview a rozmowa była długa
+      if (finishReason === 'stop' && messages.length >= 16 && sessionId && !scoredSessions.has(sessionId)) {
+        // Sprawdź czy ostatnia wiadomość asystenta zawiera słowa pożegnalne
+        const lastAssistant = [...messages].reverse().find((m: Msg) => m.role === 'assistant');
+        const lastText = lastAssistant ? msgToText(lastAssistant as Msg).toLowerCase() : '';
+        const isFarewell = /dziękuj|życzę|powodzeni|do usłyszeni|miło rozmawiać|zakończymy|tyle pytań|wszystkie pytania/.test(lastText);
+        if (isFarewell) {
+          console.log(`[auto-score] Wykryto pożegnanie, uruchamiam auto-scoring dla ${sessionId}`);
+          autoScoreInterview(messages, roleId, sessionId, role.title).catch(console.error);
+        }
+      }
+
       // Zapis pełnego transkryptu — nadpisujemy plik sesji przy każdym turze
       // Dzięki temu ostatni zapis zawsze ma kompletną rozmowę
       if (sessionId) {
@@ -318,6 +442,22 @@ export async function POST(req: Request) {
               error: 'Oba wyniki nie mogą być 0 po rozmowie. Proszę ponownie ocenić kandydata na podstawie rozmowy i wywołać narzędzie jeszcze raz z prawidłowymi wynikami (1-25 techniczny, 1-30 komunikacja).',
             };
           }
+
+          // Oznacz sesję jako ocenioną — zapobiega podwójnemu auto-scoringowi
+          if (sessionId) scoredSessions.add(sessionId);
+
+          // Duplikaty — sprawdź czy ten email już jest w Notion
+          try {
+            const existing = await notion.databases.query({
+              database_id: process.env.NOTION_DATABASE_ID!,
+              filter: { property: 'Email', email: { equals: candidate.email } },
+              page_size: 1,
+            });
+            if (existing.results.length > 0) {
+              console.log(`[complete_interview] Duplikat emaila ${candidate.email} — pomijam zapis do Notion`);
+              return { success: false, reason: 'duplicate_email' };
+            }
+          } catch { /* ignoruj błąd query, zapisz normalnie */ }
 
           try {
             // Sum tokens for this interview from JSONL for this session (best-effort)
@@ -397,7 +537,7 @@ export async function POST(req: Request) {
               meta: { wynik_lacznie, decyzja, cost },
             });
 
-            // Email powiadomienie do Łukasza
+            // Emaile — Łukasz + kandydat
             try {
               await notifyNewCandidate({
                 imie_nazwisko: candidate.imie_nazwisko,
@@ -408,6 +548,11 @@ export async function POST(req: Request) {
                 notatki: candidate.notatki,
                 notionUrl: `https://www.notion.so/${created.id.replace(/-/g, '')}`,
                 wczesneZakonczenie: candidate.wczesne_zakonczenie ?? false,
+              });
+              await sendCandidateConfirmation({
+                imie_nazwisko: candidate.imie_nazwisko,
+                email: candidate.email,
+                role: role.title,
               });
             } catch (mailErr) {
               console.error('Email notify error:', mailErr);
