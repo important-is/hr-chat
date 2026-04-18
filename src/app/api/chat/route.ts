@@ -189,6 +189,21 @@ export async function POST(req: Request) {
     recordInterviewStart(clientIP);
   }
 
+  // 5. Spam / nonsense detection — ostatnia wiadomość użytkownika
+  const lastUserMsg = [...messages].reverse().find((m: Msg) => m.role === 'user');
+  const lastText = lastUserMsg ? msgToText(lastUserMsg as Msg).trim() : '';
+  if (lastText.length > 0) {
+    const alphaRatio = (lastText.match(/[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g) ?? []).length / lastText.length;
+    const isRepeated = lastText.length > 4 && new Set(lastText.replace(/\s/g, '')).size <= 2;
+    const isTooShort = lastText.length < 2;
+    if ((alphaRatio < 0.25 && lastText.length > 5) || isRepeated || isTooShort) {
+      console.log(`[spam] Nonsense message from ${clientIP}: "${lastText.slice(0, 50)}"`);
+      // Nie blokujemy — pozwalamy Kai obsłużyć to zgodnie z promptem (ostrzeżenie → zakończenie)
+      // Ale logujemy dla statystyk
+      trackEvent('interview_error', { role: roleId, sessionId, meta: { reason: 'nonsense_message', ip: clientIP } });
+    }
+  }
+
   // Budget check
   const budget = canProceed(sessionId);
   if (!budget.allowed) {
