@@ -346,11 +346,21 @@ function ChatApp() {
         {/* RODO — informacja o przetwarzaniu danych */}
         <p className="text-[10px] text-gray-300 mt-6 max-w-md px-4 leading-relaxed">
           Rozmowa jest prowadzona przez AI (OpenAI / Anthropic). Klikając rolę akceptujesz
-          przetwarzanie podanych danych (imię, email, odpowiedzi) przez <strong>important.is</strong> w celu
-          prowadzenia rekrutacji. Administratorem danych jest important.is sp. z o.o.
-          Dane przechowujemy max 12 miesięcy. Masz prawo wglądu, poprawki i usunięcia —
-          pisz na <a href="mailto:hi@important.is" className="text-gray-400 hover:text-accent underline">hi@important.is</a>.
+          przetwarzanie podanych danych przez <strong>important.is</strong> w celu rekrutacji.
+          Dane przechowujemy max 12 miesięcy. Szczegóły w{' '}
+          <a href="/polityka-prywatnosci" className="text-gray-400 hover:text-accent underline">Polityce prywatności</a>
+          {' '}i{' '}
+          <a href="/regulamin" className="text-gray-400 hover:text-accent underline">Regulaminie</a>.
         </p>
+
+        {/* Footer links */}
+        <div className="mt-4 flex gap-4 text-[10px] text-gray-300">
+          <a href="/polityka-prywatnosci" className="hover:text-accent transition-colors">Polityka prywatności</a>
+          <span>·</span>
+          <a href="/regulamin" className="hover:text-accent transition-colors">Regulamin</a>
+          <span>·</span>
+          <a href="mailto:hi@important.is" className="hover:text-accent transition-colors">Kontakt</a>
+        </div>
       </div>
     );
   }
