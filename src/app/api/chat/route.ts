@@ -4,7 +4,7 @@ import { streamText, tool } from 'ai';
 import { z } from 'zod';
 import { Client } from '@notionhq/client';
 import { getRole } from '@/lib/roles';
-import { appendFileSync, mkdirSync, existsSync } from 'fs';
+import { appendFileSync, mkdirSync, existsSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { canProceed, recordCost } from '@/lib/budget';
 import { trackEvent } from '@/lib/analytics';
@@ -35,6 +35,10 @@ function getModel() {
 const LOG_DIR = join(process.cwd(), 'logs');
 if (!existsSync(LOG_DIR)) mkdirSync(LOG_DIR, { recursive: true });
 const LOG_FILE = join(LOG_DIR, 'conversations.jsonl');
+
+// Transcripts dir — każda sesja to osobny plik nadpisywany przy każdym turze
+const TRANSCRIPTS_DIR = join(LOG_DIR, 'transcripts');
+if (!existsSync(TRANSCRIPTS_DIR)) mkdirSync(TRANSCRIPTS_DIR, { recursive: true });
 
 type Msg = { role: string; content: unknown };
 
@@ -232,6 +236,25 @@ export async function POST(req: Request) {
         appendFileSync(LOG_FILE, JSON.stringify(logEntry) + '\n');
       } catch (err) {
         console.error('Log write error:', err);
+      }
+
+      // Zapis pełnego transkryptu — nadpisujemy plik sesji przy każdym turze
+      // Dzięki temu ostatni zapis zawsze ma kompletną rozmowę
+      if (sessionId) {
+        try {
+          const transcriptPath = join(TRANSCRIPTS_DIR, `${sessionId}.json`);
+          writeFileSync(transcriptPath, JSON.stringify({
+            sessionId,
+            role: roleId,
+            ts: new Date().toISOString(),
+            msgCount: messages.length,
+            costUSD: Number(cost.toFixed(6)),
+            finishReason,
+            messages,
+          }));
+        } catch (err) {
+          console.error('Transcript write error:', err);
+        }
       }
       console.log(
         `[chat] role=${roleId} tokens=${inTok}+${outTok} cost=$${cost.toFixed(4)} finish=${finishReason}`,
