@@ -262,6 +262,16 @@ function ChatApp() {
             );
           })}
         </div>
+        <p className="text-xs text-gray-400 mt-8 max-w-sm px-2">
+          Wolisz napisać bezpośrednio? Pisz na{' '}
+          <a
+            href="mailto:hi@important.is?subject=Aplikacja%20do%20important.is"
+            className="text-gray-500 underline hover:text-accent transition-colors"
+          >
+            hi@important.is
+          </a>
+          {' '}— też się odezwiemy 👋
+        </p>
       </div>
     );
   }
