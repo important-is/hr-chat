@@ -7,6 +7,7 @@ import { getRole } from '@/lib/roles';
 import { appendFileSync, mkdirSync, existsSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { canProceed, recordCost } from '@/lib/budget';
+import { notifyNewCandidate } from '@/lib/mailer';
 import { trackEvent } from '@/lib/analytics';
 import { checkRateLimit, checkInterviewRate, recordInterviewStart } from '@/lib/rate-limit';
 import { getRoleOverride, getGlobalPromptOverrides } from '@/lib/content';
@@ -279,6 +280,10 @@ export async function POST(req: Request) {
           notatki: z
             .string()
             .describe('Podsumowanie rozmowy dla Łukasza (3-5 zdań): mocne strony, wątpliwości, powód decyzji'),
+          wczesne_zakonczenie: z
+            .boolean()
+            .optional()
+            .describe('true jeśli kandydat zakończył rozmowę wcześniej niż planowano'),
         }),
         execute: async (candidate) => {
           // Deterministyczne wyliczenie sumy i decyzji — usuwa ryzyko "mięknięcia" LLM
@@ -376,6 +381,22 @@ export async function POST(req: Request) {
               sessionId,
               meta: { wynik_lacznie, decyzja, cost },
             });
+
+            // Email powiadomienie do Łukasza
+            try {
+              await notifyNewCandidate({
+                imie_nazwisko: candidate.imie_nazwisko,
+                email: candidate.email,
+                role: role.title,
+                wynik_lacznie,
+                decyzja,
+                notatki: candidate.notatki,
+                notionUrl: `https://www.notion.so/${created.id.replace(/-/g, '')}`,
+                wczesneZakonczenie: candidate.wczesne_zakonczenie ?? false,
+              });
+            } catch (mailErr) {
+              console.error('Email notify error:', mailErr);
+            }
 
             return { success: true };
           } catch (err) {
