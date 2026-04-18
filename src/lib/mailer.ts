@@ -1,12 +1,16 @@
 import nodemailer from 'nodemailer';
 
+if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  console.error('[mailer] Missing SMTP env vars — emails will fail');
+}
+
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST ?? 'mail.important.is',
+  host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT ?? 465),
   secure: true,
   auth: {
-    user: process.env.SMTP_USER ?? 'hi@important.is',
-    pass: process.env.SMTP_PASS ?? 'Adminimportant!1',
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
 });
 

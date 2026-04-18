@@ -92,6 +92,11 @@ export async function POST(
 
   const { sessionId } = await params;
 
+  // Walidacja sessionId — zapobiega path traversal (../../.env)
+  if (!/^[a-zA-Z0-9_-]{8,64}$/.test(sessionId)) {
+    return NextResponse.json({ error: 'Invalid sessionId' }, { status: 400 });
+  }
+
   const transcriptPath = join(TRANSCRIPTS_DIR, `${sessionId}.json`);
   if (!existsSync(transcriptPath)) {
     return NextResponse.json({ error: 'Transcript not found' }, { status: 404 });

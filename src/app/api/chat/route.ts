@@ -4,7 +4,8 @@ import { streamText, generateText, tool } from 'ai';
 import { z } from 'zod';
 import { Client } from '@notionhq/client';
 import { getRole } from '@/lib/roles';
-import { appendFileSync, mkdirSync, existsSync, writeFileSync } from 'fs';
+import { mkdirSync, existsSync } from 'fs';
+import { appendFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { canProceed, recordCost } from '@/lib/budget';
 import { notifyNewCandidate, sendCandidateConfirmation } from '@/lib/mailer';
@@ -57,7 +58,12 @@ function msgToText(m: Msg): string {
     return m.content
       .map((c) => {
         if (typeof c === 'string') return c;
-        if (c && typeof c === 'object' && 'text' in c) return String((c as { text: unknown }).text);
+        if (!c || typeof c !== 'object') return '';
+        const part = c as Record<string, unknown>;
+        if ('text' in part) return String(part.text);
+        // Tool-call content part — pokaż jako placeholder w transkrypcie
+        if (part.type === 'tool-call') return `[wywołano narzędzie: ${part.toolName ?? 'unknown'}]`;
+        if (part.type === 'tool-result') return `[wynik narzędzia]`;
         return '';
       })
       .join('');
@@ -132,7 +138,8 @@ async function autoScoreInterview(messages: Msg[], roleId: string, sessionId: st
 Wyciągnij: imię i nazwisko, email (jeśli padł), miasto, stawkę, dostępność h/tydzień, użycie AI.
 Oceń wynik_techniczny (0-25) i wynik_komunikacja (0-30) uczciwie na podstawie odpowiedzi.
 Jeśli email nie padł — wpisz "brak@brak.pl". MUSISZ wywołać narzędzie complete_interview.`,
-      messages,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      messages: messages as any,
       maxSteps: 3,
       tools: {
         complete_interview: tool({
@@ -360,18 +367,31 @@ export async function POST(req: Request) {
         finishReason,
         durationMs: Date.now() - requestStart,
       };
-      try {
-        appendFileSync(LOG_FILE, JSON.stringify(logEntry) + '\n');
-      } catch (err) {
+      // Non-blocking: fire-and-forget zapis metadanych
+      appendFile(LOG_FILE, JSON.stringify(logEntry) + '\n').catch((err) => {
         console.error('Log write error:', err);
-      }
+      });
 
       // Fallback auto-scoring — gdy model nie wywołał complete_interview a rozmowa była długa
       if (finishReason === 'stop' && messages.length >= 16 && sessionId && !scoredSessions.has(sessionId)) {
-        // Sprawdź czy ostatnia wiadomość asystenta zawiera słowa pożegnalne
+        // Detekcja pożegnania — wymagamy SPECYFICZNYCH fraz zamykających rozmowę
+        // (nie samo "dziękuję" żeby uniknąć false positives typu "dziękuję za to pytanie")
         const lastAssistant = [...messages].reverse().find((m: Msg) => m.role === 'assistant');
         const lastText = lastAssistant ? msgToText(lastAssistant as Msg).toLowerCase() : '';
-        const isFarewell = /dziękuj|życzę|powodzeni|do usłyszeni|miło rozmawiać|zakończymy|tyle pytań|wszystkie pytania/.test(lastText);
+        const farewellPhrases = [
+          'to wszystkie moje pytania',
+          'to wszystkie pytania',
+          'tyle z mojej strony',
+          'wielkie dzięki za rozmow',
+          'dzięki za rozmow',
+          'życzę powodzenia',
+          'miło było porozmawiać',
+          'łukasz odezwie się',
+          'łukasz się odezwie',
+          'odezwiemy się do ciebie',
+          'do usłyszenia',
+        ];
+        const isFarewell = farewellPhrases.some(p => lastText.includes(p));
         if (isFarewell) {
           console.log(`[auto-score] Wykryto pożegnanie, uruchamiam auto-scoring dla ${sessionId}`);
           autoScoreInterview(messages, roleId, sessionId, role.title).catch(console.error);
@@ -379,22 +399,20 @@ export async function POST(req: Request) {
       }
 
       // Zapis pełnego transkryptu — nadpisujemy plik sesji przy każdym turze
-      // Dzięki temu ostatni zapis zawsze ma kompletną rozmowę
-      if (sessionId) {
-        try {
-          const transcriptPath = join(TRANSCRIPTS_DIR, `${sessionId}.json`);
-          writeFileSync(transcriptPath, JSON.stringify({
-            sessionId,
-            role: roleId,
-            ts: new Date().toISOString(),
-            msgCount: messages.length,
-            costUSD: Number(cost.toFixed(6)),
-            finishReason,
-            messages,
-          }));
-        } catch (err) {
+      // Non-blocking: nie opóźnia response dla kandydata
+      if (sessionId && /^[a-zA-Z0-9_-]{8,64}$/.test(sessionId)) {
+        const transcriptPath = join(TRANSCRIPTS_DIR, `${sessionId}.json`);
+        writeFile(transcriptPath, JSON.stringify({
+          sessionId,
+          role: roleId,
+          ts: new Date().toISOString(),
+          msgCount: messages.length,
+          costUSD: Number(cost.toFixed(6)),
+          finishReason,
+          messages,
+        })).catch((err) => {
           console.error('Transcript write error:', err);
-        }
+        });
       }
       console.log(
         `[chat] role=${roleId} tokens=${inTok}+${outTok} cost=$${cost.toFixed(4)} finish=${finishReason}`,
@@ -432,19 +450,26 @@ export async function POST(req: Request) {
             wynik_lacznie >= 35 ? 'Zadanie techniczne' :
             wynik_lacznie >= 25 ? 'Do przemyślenia' : 'Odrzucony';
 
+          // ATOMIC: oznacz sesję jako ocenioną NATYCHMIAST (przed walidacją i async work)
+          // Zapobiega race condition gdy fallback auto-scoring odpali się równolegle
+          if (sessionId) {
+            if (scoredSessions.has(sessionId)) {
+              console.log(`[complete_interview] Sesja ${sessionId} już oceniona — pomijam`);
+              return { success: false, reason: 'already_scored' };
+            }
+            scoredSessions.add(sessionId);
+          }
+
           // SAFETY CHECK: oba wyniki = 0 po dłuższej rozmowie = bug modelu
-          // (obserwowane sporadycznie przy GPT-4o-mini). Zwracamy błąd żeby model spróbował ponownie.
           const turnsCount = messages.filter((m: Msg) => m.role === 'user').length;
           if (candidate.wynik_techniczny === 0 && candidate.wynik_komunikacja === 0 && turnsCount > 5) {
             console.error(`[complete_interview] SUSPICIOUS: oba wyniki=0 po ${turnsCount} turach — kandydat: ${candidate.imie_nazwisko}`);
+            if (sessionId) scoredSessions.delete(sessionId); // pozwól spróbować ponownie
             return {
               success: false,
               error: 'Oba wyniki nie mogą być 0 po rozmowie. Proszę ponownie ocenić kandydata na podstawie rozmowy i wywołać narzędzie jeszcze raz z prawidłowymi wynikami (1-25 techniczny, 1-30 komunikacja).',
             };
           }
-
-          // Oznacz sesję jako ocenioną — zapobiega podwójnemu auto-scoringowi
-          if (sessionId) scoredSessions.add(sessionId);
 
           // Duplikaty — sprawdź czy ten email już jest w Notion
           try {
@@ -549,11 +574,14 @@ export async function POST(req: Request) {
                 notionUrl: `https://www.notion.so/${created.id.replace(/-/g, '')}`,
                 wczesneZakonczenie: candidate.wczesne_zakonczenie ?? false,
               });
-              await sendCandidateConfirmation({
-                imie_nazwisko: candidate.imie_nazwisko,
-                email: candidate.email,
-                role: role.title,
-              });
+              // Email kandydata tylko jeśli mamy prawdziwy adres
+              if (candidate.email && !candidate.email.includes('brak@') && candidate.email.includes('@')) {
+                await sendCandidateConfirmation({
+                  imie_nazwisko: candidate.imie_nazwisko,
+                  email: candidate.email,
+                  role: role.title,
+                });
+              }
             } catch (mailErr) {
               console.error('Email notify error:', mailErr);
             }

@@ -42,7 +42,11 @@ export default function TranscriptsTab() {
   }, [fetchData]);
 
   const handlePush = async (sessionId: string) => {
-    setPushStatuses((prev) => ({ ...prev, [sessionId]: { state: 'loading' } }));
+    // Guard przed podwójnym kliknięciem — sprawdzamy aktualny stan
+    setPushStatuses((prev) => {
+      if (prev[sessionId]?.state === 'loading') return prev;
+      return { ...prev, [sessionId]: { state: 'loading' } };
+    });
     try {
       const res = await fetch(`/api/admin/transcripts/${sessionId}/push`, { method: 'POST' });
       const json = await res.json();
@@ -163,9 +167,10 @@ export default function TranscriptsTab() {
                         {!pushStatus || pushStatus.state === 'idle' ? (
                           <button
                             onClick={() => handlePush(entry.sessionId)}
-                            className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium bg-gray-900 text-white hover:bg-gray-700 transition-colors"
+                            disabled={pushStatus?.state === 'loading'}
+                            className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium bg-gray-900 text-white hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                           >
-                            Wyslij do Notion
+                            Wyślij do Notion
                           </button>
                         ) : pushStatus.state === 'loading' ? (
                           <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium bg-gray-100 text-gray-400 animate-pulse">
