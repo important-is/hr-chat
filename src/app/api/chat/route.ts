@@ -11,26 +11,42 @@ import { canProceed, recordCost } from '@/lib/budget';
 import { notifyNewCandidate, sendCandidateConfirmation } from '@/lib/mailer';
 import { trackEvent } from '@/lib/analytics';
 import { checkRateLimit, checkInterviewRate, recordInterviewStart } from '@/lib/rate-limit';
-import { getRoleOverride, getGlobalPromptOverrides } from '@/lib/content';
+import { getRoleOverride, getGlobalPromptOverrides, getModelOverride, AVAILABLE_MODELS } from '@/lib/content';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
-// Provider wybierany przez env var: MODEL_PROVIDER=openai | anthropic (default: openai — tańszy)
-const PROVIDER = (process.env.MODEL_PROVIDER ?? 'openai') as 'openai' | 'anthropic';
+// Provider domyślny z env var: MODEL_PROVIDER=openai | anthropic (default: openai — tańszy)
+// Override z panelu admina (content.json) ma priorytet nad env.
+const ENV_PROVIDER = (process.env.MODEL_PROVIDER ?? 'openai') as 'openai' | 'anthropic';
 
-// Modele + cennik per MTok (input, output) w USD
+// Domyślne modele + cennik per MTok (input, output) w USD — używane gdy brak override'u.
+// Ceny dla override'ów z panelu admina są pobierane z AVAILABLE_MODELS (content.ts).
 const MODELS = {
   openai: { id: 'gpt-4o-mini', priceIn: 0.15, priceOut: 0.60 },
   anthropic: { id: 'claude-sonnet-4-6', priceIn: 3, priceOut: 15 },
 } as const;
 
-const MODEL = MODELS[PROVIDER].id;
-const PRICE_IN_PER_MTOK = MODELS[PROVIDER].priceIn;
-const PRICE_OUT_PER_MTOK = MODELS[PROVIDER].priceOut;
+/**
+ * Rozwiązuje aktywną konfigurację modelu dla bieżącego requestu.
+ * Kolejność: override z content.json > domyślne z env MODEL_PROVIDER.
+ */
+function resolveModelConfig(): { provider: 'openai' | 'anthropic'; modelId: string; priceIn: number; priceOut: number } {
+  const override = getModelOverride();
+  if (override) {
+    const list = AVAILABLE_MODELS[override.provider];
+    const m = list.find((x) => x.id === override.modelId);
+    if (m) {
+      return { provider: override.provider, modelId: m.id, priceIn: m.priceIn, priceOut: m.priceOut };
+    }
+  }
+  const def = MODELS[ENV_PROVIDER];
+  return { provider: ENV_PROVIDER, modelId: def.id, priceIn: def.priceIn, priceOut: def.priceOut };
+}
 
 function getModel() {
+  const cfg = resolveModelConfig();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (PROVIDER === 'openai' ? openai(MODEL) : anthropic(MODEL)) as any;
+  return (cfg.provider === 'openai' ? openai(cfg.modelId) : anthropic(cfg.modelId)) as any;
 }
 
 // Log dir
@@ -47,8 +63,12 @@ const scoredSessions = new Set<string>();
 
 type Msg = { role: string; content: unknown };
 
-function calcCost(inTok: number, outTok: number) {
-  return (inTok * PRICE_IN_PER_MTOK + outTok * PRICE_OUT_PER_MTOK) / 1_000_000;
+function calcCost(inTok: number, outTok: number, priceIn?: number, priceOut?: number) {
+  // Gdy nie podano cen, wylicz na podstawie aktualnej konfiguracji (override lub env default).
+  const cfg = priceIn == null || priceOut == null ? resolveModelConfig() : null;
+  const pIn = priceIn ?? cfg!.priceIn;
+  const pOut = priceOut ?? cfg!.priceOut;
+  return (inTok * pIn + outTok * pOut) / 1_000_000;
 }
 
 /** Flatten AI SDK message content → plain text */
@@ -72,7 +92,8 @@ function msgToText(m: Msg): string {
 }
 
 /** Build Notion blocks for transcript */
-function buildTranscriptBlocks(messages: Msg[], totals: { tokIn: number; tokOut: number; cost: number; turns: number }) {
+function buildTranscriptBlocks(messages: Msg[], totals: { tokIn: number; tokOut: number; cost: number; turns: number; modelId?: string }) {
+  const modelLabel = totals.modelId ?? resolveModelConfig().modelId;
   const blocks: object[] = [
     {
       object: 'block',
@@ -87,7 +108,7 @@ function buildTranscriptBlocks(messages: Msg[], totals: { tokIn: number; tokOut:
           {
             type: 'text',
             text: {
-              content: `Model: ${MODEL} · Tury: ${totals.turns} · Tokeny: ${totals.tokIn} in / ${totals.tokOut} out · Koszt: $${totals.cost.toFixed(4)}`,
+              content: `Model: ${modelLabel} · Tury: ${totals.turns} · Tokeny: ${totals.tokIn} in / ${totals.tokOut} out · Koszt: $${totals.cost.toFixed(4)}`,
             },
             annotations: { italic: true, color: 'gray' },
           },
@@ -340,6 +361,9 @@ export async function POST(req: Request) {
 
   const requestStart = Date.now();
 
+  // Zapisz aktywną konfigurację raz na request (override lub env default) — spójność w onFinish/logach
+  const activeModel = resolveModelConfig();
+
   const result = streamText({
     model: getModel(),
     system: systemPrompt,
@@ -348,7 +372,7 @@ export async function POST(req: Request) {
     onFinish: ({ usage, finishReason }) => {
       const inTok = usage?.promptTokens ?? 0;
       const outTok = usage?.completionTokens ?? 0;
-      const cost = calcCost(inTok, outTok);
+      const cost = calcCost(inTok, outTok, activeModel.priceIn, activeModel.priceOut);
 
       // Record cost for budget tracking
       if (sessionId) {
@@ -358,7 +382,8 @@ export async function POST(req: Request) {
       const logEntry = {
         ts: new Date().toISOString(),
         role: roleId,
-        model: MODEL,
+        model: activeModel.modelId,
+        provider: activeModel.provider,
         msgCount: messages.length,
         promptTokens: inTok,
         completionTokens: outTok,

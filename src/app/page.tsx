@@ -43,6 +43,7 @@ function ChatApp() {
   const [started, setStarted] = useState(false);
   const [interviewDone, setInterviewDone] = useState(false);
   const [budgetError, setBudgetError] = useState(false);
+  const [resumablePrevSession, setResumablePrevSession] = useState<{ role: string; sessionId: string; ts: number } | null>(null);
 
   // CMS content overrides
   const [cmsRoles, setCmsRoles] = useState<Record<string, {
@@ -77,7 +78,24 @@ function ChatApp() {
       setCmsRoles(d.roles || {});
       setCmsUI(d.ui || {});
     }).catch(() => {});
+
+    // Sprawdź czy istnieje zapisana sesja (resume po zamknięciu karty)
+    try {
+      const saved = localStorage.getItem('hr-chat-session');
+      if (saved) {
+        const parsed = JSON.parse(saved) as { role: string; sessionId: string; ts: number };
+        const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+        if (Date.now() - parsed.ts < TWENTY_FOUR_HOURS && parsed.role && ROLES[parsed.role]) {
+          setResumablePrevSession(parsed);
+        } else {
+          localStorage.removeItem('hr-chat-session');
+        }
+      }
+    } catch { /* localStorage niedostępny */ }
   }, []);
+
+  // Zapisuj sesję przy każdej wymianie wiadomości
+  const lastSaveRef = useRef<number>(0);
 
   // Reset page load time when start screen shows
   useEffect(() => {
@@ -121,7 +139,28 @@ function ChatApp() {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    // Zapisz sesję do localStorage (max raz na 3s — throttle)
+    if (started && selectedRole && messages.length > 0 && !interviewDone) {
+      const now = Date.now();
+      if (now - lastSaveRef.current > 3000) {
+        lastSaveRef.current = now;
+        try {
+          localStorage.setItem('hr-chat-session', JSON.stringify({
+            role: selectedRole,
+            sessionId: sessionIdRef.current,
+            ts: now,
+          }));
+        } catch { /* ignore */ }
+      }
+    }
+  }, [messages, started, selectedRole, interviewDone]);
+
+  // Czyść localStorage po ukończeniu rozmowy
+  useEffect(() => {
+    if (interviewDone) {
+      try { localStorage.removeItem('hr-chat-session'); } catch { /* ignore */ }
+    }
+  }, [interviewDone]);
 
   useEffect(() => {
     for (const msg of messages) {
@@ -236,6 +275,37 @@ function ChatApp() {
         <p className="text-gray-400 text-sm mb-8 sm:mb-10 max-w-sm px-2">
           {cmsUI.heroSubtitle || 'Wybierz stanowisko, na które chcesz aplikować — Kaja przeprowadzi Cię przez krótką rozmowę ☕️'}
         </p>
+
+        {/* Resume baner — jeśli zapisana sesja jest świeża (<24h) */}
+        {resumablePrevSession && (
+          <div className="w-full max-w-md mb-5 p-3 rounded-xl border border-amber-200 bg-amber-50 text-left">
+            <p className="text-xs text-amber-900 mb-2">
+              ↩️ Zaczęłaś/ąłeś już rozmowę na stanowisko <strong>{ROLES[resumablePrevSession.role]?.title}</strong>. Chcesz kontynuować?
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => {
+                  sessionIdRef.current = resumablePrevSession.sessionId;
+                  setSelectedRole(resumablePrevSession.role);
+                  setResumablePrevSession(null);
+                }}
+                className="text-xs px-3 py-1 rounded-lg bg-amber-600 text-white hover:bg-amber-700 transition-colors"
+              >
+                Kontynuuj
+              </button>
+              <button
+                onClick={() => {
+                  try { localStorage.removeItem('hr-chat-session'); } catch { /* */ }
+                  setResumablePrevSession(null);
+                }}
+                className="text-xs px-3 py-1 rounded-lg bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition-colors"
+              >
+                Zacznij od nowa
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="grid gap-2.5 sm:gap-3 w-full max-w-md">
           {Object.entries(ROLES).map(([id, r]) => {
             const cr = cmsRoles?.[id];
@@ -271,6 +341,15 @@ function ChatApp() {
             hi@important.is
           </a>
           {' '}— też się odezwiemy 👋
+        </p>
+
+        {/* RODO — informacja o przetwarzaniu danych */}
+        <p className="text-[10px] text-gray-300 mt-6 max-w-md px-4 leading-relaxed">
+          Rozmowa jest prowadzona przez AI (OpenAI / Anthropic). Klikając rolę akceptujesz
+          przetwarzanie podanych danych (imię, email, odpowiedzi) przez <strong>important.is</strong> w celu
+          prowadzenia rekrutacji. Administratorem danych jest important.is sp. z o.o.
+          Dane przechowujemy max 12 miesięcy. Masz prawo wglądu, poprawki i usunięcia —
+          pisz na <a href="mailto:hi@important.is" className="text-gray-400 hover:text-accent underline">hi@important.is</a>.
         </p>
       </div>
     );

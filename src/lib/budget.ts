@@ -1,5 +1,9 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import { notifyBudgetThreshold } from './mailer';
+
+// Próg ostrzegawczy — wysyłka alertu gdy przekroczymy ten % dziennego limitu
+const ALERT_THRESHOLD = 0.8;
 
 const DATA_DIR = join(process.cwd(), 'data');
 const BUDGET_FILE = join(DATA_DIR, 'budget.json');
@@ -16,6 +20,7 @@ interface BudgetData {
   totalCost: number;
   interviewCount: number;
   interviews: Record<string, number>; // sessionId -> cost
+  alertSent: boolean; // czy wysłano dziś alert o przekroczeniu progu
 }
 
 function today(): string {
@@ -29,17 +34,21 @@ function ensureDir() {
 function load(): BudgetData {
   ensureDir();
   if (!existsSync(BUDGET_FILE)) {
-    return { date: today(), totalCost: 0, interviewCount: 0, interviews: {} };
+    return { date: today(), totalCost: 0, interviewCount: 0, interviews: {}, alertSent: false };
   }
   try {
     const data: BudgetData = JSON.parse(readFileSync(BUDGET_FILE, 'utf-8'));
     // Reset jeśli nowy dzień
     if (data.date !== today()) {
-      return { date: today(), totalCost: 0, interviewCount: 0, interviews: {} };
+      return { date: today(), totalCost: 0, interviewCount: 0, interviews: {}, alertSent: false };
+    }
+    // Backfill dla starych plików bez pola alertSent
+    if (typeof data.alertSent !== 'boolean') {
+      data.alertSent = false;
     }
     return data;
   } catch {
-    return { date: today(), totalCost: 0, interviewCount: 0, interviews: {} };
+    return { date: today(), totalCost: 0, interviewCount: 0, interviews: {}, alertSent: false };
   }
 }
 
@@ -72,6 +81,25 @@ export function recordCost(sessionId: string, costUSD: number) {
   const data = load();
   data.totalCost += costUSD;
   data.interviews[sessionId] = (data.interviews[sessionId] ?? 0) + costUSD;
+
+  // Alert gdy przekroczymy próg ostrzegawczy — tylko raz dziennie
+  const thresholdCost = LIMITS.maxCostPerDay * ALERT_THRESHOLD;
+  if (!data.alertSent && data.totalCost >= thresholdCost) {
+    data.alertSent = true;
+    save(data);
+
+    // Fire-and-forget — nie blokujemy flow rozmowy
+    const percentage = Math.round((data.totalCost / LIMITS.maxCostPerDay) * 100);
+    notifyBudgetThreshold({
+      currentCost: data.totalCost,
+      limit: LIMITS.maxCostPerDay,
+      percentage,
+      date: data.date,
+      interviewCount: data.interviewCount,
+    }).catch(console.error);
+    return;
+  }
+
   save(data);
 }
 

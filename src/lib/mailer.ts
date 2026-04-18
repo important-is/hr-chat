@@ -53,6 +53,59 @@ export async function sendCandidateConfirmation(data: {
   });
 }
 
+export async function notifyBudgetThreshold(data: {
+  currentCost: number;
+  limit: number;
+  percentage: number;
+  date: string;
+  interviewCount: number;
+}): Promise<void> {
+  const subject = `⚠️ Budżet HR chat: ${data.percentage}% ($${data.currentCost.toFixed(4)}/$${data.limit.toFixed(2)})`;
+
+  const html = `
+    <div style="font-family: sans-serif; max-width: 600px;">
+      <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+        <h2 style="margin: 0 0 8px 0; color: #856404;">⚠️ Alert budżetu HR chat</h2>
+        <p style="margin: 0; color: #856404;">Dzienny budżet przekroczył <strong>${data.percentage}%</strong> limitu.</p>
+      </div>
+
+      <table style="border-collapse: collapse; width: 100%; margin: 16px 0;">
+        <tr>
+          <td style="padding: 8px; border: 1px solid #eee; color: #666;">Data</td>
+          <td style="padding: 8px; border: 1px solid #eee;"><strong>${data.date}</strong></td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #eee; color: #666;">Aktualny koszt</td>
+          <td style="padding: 8px; border: 1px solid #eee;"><strong>$${data.currentCost.toFixed(4)}</strong></td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #eee; color: #666;">Limit dzienny</td>
+          <td style="padding: 8px; border: 1px solid #eee;">$${data.limit.toFixed(2)}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #eee; color: #666;">Wykorzystanie</td>
+          <td style="padding: 8px; border: 1px solid #eee;"><strong>${data.percentage}%</strong></td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #eee; color: #666;">Liczba rozmów</td>
+          <td style="padding: 8px; border: 1px solid #eee;">${data.interviewCount}</td>
+        </tr>
+      </table>
+
+      <p style="color: #333; font-size: 14px;">Gdy budżet osiągnie 100%, nowe rozmowy zostaną zablokowane do końca dnia.</p>
+
+      <p><a href="https://rekrutacja.important.is/admin" style="background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px;">Otwórz panel admina →</a></p>
+    </div>
+  `;
+
+  await transporter.sendMail({
+    from: `"Kaja — Rekrutacja" <hi@important.is>`,
+    to: 'lukasz.s@important.is',
+    subject,
+    html,
+  });
+}
+
 export async function notifyNewCandidate(data: CandidateNotification) {
   const emoji = DECISION_EMOJI[data.decyzja] ?? '⚪';
   const earlyTag = data.wczesneZakonczenie ? ' ⚠️ (przerwana wcześniej)' : '';
