@@ -36,11 +36,24 @@ export interface ModelOverride {
   modelId: string;
 }
 
+export interface EmailTemplate {
+  subject?: string;
+  html?: string;
+}
+
+export type EmailTemplateType = 'candidateConfirmation' | 'lukaszNotification';
+
+export interface EmailTemplates {
+  candidateConfirmation?: EmailTemplate;
+  lukaszNotification?: EmailTemplate;
+}
+
 export interface ContentData {
   roles: Record<string, RoleContent>;
   ui: UIContent;
   global: GlobalPrompt;
   modelOverride?: ModelOverride | null;
+  emailTemplates?: EmailTemplates;
   updatedAt?: string;
 }
 
@@ -70,6 +83,58 @@ const DEFAULT_CONTENT: ContentData = {
   ui: {},
   global: {},
   modelOverride: null,
+  emailTemplates: {},
+};
+
+/**
+ * Domyślne szablony maili — używane jako fallback gdy brak override w content.json.
+ * Placeholdery:
+ *  - candidateConfirmation: {{imie}}, {{imie_first}}, {{email}}, {{rola}}
+ *  - lukaszNotification: {{imie}}, {{email}}, {{rola}}, {{wynik}}, {{decyzja}},
+ *    {{notatki}}, {{notionUrl}}, {{earlyTag}}, {{emoji}}
+ */
+export const DEFAULT_EMAIL_TEMPLATES: Record<EmailTemplateType, Required<EmailTemplate>> = {
+  candidateConfirmation: {
+    subject: 'Dzięki za rozmowę, {{imie_first}}! ✌️',
+    html: `
+      <div style="font-family: sans-serif; max-width: 560px; color: #222;">
+        <h2 style="font-size: 22px; margin-bottom: 8px;">Hej {{imie_first}}! 👋</h2>
+        <p>Dzięki za rozmowę na stanowisko <strong>{{rola}}</strong> w important.is.</p>
+        <p>Łukasz przejrzy Twoje odpowiedzi i odezwie się do Ciebie w ciągu <strong>5 dni roboczych</strong>.</p>
+        <p style="color: #666; font-size: 14px;">Jeśli masz pytania — pisz śmiało na <a href="mailto:hi@important.is">hi@important.is</a>.</p>
+        <p style="margin-top: 32px;">Do usłyszenia,<br><strong>Kaja</strong><br><span style="color:#666;font-size:13px;">Rekruterka · important.is</span></p>
+      </div>
+    `.trim(),
+  },
+  lukaszNotification: {
+    subject: '{{emoji}} Nowy kandydat: {{imie}} — {{rola}}{{earlyTag}}',
+    html: `
+      <div style="font-family: sans-serif; max-width: 600px;">
+        <h2 style="margin-bottom: 4px;">{{emoji}} {{imie}}{{earlyTag}}</h2>
+        <p style="color: #666; margin-top: 0;">Rola: <strong>{{rola}}</strong></p>
+
+        <table style="border-collapse: collapse; width: 100%; margin: 16px 0;">
+          <tr>
+            <td style="padding: 8px; border: 1px solid #eee; color: #666;">Email</td>
+            <td style="padding: 8px; border: 1px solid #eee;"><a href="mailto:{{email}}">{{email}}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border: 1px solid #eee; color: #666;">Wynik</td>
+            <td style="padding: 8px; border: 1px solid #eee;">{{wynik}}/55 pkt</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border: 1px solid #eee; color: #666;">Decyzja</td>
+            <td style="padding: 8px; border: 1px solid #eee;"><strong>{{decyzja}}</strong></td>
+          </tr>
+        </table>
+
+        <p style="color: #333;"><strong>Notatki Kai:</strong><br>{{notatki}}</p>
+
+        {{notionUrl}}
+        {{earlyNote}}
+      </div>
+    `.trim(),
+  },
 };
 
 export function loadContent(): ContentData {
@@ -138,5 +203,42 @@ export function getModelOverride(): ModelOverride | null {
 export function setModelOverride(override: ModelOverride | null): void {
   const content = loadContent();
   content.modelOverride = override;
+  saveContent(content);
+}
+
+/**
+ * Pobierz override szablonu maila z content.json.
+ * Zwraca null jeśli brak override (lub nie ma ani subject, ani html) —
+ * wtedy mailer powinien użyć hardcoded defaultu z kodu.
+ */
+export function getEmailTemplate(type: EmailTemplateType): { subject: string; html: string } | null {
+  const content = loadContent();
+  const tpl = content.emailTemplates?.[type];
+  if (!tpl) return null;
+  const subject = (tpl.subject ?? '').trim();
+  const html = (tpl.html ?? '').trim();
+  if (!subject && !html) return null;
+  const defaults = DEFAULT_EMAIL_TEMPLATES[type];
+  return {
+    subject: subject || defaults.subject,
+    html: html || defaults.html,
+  };
+}
+
+/**
+ * Zapisz (lub wyczyść) override szablonu maila.
+ * Przekaż pusty obiekt `{}` aby zresetować do defaultów z kodu.
+ */
+export function setEmailTemplate(type: EmailTemplateType, template: EmailTemplate | null): void {
+  const content = loadContent();
+  if (!content.emailTemplates) content.emailTemplates = {};
+  if (template === null || (!template.subject && !template.html)) {
+    delete content.emailTemplates[type];
+  } else {
+    content.emailTemplates[type] = {
+      ...content.emailTemplates[type],
+      ...template,
+    };
+  }
   saveContent(content);
 }

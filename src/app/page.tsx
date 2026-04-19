@@ -54,6 +54,10 @@ function ChatApp() {
   const [fallbackEmail, setFallbackEmail] = useState('');
   const [fallbackSent, setFallbackSent] = useState(false);
   const [honeypot, setHoneypot] = useState('');
+  const [cvUploading, setCvUploading] = useState(false);
+  const [cvUploaded, setCvUploaded] = useState(false);
+  const [cvError, setCvError] = useState<string | null>(null);
+  const [cvDragActive, setCvDragActive] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const sessionIdRef = useRef(genSessionId());
   const pageLoadTime = useRef(Date.now());
@@ -239,6 +243,44 @@ function ChatApp() {
 
   // ── Success ─────────────────────────────────────────────────────────────
   if (interviewDone) {
+    const uploadCv = async (file: File) => {
+      setCvError(null);
+
+      if (file.type !== 'application/pdf') {
+        setCvError('Tylko pliki PDF są akceptowane.');
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        setCvError('Plik jest za duży (max 5MB).');
+        return;
+      }
+
+      setCvUploading(true);
+      try {
+        const fd = new FormData();
+        fd.append('file', file);
+        fd.append('sessionId', sessionIdRef.current);
+        const res = await fetch('/api/cv-upload', { method: 'POST', body: fd });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          setCvError(data?.error === 'file_too_large'
+            ? 'Plik jest za duży (max 5MB).'
+            : data?.error === 'invalid_mime_type' || data?.error === 'invalid_pdf_header'
+            ? 'Nieprawidłowy plik PDF.'
+            : data?.error === 'too_many_requests'
+            ? 'Za dużo prób — spróbuj za chwilę.'
+            : 'Nie udało się wgrać pliku. Spróbuj ponownie.');
+          setCvUploading(false);
+          return;
+        }
+        setCvUploaded(true);
+      } catch {
+        setCvError('Błąd sieci — spróbuj ponownie.');
+      } finally {
+        setCvUploading(false);
+      }
+    };
+
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center px-5 sm:px-6 py-10 text-center">
         <div className="mb-5 sm:mb-6"><KajaAvatar size={56} /></div>
@@ -249,6 +291,58 @@ function ChatApp() {
           Twoje odpowiedzi właśnie wylądowały u nas. Odezwiemy się w ciągu
           5 dni roboczych z informacją o kolejnych krokach. Do usłyszenia!
         </p>
+
+        {/* CV upload section */}
+        <div className="mt-8 w-full max-w-sm">
+          {cvUploaded ? (
+            <div className="rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700 font-medium">
+              CV zapisane ✓
+            </div>
+          ) : (
+            <div>
+              <p className="text-sm text-gray-600 mb-3">
+                📎 Masz CV? Możesz je dorzucić (PDF, max 5MB)
+              </p>
+              <label
+                htmlFor="cv-input"
+                onDragOver={(e) => { e.preventDefault(); setCvDragActive(true); }}
+                onDragLeave={() => setCvDragActive(false)}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  setCvDragActive(false);
+                  const f = e.dataTransfer.files?.[0];
+                  if (f && !cvUploading) void uploadCv(f);
+                }}
+                className={`block w-full rounded-2xl border-2 border-dashed px-4 py-6 cursor-pointer transition-colors ${
+                  cvDragActive ? 'border-accent bg-red-50' : 'border-gray-200 hover:border-accent bg-gray-50'
+                } ${cvUploading ? 'opacity-60 pointer-events-none' : ''}`}
+              >
+                <input
+                  id="cv-input"
+                  type="file"
+                  accept="application/pdf"
+                  className="hidden"
+                  disabled={cvUploading}
+                  onChange={(e) => {
+                    const f = e.target.files?.[0];
+                    if (f) void uploadCv(f);
+                  }}
+                />
+                {cvUploading ? (
+                  <span className="text-sm text-gray-500">Wgrywam…</span>
+                ) : (
+                  <span className="text-sm text-gray-500">
+                    <span className="underline text-gray-700">Wybierz plik</span>{' '}lub przeciągnij tu
+                  </span>
+                )}
+              </label>
+              {cvError && (
+                <p className="mt-2 text-xs text-red-600">{cvError}</p>
+              )}
+            </div>
+          )}
+        </div>
+
         <a href="https://important.is" target="_blank" rel="noopener noreferrer"
           className="mt-6 text-sm text-gray-400 hover:text-accent transition-colors">
           important<span className="text-accent">.</span>is 🚀

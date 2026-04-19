@@ -15,7 +15,8 @@ export type EventType =
   | 'interview_start' // kliknął "Zacznij rozmowę"
   | 'interview_complete' // Kaja wywołała complete_interview
   | 'interview_error' // błąd podczas rozmowy
-  | 'fallback_shown'; // wyświetlono "Kaja niedostępna"
+  | 'fallback_shown' // wyświetlono "Kaja niedostępna"
+  | 'cv_uploaded'; // kandydat dodał CV po rozmowie
 
 interface Event {
   ts: string;

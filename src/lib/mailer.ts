@@ -1,4 +1,15 @@
 import nodemailer from 'nodemailer';
+import { getEmailTemplate } from './content';
+
+/**
+ * Prosty renderer szablonów — podmienia `{{variable}}` na odpowiednią wartość.
+ * Nieznalezione klucze zostają jako pusty string.
+ */
+export function renderTemplate(tpl: string, vars: Record<string, string>): string {
+  return tpl.replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (_, key) => {
+    return Object.prototype.hasOwnProperty.call(vars, key) ? String(vars[key] ?? '') : '';
+  });
+}
 
 if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
   console.error('[mailer] Missing SMTP env vars — emails will fail');
@@ -23,6 +34,7 @@ export interface CandidateNotification {
   notatki: string;
   notionUrl?: string;
   wczesneZakonczenie?: boolean;
+  cvUrl?: string;
 }
 
 const DECISION_EMOJI: Record<string, string> = {
@@ -37,19 +49,39 @@ export async function sendCandidateConfirmation(data: {
   email: string;
   role: string;
 }) {
-  await transporter.sendMail({
-    from: `"Kaja z important.is" <hi@important.is>`,
-    to: data.email,
-    subject: `Dzięki za rozmowę, ${data.imie_nazwisko.split(' ')[0]}! ✌️`,
-    html: `
+  const firstName = data.imie_nazwisko.split(' ')[0];
+  const override = getEmailTemplate('candidateConfirmation');
+
+  let subject: string;
+  let html: string;
+
+  if (override) {
+    const vars = {
+      imie: data.imie_nazwisko,
+      imie_first: firstName,
+      email: data.email,
+      rola: data.role,
+    };
+    subject = renderTemplate(override.subject, vars);
+    html = renderTemplate(override.html, vars);
+  } else {
+    subject = `Dzięki za rozmowę, ${firstName}! ✌️`;
+    html = `
       <div style="font-family: sans-serif; max-width: 560px; color: #222;">
-        <h2 style="font-size: 22px; margin-bottom: 8px;">Hej ${data.imie_nazwisko.split(' ')[0]}! 👋</h2>
+        <h2 style="font-size: 22px; margin-bottom: 8px;">Hej ${firstName}! 👋</h2>
         <p>Dzięki za rozmowę na stanowisko <strong>${data.role}</strong> w important.is.</p>
         <p>Łukasz przejrzy Twoje odpowiedzi i odezwie się do Ciebie w ciągu <strong>5 dni roboczych</strong>.</p>
         <p style="color: #666; font-size: 14px;">Jeśli masz pytania — pisz śmiało na <a href="mailto:hi@important.is">hi@important.is</a>.</p>
         <p style="margin-top: 32px;">Do usłyszenia,<br><strong>Kaja</strong><br><span style="color:#666;font-size:13px;">Rekruterka · important.is</span></p>
       </div>
-    `,
+    `;
+  }
+
+  await transporter.sendMail({
+    from: `"Kaja z important.is" <hi@important.is>`,
+    to: data.email,
+    subject,
+    html,
   });
 }
 
@@ -106,12 +138,60 @@ export async function notifyBudgetThreshold(data: {
   });
 }
 
+export async function notifyCvUploaded(data: { sessionId: string; cvUrl: string; size: number }) {
+  await transporter.sendMail({
+    from: `"Kaja — Rekrutacja" <hi@important.is>`,
+    to: 'lukasz.s@important.is',
+    subject: `📎 Kandydat dorzucił CV — sessionId ${data.sessionId.slice(0, 16)}…`,
+    html: `
+      <div style="font-family: sans-serif; max-width: 560px;">
+        <h2 style="margin-bottom: 4px;">📎 CV dorzucone po rozmowie</h2>
+        <p style="color: #666;">Sprawdź — prawdopodobnie to ostatni kandydat którego zgłoszenie dostałeś.</p>
+        <p style="font-size: 13px; color: #666;">Rozmiar: ${(data.size / 1024).toFixed(0)} KB · Session: <code>${data.sessionId}</code></p>
+        <p><a href="${data.cvUrl}" style="background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px;">Otwórz CV →</a></p>
+      </div>
+    `,
+  });
+}
+
 export async function notifyNewCandidate(data: CandidateNotification) {
   const emoji = DECISION_EMOJI[data.decyzja] ?? '⚪';
   const earlyTag = data.wczesneZakonczenie ? ' ⚠️ (przerwana wcześniej)' : '';
-  const subject = `${emoji} Nowy kandydat: ${data.imie_nazwisko} — ${data.role}${earlyTag}`;
+  const notionBlock = data.notionUrl
+    ? `<p><a href="${data.notionUrl}" style="background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px;">Otwórz w Notion →</a></p>`
+    : '';
+  const cvBlock = data.cvUrl
+    ? `<p style="color: #333;">📎 CV: <a href="${data.cvUrl}" style="color: #E63946;">${data.cvUrl}</a></p>`
+    : '';
+  const earlyNote = data.wczesneZakonczenie
+    ? '<p style="color: #e67e22; font-size: 13px;">⚠️ Kandydat/ka przerwał/a rozmowę wcześniej. Email podany — warto się odezwać.</p>'
+    : '';
+  const notatkiHtml = data.notatki.replace(/\n/g, '<br>');
 
-  const html = `
+  const override = getEmailTemplate('lukaszNotification');
+
+  let subject: string;
+  let html: string;
+
+  if (override) {
+    const vars = {
+      imie: data.imie_nazwisko,
+      email: data.email,
+      rola: data.role,
+      wynik: String(data.wynik_lacznie),
+      decyzja: data.decyzja,
+      notatki: notatkiHtml,
+      notionUrl: notionBlock,
+      cvUrl: cvBlock,
+      earlyTag,
+      earlyNote,
+      emoji,
+    };
+    subject = renderTemplate(override.subject, vars);
+    html = renderTemplate(override.html, vars);
+  } else {
+    subject = `${emoji} Nowy kandydat: ${data.imie_nazwisko} — ${data.role}${earlyTag}`;
+    html = `
     <div style="font-family: sans-serif; max-width: 600px;">
       <h2 style="margin-bottom: 4px;">${emoji} ${data.imie_nazwisko}${earlyTag}</h2>
       <p style="color: #666; margin-top: 0;">Rola: <strong>${data.role}</strong></p>
@@ -131,13 +211,16 @@ export async function notifyNewCandidate(data: CandidateNotification) {
         </tr>
       </table>
 
-      <p style="color: #333;"><strong>Notatki Kai:</strong><br>${data.notatki.replace(/\n/g, '<br>')}</p>
+      <p style="color: #333;"><strong>Notatki Kai:</strong><br>${notatkiHtml}</p>
 
-      ${data.notionUrl ? `<p><a href="${data.notionUrl}" style="background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px;">Otwórz w Notion →</a></p>` : ''}
+      ${notionBlock}
 
-      ${data.wczesneZakonczenie ? '<p style="color: #e67e22; font-size: 13px;">⚠️ Kandydat/ka przerwał/a rozmowę wcześniej. Email podany — warto się odezwać.</p>' : ''}
+      ${cvBlock}
+
+      ${earlyNote}
     </div>
   `;
+  }
 
   await transporter.sendMail({
     from: `"Kaja — Rekrutacja" <hi@important.is>`,

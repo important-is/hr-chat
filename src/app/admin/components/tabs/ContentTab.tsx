@@ -31,14 +31,97 @@ interface GlobalData {
 interface DefaultsData {
   companyKnowledge: string;
   interviewRules: string;
+  emailTemplates?: {
+    candidateConfirmation: { subject: string; html: string };
+    lukaszNotification: { subject: string; html: string };
+  };
 }
 
-type Section = 'global' | 'roles' | 'ui';
+interface EmailTemplateData {
+  subject: string;
+  html: string;
+  override: { subject?: string; html?: string };
+}
+
+interface EmailTemplatesState {
+  candidateConfirmation: EmailTemplateData;
+  lukaszNotification: EmailTemplateData;
+}
+
+type EmailTemplateType = 'candidateConfirmation' | 'lukaszNotification';
+
+const EMPTY_EMAIL_TEMPLATES: EmailTemplatesState = {
+  candidateConfirmation: { subject: '', html: '', override: {} },
+  lukaszNotification: { subject: '', html: '', override: {} },
+};
+
+const EMAIL_TEMPLATE_META: Record<EmailTemplateType, {
+  label: string;
+  description: string;
+  variables: { name: string; desc: string }[];
+  sampleVars: Record<string, string>;
+}> = {
+  candidateConfirmation: {
+    label: 'Potwierdzenie do kandydata',
+    description: 'Wysyłany do kandydata zaraz po zakończeniu rozmowy.',
+    variables: [
+      { name: 'imie', desc: 'Pełne imię i nazwisko' },
+      { name: 'imie_first', desc: 'Tylko imię' },
+      { name: 'email', desc: 'Email kandydata' },
+      { name: 'rola', desc: 'Nazwa stanowiska' },
+    ],
+    sampleVars: {
+      imie: 'Anna Kowalska',
+      imie_first: 'Anna',
+      email: 'anna@example.com',
+      rola: 'Frontend Developer',
+    },
+  },
+  lukaszNotification: {
+    label: 'Powiadomienie do Łukasza',
+    description: 'Wysyłany do Łukasza z podsumowaniem rozmowy.',
+    variables: [
+      { name: 'imie', desc: 'Pełne imię i nazwisko' },
+      { name: 'email', desc: 'Email kandydata' },
+      { name: 'rola', desc: 'Nazwa stanowiska' },
+      { name: 'wynik', desc: 'Wynik punktowy (liczba)' },
+      { name: 'decyzja', desc: 'Decyzja (np. Rozmowa / Odrzucony)' },
+      { name: 'notatki', desc: 'Notatki Kai (HTML z <br>)' },
+      { name: 'emoji', desc: 'Emoji decyzji (🟢/🟡/🟠/🔴)' },
+      { name: 'earlyTag', desc: 'Tag gdy rozmowa przerwana wcześniej' },
+      { name: 'earlyNote', desc: 'Cały blok ostrzegawczy (HTML)' },
+      { name: 'notionUrl', desc: 'Cały blok z linkiem do Notion (HTML)' },
+      { name: 'cvUrl', desc: 'Cały blok z linkiem do CV (HTML)' },
+    ],
+    sampleVars: {
+      imie: 'Anna Kowalska',
+      email: 'anna@example.com',
+      rola: 'Frontend Developer',
+      wynik: '42',
+      decyzja: 'Rozmowa',
+      notatki: 'Silne doświadczenie z React.<br>Dobra komunikacja.',
+      emoji: '🟢',
+      earlyTag: '',
+      earlyNote: '',
+      notionUrl: '',
+      cvUrl: '',
+    },
+  },
+};
+
+function renderTemplatePreview(tpl: string, vars: Record<string, string>): string {
+  return tpl.replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (_, key) =>
+    Object.prototype.hasOwnProperty.call(vars, key) ? String(vars[key] ?? '') : ''
+  );
+}
+
+type Section = 'global' | 'roles' | 'ui' | 'emails';
 
 export default function ContentTab() {
   const [roles, setRoles] = useState<Record<string, RoleData>>({});
   const [ui, setUi] = useState<UIData>({});
   const [global, setGlobal] = useState<GlobalData>({});
+  const [emailTemplates, setEmailTemplates] = useState<EmailTemplatesState>(EMPTY_EMAIL_TEMPLATES);
   const [defaults, setDefaults] = useState<DefaultsData>({ companyKnowledge: '', interviewRules: '' });
   const [updatedAt, setUpdatedAt] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -56,6 +139,7 @@ export default function ContentTab() {
       setRoles(data.roles || {});
       setUi(data.ui || {});
       setGlobal(data.global || {});
+      setEmailTemplates(data.emailTemplates || EMPTY_EMAIL_TEMPLATES);
       setDefaults(data.defaults || { companyKnowledge: '', interviewRules: '' });
       setUpdatedAt(data.updatedAt || null);
     } catch (err) {
@@ -159,6 +243,41 @@ export default function ContentTab() {
     }
   };
 
+  const saveEmailTemplate = async (type: EmailTemplateType, tpl: { subject?: string; html?: string }) => {
+    setSaving(true);
+    try {
+      await fetch('/api/admin/content', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ emailTemplates: { [type]: tpl } }),
+      });
+      showToast('Saved!');
+      fetchContent();
+    } catch (err) {
+      showToast('Error: ' + String(err));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const resetEmailTemplate = async (type: EmailTemplateType) => {
+    if (!confirm('Reset do domyślnego szablonu z kodu?')) return;
+    setSaving(true);
+    try {
+      await fetch('/api/admin/content', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ resetEmailTemplate: type }),
+      });
+      showToast('Reset to defaults');
+      fetchContent();
+    } catch (err) {
+      showToast('Error: ' + String(err));
+    } finally {
+      setSaving(false);
+    }
+  };
+
   if (loading) {
     return <div className="text-sm text-gray-400 animate-pulse">Loading content...</div>;
   }
@@ -174,11 +293,12 @@ export default function ContentTab() {
 
       {/* Section tabs */}
       <div className="flex gap-2 flex-wrap">
-        {(['global', 'roles', 'ui'] as Section[]).map((s) => {
+        {(['global', 'roles', 'ui', 'emails'] as Section[]).map((s) => {
           const labels: Record<Section, string> = {
             global: 'Global Prompt',
             roles: `Roles (${Object.keys(roles).length})`,
             ui: 'UI Texts',
+            emails: '📧 Email templates',
           };
           return (
             <button
@@ -360,6 +480,165 @@ export default function ContentTab() {
           <UIField label="Success text" field="successText" value={ui.successText} placeholder="Twoje odpowiedzi właśnie wylądowały u nas..." multiline onSave={saveUI} saving={saving} />
           <UIField label="Fallback title" field="fallbackTitle" value={ui.fallbackTitle} placeholder="Kaja chwilowo niedostępna." onSave={saveUI} saving={saving} />
           <UIField label="Fallback text" field="fallbackText" value={ui.fallbackText} placeholder="Mamy teraz dużo rozmów..." multiline onSave={saveUI} saving={saving} />
+        </div>
+      )}
+
+      {/* Email templates section */}
+      {section === 'emails' && (
+        <div className="space-y-4">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+            <p className="text-sm text-amber-800">
+              Szablony maili wysyłanych po zakończonej rozmowie. Wartości w stylu <code className="bg-amber-100 px-1 rounded">{'{{imie}}'}</code> są podmieniane w locie.
+              Puste pole = używany jest domyślny szablon z kodu.
+            </p>
+          </div>
+
+          {(['candidateConfirmation', 'lukaszNotification'] as EmailTemplateType[]).map((type) => (
+            <EmailTemplateSection
+              key={type}
+              type={type}
+              data={emailTemplates[type]}
+              onSave={(tpl) => saveEmailTemplate(type, tpl)}
+              onReset={() => resetEmailTemplate(type)}
+              saving={saving}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ── Email template section ─────────────────────────── */
+function EmailTemplateSection({
+  type, data, onSave, onReset, saving,
+}: {
+  type: EmailTemplateType;
+  data: EmailTemplateData;
+  onSave: (tpl: { subject?: string; html?: string }) => void;
+  onReset: () => void;
+  saving: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const [subject, setSubject] = useState(data.subject);
+  const [html, setHtml] = useState(data.html);
+  const meta = EMAIL_TEMPLATE_META[type];
+  const isCustomized = !!(data.override.subject || data.override.html);
+
+  useEffect(() => {
+    setSubject(data.subject);
+    setHtml(data.html);
+  }, [data.subject, data.html]);
+
+  const changed = subject !== data.subject || html !== data.html;
+
+  const renderedSubject = renderTemplatePreview(subject, meta.sampleVars);
+  const renderedHtml = renderTemplatePreview(html, meta.sampleVars);
+  // Preview używa treści wpisanej przez admina (zaufany kontent) — renderowany przez dangerouslySetInnerHTML.
+  const previewHtml = { __html: renderedHtml };
+
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div
+        className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-gray-50"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <div>
+          <p className="text-sm font-medium text-gray-800">{meta.label}</p>
+          <p className="text-xs text-gray-400">{meta.description}</p>
+        </div>
+        <div className="flex items-center gap-2">
+          {isCustomized && (
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-50 text-amber-700">
+              customized
+            </span>
+          )}
+          <span className="text-gray-400 text-xs">{open ? '▼' : '▶'}</span>
+        </div>
+      </div>
+
+      {open && (
+        <div className="border-t border-gray-100 px-4 py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* Editor column */}
+            <div className="space-y-3">
+              <div>
+                <label className="text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</label>
+                <input
+                  type="text"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  className="mt-1 w-full px-3 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 focus:outline-none focus:border-[#E63946]"
+                />
+              </div>
+
+              <div>
+                <label className="text-xs font-medium text-gray-500 uppercase tracking-wider">HTML content</label>
+                <textarea
+                  value={html}
+                  onChange={(e) => setHtml(e.target.value)}
+                  className="mt-1 w-full px-3 py-2 rounded-lg border border-gray-200 text-xs text-gray-700 font-mono focus:outline-none focus:border-[#E63946] resize-y"
+                  style={{ minHeight: 240 }}
+                />
+              </div>
+
+              <div className="rounded-lg bg-gray-50 border border-gray-100 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase text-gray-500 tracking-wider mb-2">Dostępne zmienne</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {meta.variables.map((v) => (
+                    <code
+                      key={v.name}
+                      title={v.desc}
+                      className="px-2 py-0.5 rounded bg-white border border-gray-200 text-[11px] text-gray-700 font-mono cursor-pointer hover:bg-gray-100"
+                      onClick={() => navigator.clipboard?.writeText(`{{${v.name}}}`)}
+                    >
+                      {`{{${v.name}}}`}
+                    </code>
+                  ))}
+                </div>
+                <p className="text-[10px] text-gray-400 mt-2">Kliknij zmienną aby skopiować do schowka.</p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-2">
+                <button
+                  onClick={() => onSave({ subject, html })}
+                  disabled={saving || !changed}
+                  className="px-4 py-1.5 rounded-lg text-xs font-medium bg-[#E63946] text-white hover:opacity-90 disabled:opacity-40"
+                >
+                  Zapisz
+                </button>
+                <button
+                  onClick={onReset}
+                  disabled={saving || !isCustomized}
+                  className="px-3 py-1.5 rounded-lg text-xs font-medium text-gray-500 hover:bg-gray-100 disabled:opacity-40"
+                >
+                  Reset do default
+                </button>
+                {changed && <span className="text-xs text-amber-600">Niezapisane zmiany</span>}
+                <span className="text-xs text-gray-400 ml-auto">{html.length} chars</span>
+              </div>
+            </div>
+
+            {/* Preview column */}
+            <div className="space-y-3">
+              <div>
+                <label className="text-xs font-medium text-gray-500 uppercase tracking-wider">Preview (z przykładowymi danymi)</label>
+                <div className="mt-1 rounded-lg border border-gray-200 overflow-hidden bg-gray-50">
+                  <div className="px-3 py-2 bg-gray-100 border-b border-gray-200 text-xs text-gray-700">
+                    <span className="text-gray-400">Subject:</span> <strong>{renderedSubject}</strong>
+                  </div>
+                  <div
+                    className="px-3 py-3 text-sm bg-white"
+                    style={{ minHeight: 240 }}
+                    dangerouslySetInnerHTML={previewHtml}
+                  />
+                </div>
+              </div>
+              <p className="text-[10px] text-gray-400">
+                Przykładowe dane: {Object.entries(meta.sampleVars).filter(([, v]) => v).map(([k, v]) => `${k}=${v}`).join(', ')}
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>

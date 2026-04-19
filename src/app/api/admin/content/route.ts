@@ -1,6 +1,13 @@
 import { NextResponse } from 'next/server';
 import { isAuthenticated } from '@/lib/admin-auth';
-import { loadContent, saveContent, DEFAULTS } from '@/lib/content';
+import {
+  loadContent,
+  saveContent,
+  DEFAULTS,
+  DEFAULT_EMAIL_TEMPLATES,
+  setEmailTemplate,
+  type EmailTemplateType,
+} from '@/lib/content';
 import { ROLES } from '@/lib/roles';
 
 export const dynamic = 'force-dynamic';
@@ -35,13 +42,30 @@ export async function GET() {
     };
   }
 
+  // Email templates — zwracamy override (jeśli jest) oraz defaulty z kodu
+  const emailOverrides = content.emailTemplates || {};
+  const emailTemplates: Record<EmailTemplateType, { subject: string; html: string; override: { subject?: string; html?: string } }> = {
+    candidateConfirmation: {
+      subject: emailOverrides.candidateConfirmation?.subject || DEFAULT_EMAIL_TEMPLATES.candidateConfirmation.subject,
+      html: emailOverrides.candidateConfirmation?.html || DEFAULT_EMAIL_TEMPLATES.candidateConfirmation.html,
+      override: emailOverrides.candidateConfirmation || {},
+    },
+    lukaszNotification: {
+      subject: emailOverrides.lukaszNotification?.subject || DEFAULT_EMAIL_TEMPLATES.lukaszNotification.subject,
+      html: emailOverrides.lukaszNotification?.html || DEFAULT_EMAIL_TEMPLATES.lukaszNotification.html,
+      override: emailOverrides.lukaszNotification || {},
+    },
+  };
+
   return NextResponse.json({
     roles: rolesWithDefaults,
     ui: content.ui || {},
     global: content.global || {},
+    emailTemplates,
     defaults: {
       companyKnowledge: DEFAULTS.companyKnowledge,
       interviewRules: DEFAULTS.interviewRules,
+      emailTemplates: DEFAULT_EMAIL_TEMPLATES,
     },
     updatedAt: content.updatedAt,
   });
@@ -84,6 +108,33 @@ export async function PUT(req: Request) {
       if (body.resetGlobal === 'companyKnowledge') delete content.global.companyKnowledge;
       else if (body.resetGlobal === 'interviewRules') delete content.global.interviewRules;
       else if (body.resetGlobal === 'all') content.global = {};
+    }
+
+    // Email templates — merge/save override
+    if (body.emailTemplates && typeof body.emailTemplates === 'object') {
+      if (!content.emailTemplates) content.emailTemplates = {};
+      for (const [type, tpl] of Object.entries(body.emailTemplates) as [EmailTemplateType, { subject?: string; html?: string } | null][]) {
+        if (type !== 'candidateConfirmation' && type !== 'lukaszNotification') continue;
+        if (tpl === null) {
+          delete content.emailTemplates[type];
+          continue;
+        }
+        content.emailTemplates[type] = {
+          ...content.emailTemplates[type],
+          ...(tpl.subject !== undefined ? { subject: tpl.subject } : {}),
+          ...(tpl.html !== undefined ? { html: tpl.html } : {}),
+        };
+      }
+    }
+
+    // Reset email template to defaults
+    if (body.resetEmailTemplate) {
+      const type = body.resetEmailTemplate as EmailTemplateType;
+      if (type === 'candidateConfirmation' || type === 'lukaszNotification') {
+        setEmailTemplate(type, null);
+        // reload — setEmailTemplate zapisało już content
+        return NextResponse.json({ success: true, updatedAt: new Date().toISOString() });
+      }
     }
 
     saveContent(content);

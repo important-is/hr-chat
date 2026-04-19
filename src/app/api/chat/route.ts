@@ -231,6 +231,10 @@ Jeśli email nie padł — wpisz "brak@brak.pl". MUSISZ wywołać narzędzie com
             trackEvent('interview_complete', { role: roleId, sessionId, meta: { wynik_lacznie, decyzja, auto: true } });
 
             try {
+              const cvPath = join(process.cwd(), 'data', 'cvs', `${sessionId}.pdf`);
+              const cvUrl = existsSync(cvPath)
+                ? `https://rekrutacja.important.is/api/admin/cv/${sessionId}`
+                : undefined;
               await notifyNewCandidate({
                 imie_nazwisko: candidate.imie_nazwisko,
                 email: candidate.email,
@@ -240,6 +244,7 @@ Jeśli email nie padł — wpisz "brak@brak.pl". MUSISZ wywołać narzędzie com
                 notatki: candidate.notatki,
                 notionUrl: `https://www.notion.so/${created.id.replace(/-/g, '')}`,
                 wczesneZakonczenie: candidate.wczesne_zakonczenie ?? false,
+                cvUrl,
               });
               if (emailToCheck) await sendCandidateConfirmation({ imie_nazwisko: candidate.imie_nazwisko, email: candidate.email, role: roleTitle });
             } catch (mailErr) { console.error('Auto-score mail error:', mailErr); }
@@ -589,6 +594,10 @@ export async function POST(req: Request) {
 
             // Emaile — Łukasz + kandydat
             try {
+              const cvPath = join(process.cwd(), 'data', 'cvs', `${sessionId}.pdf`);
+              const cvUrl = existsSync(cvPath)
+                ? `https://rekrutacja.important.is/api/admin/cv/${sessionId}`
+                : undefined;
               await notifyNewCandidate({
                 imie_nazwisko: candidate.imie_nazwisko,
                 email: candidate.email,
@@ -598,6 +607,7 @@ export async function POST(req: Request) {
                 notatki: candidate.notatki,
                 notionUrl: `https://www.notion.so/${created.id.replace(/-/g, '')}`,
                 wczesneZakonczenie: candidate.wczesne_zakonczenie ?? false,
+                cvUrl,
               });
               // Email kandydata tylko jeśli mamy prawdziwy adres
               if (candidate.email && !candidate.email.includes('brak@') && candidate.email.includes('@')) {
