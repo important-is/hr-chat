@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import { ROLES } from '@/lib/roles';
+import ReactMarkdown from 'react-markdown';
 
 function KajaAvatar({ size = 28 }: { size?: number }) {
   return (
@@ -465,11 +466,35 @@ function ChatApp() {
                     ? 'bg-black text-white rounded-tr-sm'
                     : 'bg-white text-gray-800 rounded-tl-sm shadow-sm border border-gray-100'
                 }`}>
-                  {typeof message.content === 'string'
-                    ? message.content.split('\n').map((line, i, arr) => (
+                  {typeof message.content === 'string' ? (
+                    isUser ? (
+                      message.content.split('\n').map((line, i, arr) => (
                         <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
                       ))
-                    : null}
+                    ) : (
+                      <div className="markdown-chat">
+                        <ReactMarkdown
+                          components={{
+                            p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                            strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                            em: ({ children }) => <em className="italic">{children}</em>,
+                            a: ({ href, children }) => (
+                              <a href={href} target="_blank" rel="noopener noreferrer"
+                                 className="text-accent underline hover:opacity-80">{children}</a>
+                            ),
+                            ul: ({ children }) => <ul className="list-disc pl-5 mb-2 space-y-0.5">{children}</ul>,
+                            ol: ({ children }) => <ol className="list-decimal pl-5 mb-2 space-y-0.5">{children}</ol>,
+                            li: ({ children }) => <li>{children}</li>,
+                            code: ({ children }) => (
+                              <code className="bg-gray-100 px-1 py-0.5 rounded text-[12px] font-mono">{children}</code>
+                            ),
+                          }}
+                        >
+                          {message.content}
+                        </ReactMarkdown>
+                      </div>
+                    )
+                  ) : null}
                 </div>
               </div>
             );
